@@ -1,0 +1,76 @@
+/* Focuses on Header */
+#header{
+    background-color: #839788;
+    padding: 10px;
+}
+
+/* --removes white bar on top of page */
+#header h1{
+    margin-top: 0;
+}
+
+/* Focuses on the Body */
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Focuses on the Footer */
+footer{
+    position: fixed;
+    background-color: #839788;
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+}
+
+/* --The Social Media Icons */
+#socials{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    vertical-align: top;
+}
+
+#github, #linkedin{
+    height: 50px;
+    width: 50px;
+}
+
+#gitlink, #linkedlink{
+    max-width: 50px;
+    max-height: 50px;
+    margin: 10px;
+}
+
+#github:hover, #linkedin:hover{
+    box-shadow: 0 0 5px 2px #8d6b94;
+}
+
+
+/* --The Links */
+#links{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+a:link{
+    color:black;
+    text-decoration: none;
+}
+
+a:visited{
+    color:black;
+}
+
+a:hover{
+    color:#8d6b94;
+}
+
+a:active{
+    color:white;
+}
