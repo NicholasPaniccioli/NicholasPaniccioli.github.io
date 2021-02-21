@@ -7,7 +7,7 @@
 #homelink{
     position: absolute;
     right: 20px;
-    top: 30px;
+    top: 25px;
 }
 
 /* --removes white bar on top of page */
@@ -20,6 +20,40 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0px;
     padding: 0px;
+}
+
+/* Focuses on the Content */
+#content{
+    margin: 20px;
+}
+
+/* Focuses on the Cards in Index*/
+#cardContainer{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    background-color: #2196F3;
+    grid-column-gap: 20px;
+    padding: 10px;
+}
+
+.cards{
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* Focuses on Updates in Documentation */
+.updateHead{
+    font-style: italic;
+    color:#A3A3A3;
+    margin: 5px;
+}
+
+.update{
+    margin: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-style: italic;
 }
 
 /* Focuses on the Footer */
@@ -39,6 +73,7 @@ footer{
     justify-content: center;
     width: 100%;
     vertical-align: top;
+    padding-top: 5px;
     padding-bottom: 10px;
 }
 
