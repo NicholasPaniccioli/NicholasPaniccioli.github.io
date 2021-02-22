@@ -1,13 +1,13 @@
 /* Focuses on Header */
 #header{
     background-color: #839788;
-    padding: 10px;
+    padding: 3vh;
 }
 
 #homelink{
     position: absolute;
-    right: 25px;
-    top: 25px;
+    right: 5vw;
+    top: 5vh;
 }
 
 /* --removes white bar on top of page */
@@ -20,6 +20,7 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 
 /* Focuses on the Content */
@@ -27,19 +28,45 @@ body{
     margin: 20px;
 }
 
+hr{
+    border-top: 3px solid #8d6b94;
+}
+
+/* Focuses on the Profile Intro */
+#intro{
+    display: flex;
+    align-items: center;
+    padding-right: 10vw;
+    padding-left: 10vw;
+}
+
+#proPic{
+    width: 15vw;
+    height: auto;
+    border-radius: 50%;
+}
+
+#introText{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 /* Focuses on the Cards in Index*/
 #cardContainer{
     display: grid;
     grid-template-columns: repeat(3, minmax(0,1fr));
     grid-column-gap: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .cards{
     background-color: white;
     border: 1px solid black;
     text-align: center;
-    height: 400px;
+    height: 50vh;
     max-height: 700px;
+    box-shadow: 2px 3px 5px black;
 }
 
 .cardCont{
@@ -47,7 +74,7 @@ body{
 }
 
 .cardPic{
-    height: 60%;
+    height: 25vh;
     max-width: 100%;
     max-height: 100%;
     border: 1px solid black;
@@ -84,13 +111,10 @@ h2{
 
 /* Focuses on the Footer */
 footer{
-    position: fixed;
     background-color: #839788;
     width: 100%;
     padding: 10px;
     padding-bottom: 30px;
-    bottom: 0;
-    left: 0;
 }
 
 /* --The Social Media Icons */
@@ -142,4 +166,51 @@ a:hover{
 
 a:active{
     color:white;
+}
+
+@media screen and (max-width: 700px)
+{
+    /* Focuses on the Cards in Index*/
+#cardContainer{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-column-gap: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.cards{
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    height: 60vh;
+    max-height: 700px;
+    box-shadow: 2px 3px 5px black;
+}
+
+.cardCont{
+    padding: 10px;
+}
+
+.cardPic{
+    height: 25vh;
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid black;
+    border-width: 1px 1px 2px 1px;
+}
+
+.thumbnail{
+    width: 100%;
+    height: 100%;
+}
+
+h2{
+    margin: 0px;
+    font-size: 12pt;
+}
+
+.cardDesc{
+    font-size: 10pt;
+}
 }
