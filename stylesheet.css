@@ -21,7 +21,6 @@
 body{
     font-family: 'Roboto', sans-serif;
     margin: 0px;
-    padding: 0px;
     overflow-x: hidden;
 }
 
@@ -38,8 +37,11 @@ hr{
 #intro{
     display: flex;
     align-items: center;
-    padding-right: 10vw;
-    padding-left: 10vw;
+    padding: 20px;
+}
+
+.empty{
+    padding: 150px;
 }
 
 #proPic{
@@ -51,22 +53,23 @@ hr{
 #introText{
     padding-left: 20px;
     padding-right: 20px;
+    
 }
 
 /* Focuses on the Cards in Index*/
 #cardContainer{
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    grid-column-gap: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding: 20px;
 }
 
 .cards{
     background-color: white;
     border: 1px solid black;
     text-align: center;
-    height: 50vh;
+    height: auto;
     max-height: 700px;
     box-shadow: 2px 3px 5px black;
 }
@@ -81,6 +84,7 @@ hr{
     max-height: 100%;
     border: 1px solid black;
     border-width: 1px 1px 2px 1px;
+    filter: blur(1px);
 }
 
 .thumbnail{
@@ -115,8 +119,8 @@ h2{
 footer{
     background-color: #839788;
     width: 100%;
-    padding: 10px;
-    padding-bottom: 30px;
+    height: 100%;
+    padding: 20px;
 }
 
 /* --The Social Media Icons */
@@ -170,12 +174,28 @@ a:active{
     color:white;
 }
 
+@media screen and (max-width: 1130px)
+{
+    .empty{
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    #cardContainer{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+}
+
 /* Adjusts for smaller windows and phone screens */
 @media screen and (max-width: 700px)
 {
     /* Prevents swiping to side on phone */
     html {
         overflow-x: scroll;
+        overflow-x: hidden;
         -ms-touch-action: none; 
         -ms-overflow-style: none;
         -ms-scroll-chaining: none; 
@@ -201,6 +221,7 @@ a:active{
         text-align: center;
         height: auto;
         margin: 20px;
+        max-width: 800px;
         box-shadow: 2px 3px 5px black;
     }
 
@@ -210,6 +231,10 @@ a:active{
         flex-direction: column;
         padding-right: 10vw;
         padding-left: 10vw;
+    }
+
+    .empty{
+        padding: 0px;
     }
     
     #proPic{
