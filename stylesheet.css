@@ -1,18 +1,26 @@
 /* Focuses on Header */
 #header{
     background-color: #839788;
-    padding: 3vh;
+    padding: 15px;
 }
 
 #homelink{
     position: absolute;
     right: 5vw;
-    top: 5vh;
+    top: 3vh;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#homelink:active {
+    border-color:#8d6b94;
 }
 
 /* --removes white bar on top of page */
 #header h1{
     padding-top: 3vh;
+    padding-left: 2vw;
     margin-top: 0;
     width: 100%;
 }
@@ -147,7 +155,6 @@ footer{
 #github:hover, #linkedin:hover{
     box-shadow: 0 0 5px 2px #8d6b94;
 }
-
 
 /* --The Links */
 .links{
