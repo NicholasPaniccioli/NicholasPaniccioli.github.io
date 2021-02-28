@@ -123,6 +123,17 @@ h2{
     font-style: italic;
 }
 
+/* Focuses on Sources Page */
+#welSource{
+    padding: 25px;
+}
+
+#sources{
+    padding: 20px;
+}
+
+
+
 /* Focuses on the Footer */
 footer{
     background-color: #839788;
