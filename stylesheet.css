@@ -137,19 +137,14 @@ h2{
 /* Focuses on the Footer */
 footer{
     background-color: #839788;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
 }
 
 /* --The Social Media Icons */
 #socials{
     display: flex;
     justify-content: center;
-    width: 100%;
-    vertical-align: top;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    max-width: 100vw;
+    padding: 20px 20px 5px 20px;
 }
 
 #github, #linkedin, #home{
@@ -168,11 +163,24 @@ footer{
 }
 
 /* --The Links */
+#linkBox{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+}
+
+#sourcelink{
+    padding: 5px;
+}
+
+#doclink{
+    padding: 5px;
+}
+
 .links{
     display: flex;
-    justify-content:center;
+    justify-content: center;
     width: 100%;
-    padding: 2px;
 }
 
 a:link{
