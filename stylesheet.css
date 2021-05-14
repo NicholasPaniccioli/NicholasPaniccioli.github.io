@@ -34,6 +34,8 @@ body{
 
 /* Focuses on the Content */
 #content{
+    display: grid;
+    grid-template-columns: auto auto auto;
     margin: 20px;
 }
 
@@ -88,10 +90,6 @@ hr{
 
 /* Focuses on the Cards in Index*/
 #cardsShowContainer{
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0,1fr));
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
     padding: 20px;
 }
 
@@ -301,9 +299,6 @@ a:active{
 
     /* Focuses on the Cards in Index*/
     #cardsShowContainer{
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0,1fr));
-        grid-column-gap: 20px;
         padding-top: 15px;
         padding-bottom: 15px;
     }
