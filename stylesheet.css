@@ -34,8 +34,6 @@ body{
 
 /* Focuses on the Content */
 #content{
-    display: grid;
-    grid-template-columns: auto auto auto;
     margin: 20px;
 }
 
@@ -99,6 +97,11 @@ hr{
 /* Focuses on the Cards in Index*/
 #cardsShowContainer{
     padding: 20px;
+}
+
+.cardSection {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 .cardContainer{
