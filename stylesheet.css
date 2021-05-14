@@ -263,49 +263,6 @@ a:active{
     color:white;
 }
 
-@media screen and (max-width: 1650px)
-{
-    .tagBox{
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-
-    .tags{
-        max-width: 80px;
-        max-height: 15px;
-        width: 80px;
-        height: 15px;
-        font-size: 10pt;
-        padding: 3px;
-    }
-}
-
-@media screen and (max-width: 1300px)
-{
-    .empty{
-        padding: 50px;
-    }
-
-    .tagBox{
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-}
-
-@media screen and (max-width: 1000px)
-{
-    #cardContainer{
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0,1fr));
-    }
-
-    .cardDesc{
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0,1fr));
-        padding: 0px 25px;
-    }
-}
-
 /* Adjusts for smaller windows and phone screens */
 @media screen and (max-width: 700px)
 {
