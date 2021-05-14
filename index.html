@@ -27,13 +27,13 @@
         <!-- Where all the links and text for past works will go -->
         <div id="content">
             <!-- Holds all the cards for projects -->
-            <div id="cardContainer">
+            <div id="cardsShowContainer">
                 <!-- Card for Mapbox API -->
-                <div class="cards" id="mapbox">
+                <div class="cardContainer" id="mapbox">
                     <div class="cardPic">
                         <img class="thumbnail" src="images/mapboxAPI.JPG" alt="Landmark Finder">
                     </div>
-                    <div class="cardCont">
+                    <div class="cardInfo">
                         <h2>Landmark Finder</h2>
                         <div class="cardDesc">
                             <div class = "tagBox">
@@ -51,11 +51,11 @@
                     </div>
                 </div>
                 <!-- Card for Space Experience -->
-                <div class="cards" id="space">
+                <div class="cardContainer" id="space">
                     <div class="cardPic">
                         <img class="thumbnail" src="images/spaceExp.JPG" alt="Space Experience">
                     </div>
-                    <div class="cardCont">
+                    <div class="cardInfo">
                         <h2>Space Experience</h2>
                         <div class="cardDesc">
                             <div class = "tagBox">
@@ -73,10 +73,10 @@
                     </div>
                 </div>
                 <!-- Card for work In Progress -->
-                <div class="cards" id="progress">
+                <div class="cardContainer" id="progress">
                     <div class="cardPic">
                     </div>
-                    <div class="cardCont">
+                    <div class="cardInfo">
                         <div class="cardTemp">
                             <h2>Progress</h2>
                             <p>
@@ -180,7 +180,7 @@
 
         //Dictates which card to show
         function showCard(n) {
-            let totalCards = document.getElementsByClassName("cards");
+            let totalCards = document.getElementsByClassName("cardContainer");
             
             //If the number is greater, restarts to the beginning of the cards
             if(n > totalCards.length) {

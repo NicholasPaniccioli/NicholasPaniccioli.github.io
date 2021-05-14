@@ -87,7 +87,7 @@ hr{
 }
 
 /* Focuses on the Cards in Index*/
-#cardContainer{
+#cardsShowContainer{
     display: grid;
     grid-template-columns: repeat(4, minmax(0,1fr));
     grid-column-gap: 30px;
@@ -95,7 +95,7 @@ hr{
     padding: 20px;
 }
 
-.cards{
+.cardContainer{
     background-color: white;
     border: 1px solid black;
     text-align: center;
@@ -104,7 +104,7 @@ hr{
     box-shadow: 2px 3px 5px black;
 }
 
-.cardCont{
+.cardInfo{
     padding: 10px;
 }
 
@@ -296,7 +296,7 @@ a:active{
     }
 
     /* Focuses on the Cards in Index*/
-    #cardContainer{
+    #cardShowContainer{
         display: grid;
         grid-template-columns: repeat(1, minmax(0,1fr));
         grid-column-gap: 20px;
@@ -304,7 +304,7 @@ a:active{
         padding-bottom: 15px;
     }
 
-    .cards{
+    .cardContainer{
         background-color: white;
         border: 1px solid black;
         text-align: center;
