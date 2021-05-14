@@ -113,27 +113,10 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Card for work In Progress -->
-                <div class="cards" id="progress">
-                    <div class="cardPic">
-
-                    </div>
-                    <div class="cardCont">
-                        <div class="cardTemp">
-                            <h2>Progress</h2>
-                            <p>
-                                Looks like this card is still under construction! Sorry for 
-                                the look, but we'll be finished soon!
-                            </p>
-                        </div>
-                        <div class="cardLink">
-                            
-                        </div>
-                    </div>
-                </div>
             </div>
-        
+            
+            <button class="w3-button w3-display-left" onclick="nextCard(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" onclick="nextCard(+1)">&#10095;</button>
         </div>
 
         <hr>
@@ -207,6 +190,42 @@
                 </div>
             </div>
         </footer>
-        
     </body>
+
+    <script>
+        let cardDisplay = 1;
+
+        //Shows the 1st default card
+        showCard(cardDisplay);
+
+        //Shows the next card in line
+        function nextCard(n) {
+            showCard(cardDisplay +=n);
+        }
+
+        //Dictates which card to show
+        function showCard(n) {
+            let totalCards = document.getElementsByClassName("cards");
+            
+            //If the number is greater, restarts to the beginning of the cards
+            if(n > totalCards.length) {
+                cardDisplay = 1
+            }
+
+            //If the number goes below, starts from the end of the cards
+            if(n < 1) {
+                cardDisplay = totalCards.length
+            };
+
+            //Loops through and sets all cards display to none
+            for(let i = 0; i < totalCards.length; i++)
+            {
+                totalCards[i].style.display= "none";
+            }
+
+            //Which ever card is on display will be shown
+            totalCards[cardDisplay-1].style.display= "block";
+        }
+    </script>
+
 </html>
