@@ -42,6 +42,10 @@ hr{
     width: 90vw;
 }
 
+.arrow{
+    max-width: 2vw;
+}
+
 #leftArrow:hover {
     box-shadow: -5px 0 10px 5px rgba(0,0,0, 0.20); 
 }
@@ -105,15 +109,12 @@ hr{
 }
 
 .cardContainer{
-    background-color: white;
-    border: 1px solid black;
-    text-align: center;
+    grid-template-columns: auto auto auto;
     width: 100%;
     min-width:50vw;
     height: 60vh;
     min-height: 65vh;
     max-height: 70vh;
-    box-shadow: 2px 3px 5px black;
 }
 
 .cardInfo{
@@ -121,12 +122,12 @@ hr{
 }
 
 .cardPic{
-    height: 25vh;
-    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 50vh;
+    width: 60vw;
     max-width: 100%;
     max-height: 100%;
-    border: 1px solid black;
-    border-width: 1px 1px 2px 1px;
 }
 
 .thumbnail{
