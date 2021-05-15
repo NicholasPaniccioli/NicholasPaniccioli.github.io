@@ -42,15 +42,12 @@ hr{
     width: 90vw;
 }
 
-.arrow{
-    max-width: 2vw;
-}
-
 #leftArrow:hover {
     box-shadow: -5px 0 10px 5px rgba(0,0,0, 0.20); 
 }
 
 #rightArrow:hover{
+    
     box-shadow: 5px 0 10px 5px rgba(0,0,0, 0.20);
 }
 
@@ -105,7 +102,7 @@ hr{
 
 .cardSection {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 2vw auto 2vw;
 }
 
 .cardContainer{
@@ -115,15 +112,26 @@ hr{
     height: 60vh;
     min-height: 65vh;
     max-height: 70vh;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 25%;}
+    to {opacity: 100%;}
 }
 
 .cardInfo{
     padding: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .cardPic{
     grid-column-start: 1;
     grid-column-end: 3;
+    margin-top: auto;
+    margin-bottom: auto;
     height: 50vh;
     width: 60vw;
     max-width: 100%;
@@ -146,25 +154,6 @@ h2{
 
 .cardLink{
     padding: 25px 0px;
-}
-
-.tagBox{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    padding: 20px 0px;
-}
-
-.tags{
-    margin: 10px;
-    padding: 2px;
-    background-color: #859999;
-    color: white;
-    border-radius: 25px;
-    max-width: 100;
-    max-height: 20px;
-    width: 100px;
-    height: 20px;
-    border: solid 1px black;
 }
 
 .viewButton {
@@ -315,9 +304,6 @@ a:active{
     }
 
     .cardContainer{
-        background-color: white;
-        border: 1px solid black;
-        text-align: center;
         margin: 20px;
         width: 70vw;
         min-width:50vw;
@@ -325,7 +311,6 @@ a:active{
         height: 50vh;
         min-height: 65vh;
         max-height: 70vh;
-        box-shadow: 2px 3px 5px black;
     }
 
     /* Focuses on the Profile Intro */   

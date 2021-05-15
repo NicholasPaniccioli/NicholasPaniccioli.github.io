@@ -37,13 +37,6 @@
                     <div class="cardInfo">
                         <h2>Landmark Finder</h2>
                         <div class="cardDesc">
-                            <div class = "tagBox">
-                                <p class="tags">APIs</p>
-                                <p class="tags">PHP</p>
-                                <p class="tags">HTML</p>
-                                <p class="tags">CSS</p>
-                                <p class="tags">JSON</p>
-                            </div>
                             <div class="cardLink">
                                 <button class="viewButton" onclick="window.open('https://people.rit.edu/njp7745/330/exercises/Project-3/','_blank')">View</button>
                                 <!-- <button class="viewButton" onclick="window.open('','_blank')">Doc</button> -->
@@ -59,33 +52,10 @@
                     <div class="cardInfo">
                         <h2>Space Experience</h2>
                         <div class="cardDesc">
-                            <div class = "tagBox">
-                                <p class="tags">AudioContext</p>
-                                <p class="tags">Canvas</p>
-                                <p class="tags">HTML</p>
-                                <p class="tags">CSS</p>
-                                <p class="tags">JSON</p>
-                            </div>
                             <div class="cardLink">
                                 <button class="viewButton" onclick="window.open('https://people.rit.edu/njp7745/330/exercises/Project-2/','_blank')">View</button>
                                 <!-- <button class="viewButton" onclick="window.open('','_blank')">Doc</button> -->
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card for work In Progress -->
-                <div class="cardContainer" id="progress">
-                    <div class="cardPic">
-                    </div>
-                    <div class="cardInfo">
-                        <div class="cardTemp">
-                            <h2>Progress</h2>
-                            <p>
-                                Looks like this card is still under construction! Sorry for 
-                                the look, but we'll be finished soon!
-                            </p>
-                        </div>
-                        <div class="cardLink">
                         </div>
                     </div>
                 </div>
@@ -180,7 +150,7 @@
         //Dictates which card to show
         function showCard(n) {
             let totalCards = document.getElementsByClassName("cardContainer");
-            
+
             //If the number is greater, restarts to the beginning of the cards
             if(n > totalCards.length) {
                 cardDisplay = 1
