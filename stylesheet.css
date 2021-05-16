@@ -42,12 +42,25 @@ hr{
     width: 90vw;
 }
 
+.arrow{
+    background-color: white;
+    font-size: 26pt;
+    height: 10vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+
+.arrow:hover{
+    background-color: #839777;
+    transition-duration: 0.5s;
+}
+
 #leftArrow:hover {
     box-shadow: -5px 0 10px 5px rgba(0,0,0, 0.20); 
 }
 
 #rightArrow:hover{
-    
     box-shadow: 5px 0 10px 5px rgba(0,0,0, 0.20);
 }
 
@@ -102,7 +115,7 @@ hr{
 
 .cardSection {
     display: grid;
-    grid-template-columns: 2vw auto 2vw;
+    grid-template-columns: 4vw auto 4vw;
 }
 
 .cardContainer{
@@ -172,7 +185,7 @@ h2{
     cursor: pointer;
 }
 .viewButton:hover{
-    background-color: #8d6b94;
+    background-color: #839744;
     color: white;
 }
 
