@@ -1,20 +1,24 @@
 /* Focuses on Header */
 #header{
+    display: grid;
+    grid-template-columns: auto auto auto;
     background-color: #839777;
-    padding: 15px;
 }
 
-#homelink{
-    position: absolute;
-    right: 5vw;
-    top: 3vh;
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: 5px;
+#name{
+    margin: auto;
 }
 
-#homelink:active {
+#homeButton{
+    margin: auto auto auto 20px;
+}
+
+#homeLink:active {
     border-color:#8d6b94;
+}
+
+#blogLink{
+    margin: auto 20px auto auto;
 }
 
 /* --removes white bar on top of page */
@@ -28,13 +32,13 @@
 /* Focuses on the Body */
 body{
     font-family: 'Roboto', sans-serif;
-    margin: 0px;
+    margin: 0;
     overflow-x: hidden;
 }
 
 /* Focuses on the Content */
 #content{
-    /* margin: 20px; */
+    margin: 20px;
 }
 
 hr{
