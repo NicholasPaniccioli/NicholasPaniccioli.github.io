@@ -63,13 +63,23 @@ hr{
 
 /* Focuses on the Profile Intro */
 #intro{
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 20vw auto auto 20vw;
     padding: 25px;
 }
 
-.empty{
-    padding: 150px;
+#profile{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#introText{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#about{
+    text-align: center;
 }
 
 #proPic{
@@ -78,32 +88,6 @@ hr{
     border-radius: 50%;
 }
 
-#introText{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#skills{
-    padding: 10px 10px 10px 0px;
-}
-
-#skillList{
-    display: grid;
-    grid-template-columns: 100px 20px 100px;
-}
-
-#vertLine{
-    display: flex;
-    justify-content: center;
-    max-width: 20px;
-    width: 20px;
-}
-
-#vl{
-    margin: 0px;
-    border-left: 3px solid #859999;
-    height: 100%;
-}
 
 /* Focuses on the Cards in Index*/
 #cardsShowContainer{
@@ -354,20 +338,8 @@ a:active{
         padding-right: 20px;
     }
 
-    #about, #skills{
+    #about{
         display: flex;
         justify-content: center;
-    }
-
-    #skillList{
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0,1fr));
-    }
-
-    #vertLine{
-        display: flex;
-        justify-content: center;
-        max-width: 100%;
-        width: 100%;
     }
 }
