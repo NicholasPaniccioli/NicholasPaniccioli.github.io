@@ -9,12 +9,8 @@
     margin: auto;
 }
 
-#homeButton{
+#homeLink{
     margin: auto auto auto 20px;
-}
-
-#homeLink:active {
-    border-color:#8d6b94;
 }
 
 #blogLink{
@@ -99,7 +95,6 @@ hr{
     grid-template-columns: 4vw auto 4vw;
     margin-left: auto;
     margin-right: auto;
-    padding: 30px;
 }
 
 .cardContainer{
@@ -208,21 +203,35 @@ footer{
 
 /* --The Social Media Icons */
 #socials{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto 10vw 10vw auto;
     max-width: 100vw;
     padding: 20px 20px 5px 20px;
 }
 
-#github, #linkedin, #home{
+#github, #linkedin{
     height: 50px;
     width: 50px;
 }
 
-#gitlink, #linkedlink #homelink{
+#gitlink, #linkedlink{
     max-width: 50px;
     max-height: 50px;
     margin: 10px;
+}
+
+#picLiLinks{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+#picGitlinks{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+#picGitLinks, #picLiLinks{
+    margin: auto;
 }
 
 #github:hover, #linkedin:hover{
@@ -231,8 +240,8 @@ footer{
 
 /* --The Links */
 #linkBox{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
     padding-bottom: 25px;
 }
 
@@ -283,20 +292,6 @@ a:active{
     h1{
         font-size: 20px;
         padding-bottom: 5px;
-    }
-
-    #homelink{
-        position: absolute;
-        right: 5vw;
-        top: 4vh;
-        padding: 10px;
-        border: 2px solid black;
-        border-radius: 5px;
-    }
-
-    #homelink, #home {
-        width: 25px;
-        height: 25px;
     }
 
     /* Focuses on the Cards in Index*/
