@@ -317,6 +317,30 @@ a:active{
         padding-bottom: 5px;
     }
 
+    
+    #header{
+        display: grid;
+        grid-template-areas:
+        'title title'
+        'home blog';
+        padding: 10px;
+    }
+    #homeLink{
+        grid-area: home;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #blogLink{
+        grid-area: blog;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #name{grid-area: title;        
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /* Focuses on the Cards in Index*/
     #cardsShowContainer{
         padding-top: 15px;
@@ -345,10 +369,20 @@ a:active{
         padding: 0px;
     }
     
+    #profile{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin: 10px;
+    }
+
     #proPic{
         width: 25vw;
         height: auto;
         border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        grid-column-start: 1;
+        grid-column-start: 2;
     }
     
     #introText{
@@ -359,5 +393,10 @@ a:active{
     #about{
         display: flex;
         justify-content: center;
+    }
+
+    /* Focuses on the Footer */
+    #socials{
+        grid-template-columns: auto 20vw 20vw auto;
     }
 }
