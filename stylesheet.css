@@ -313,49 +313,64 @@ a:active{
 
     /* Focuses on the Header */
     h1{
-        font-size: 20px;
+        font-size: 18px;
         padding-bottom: 5px;
     }
-
     
     #header{
-        display: grid;
+        grid-template-columns: none;
         grid-template-areas:
         'title title'
         'home blog';
         padding: 10px;
     }
-    #homeLink{
-        grid-area: home;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #blogLink{
-        grid-area: blog;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    #name{grid-area: title;        
+
+    #homeLink, #blogLink, #name{
         margin-left: auto;
         margin-right: auto;
     }
 
+    #homeLink{grid-area: home;}
+
+    #blogLink{grid-area: blog;}
+    
+    #name{grid-area: title;}
+
     /* Focuses on the Cards in Index*/
-    #cardsShowContainer{
-        padding-top: 15px;
-        padding-bottom: 15px;
+
+    .arrow{
+        font-size: 13pt;
+    }
+    .cardSection{
+        grid-template-columns: 8vw auto 8vw;
     }
 
     .cardContainer{
-        margin: 20px;
-        width: 70vw;
-        min-width:50vw;
-        max-width: 70vw;
-        height: 50vh;
-        min-height: 65vh;
-        max-height: 70vh;
+        grid-template-columns:none;
+        grid-template-areas:
+        'content'
+        'info';
     }
+
+    .cardPic{grid-area: content;}
+
+    .cardInfo{grid-area: info;}
+
+    .cardDesc{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .cardLink{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .viewButton{
+        margin: 0px;
+        max-width: 150px;
+    }
+
 
     /* Focuses on the Profile Intro */   
     #intro{
