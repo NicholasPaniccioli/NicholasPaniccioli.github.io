@@ -14,6 +14,8 @@
 }
 
 #blogLink{
+    display: grid;
+    grid-template-columns: auto;
     margin: auto 20px auto auto;
 }
 
@@ -352,7 +354,11 @@ a:active{
         'info';
     }
 
-    .cardPic{grid-area: content;}
+    .cardPic{
+        grid-area: content;
+        width: 100%;
+        height: 100%;
+    }
 
     .cardInfo{grid-area: info;}
 
