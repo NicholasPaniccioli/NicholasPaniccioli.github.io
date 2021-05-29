@@ -14,7 +14,7 @@
     </head>
 
     <script>
-        
+        //Used to check when button is pressed
         const init = () => {
             const button = document.querySelector("#pickProj");
             button.addEventListener('click', getProject);
@@ -40,10 +40,11 @@
         </div>
 
         <div id="content">
+            <!-- Select List for the projects -->
             <div id="projSearch">
                 <label for="projects">Choose a Project: </label>
                 <select name="projects" id="projList">
-                    <option value="OSE">Outer Space Experienc</option>
+                    <option value="OSE">Outer Space Experience</option>
                     <option value="LF">Landmark Finder</option>
                 </select>
 
