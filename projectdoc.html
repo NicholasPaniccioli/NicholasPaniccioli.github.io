@@ -8,9 +8,20 @@
         <link rel="stylesheet" href="stylesheet.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        
+        <script type="text/javascript" src="src/projectHandler.js"></script>
+
         <title>Project Documentation</title>
     </head>
+
+    <script>
+        
+        const init = () => {
+            const button = document.querySelector("#pickProj");
+            button.addEventListener('click', getProject);
+        };
+
+        window.onload = init;
+    </script>
 
     <body>
         <!-- The top bar of the webpage -->
@@ -30,15 +41,13 @@
 
         <div id="content">
             <div id="projSearch">
-                <form action="src/projectHandler.js">
-                    <label for="projects">Choose a Project: </label>
-                    <select id="projList" name="projects">
-                        <option value="OSE">Outer Space Experienc</option>
-                        <option value="LF">Landmark Finder</option>
-                    </select>
+                <label for="projects">Choose a Project: </label>
+                <select name="projects" id="projList">
+                    <option value="OSE">Outer Space Experienc</option>
+                    <option value="LF">Landmark Finder</option>
+                </select>
 
-                    <input type="submit" value="Submit">
-                </form>
+                <button id="pickProj">Submit</button>
             </div>
             <div id="projPic">
             
