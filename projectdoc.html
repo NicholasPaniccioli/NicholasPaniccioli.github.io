@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        
+        <title>Project Documentation</title>
+    </head>
+
+    <body>
+        <!-- The top bar of the webpage -->
+        <div id="header">
+            <div id="homeLink">
+                <a href="index.html">Home</a>
+            </div>
+            <div id="name">
+                <h1>Project Documents</h1>
+            </div>
+            <div id="blogLink">
+                <a href="https://trello.com/b/OS7vwvyW/portfolio-website">Trello Board</a>
+                <a href="documentation.html">Blog</a>
+            </div>
+
+        </div>
+
+        <div id="content">
+            <div id="projSearch">
+                <form action="src/projectHandler.js">
+                    <label for="projects">Choose a Project: </label>
+                    <select id="projList" name="projects">
+                        <option value="OSE">Outer Space Experienc</option>
+                        <option value="LF">Landmark Finder</option>
+                    </select>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div id="projPic">
+            
+            </div>
+            <div>
+                <p id="projDesc">
+                </p>
+            </div>
+        </div>
+
+        <!-- The bottom bar of the page -->
+        <footer>
+            <div id="linkBox">
+                <div id="socials">
+                    <div id="picLiLinks">
+                        <a id="linkedlink" href="https://www.linkedin.com/in/nicholas-paniccioli-a829a2154/">
+                            <img id="linkedin" src="images/linkedin.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                    <div id="picGitLinks">
+                        <a id="gitlink" href="https://github.com/NicholasPaniccioli">
+                            <img id="github" src="images/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="links">
+                    <a id="sourcelink" href="sources.html">Sources</a>
+                </div>
+                <div class ="links">
+                    <a id="doclink" href="documentation.html">Documentation/Blog</a>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+
+</html>
