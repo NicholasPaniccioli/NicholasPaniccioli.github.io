@@ -13,16 +13,6 @@
         <title>Project Documentation</title>
     </head>
 
-    <script>
-        //Used to check when button is pressed
-        const init = () => {
-            const button = document.querySelector("#pickProj");
-            button.addEventListener('click', getProject);
-        };
-
-        window.onload = init;
-    </script>
-
     <body>
         <!-- The top bar of the webpage -->
         <div id="header">
@@ -44,18 +34,17 @@
             <div id="projSearch">
                 <label for="projects">Choose a Project: </label>
                 <select name="projects" id="projList">
-                    <option value="OSE">Outer Space Experience</option>
                     <option value="LF">Landmark Finder</option>
+                    <option value="OSE">Outer Space Experience</option>
                 </select>
 
                 <button id="pickProj">Submit</button>
             </div>
-            <div id="projPic">
-            
+            <div id="thumbnail">
+                <img id="projPic">
             </div>
             <div>
-                <p id="projDesc">
-                </p>
+                <p id="projDesc"></p>
             </div>
         </div>
 
@@ -85,5 +74,16 @@
         </footer>
         
     </body>
+
+    <script>
+        //Used to check when button is pressed
+        const init = () => {
+            const button = document.querySelector("#pickProj");
+            button.addEventListener('click', getProject);
+        };
+
+        getProject();
+        window.onload = init;
+    </script>
 
 </html>

@@ -214,6 +214,16 @@ h2{
     font-style: italic;
 }
 
+/* Focuses on the Project Documentation */
+#thumbnail {
+    margin: 10px;
+}
+
+#projPic {
+    width: 100%;
+    height: 100%;
+}
+
 /* Focuses on Sources Page */
 #welSource{
     padding: 25px;
