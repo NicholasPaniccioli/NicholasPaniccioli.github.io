@@ -38,5 +38,15 @@ function getProjLandmark (desc, thumbnail){
 //Outer Space Exprience
 function getProjSpace (desc, thumbnail){
     thumbnail.src = "images/spaceExp.JPG";
-    desc.innerHTML = "OSE project desc, testing";
+    desc.innerHTML = "Outer Space Experience was a school projected I worked on in March of 2020." +
+    " The goal of the project was to create a visual experience using Canvas and the AudioContext API to" +
+    " allow a user to change multiple settings of what was being shown. I gave users the options to change" +
+    " the speed of the surrounding planets, the color and direction of the visual audio." +
+    "<br><br>" +
+    "The project is finished as of right now with no urgency for updates. My plans for the project however" +
+    " do include some updates to the layout and the audio waves because they aren't perfectly perpendicular." +
+    " Other than that it's just going through and refreshing myself on AudioContext, Canvas, and seeing other" +
+    " ways to improve on the project." +
+    "<br><br>" +
+    "Summed up this project dealt with HTML/CSS, JSON, AudioContext API, and Canvas.";
 };
