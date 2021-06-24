@@ -21,6 +21,19 @@
     margin: auto 20px auto auto;
 }
 
+
+
+/* Focuses on the Footer */
+footer{
+    background-color: #839777;
+}
+
+/*Helps get rid of whitespace after footer TAKEN from StackOverflow*/
+html,body,header { height:100%;}
+#content{
+    min-height: calc(100% - 285px);
+}
+
 /* Focuses on the Body */
 body{
     font-family: 'Roboto', sans-serif;
@@ -215,6 +228,21 @@ h2{
 }
 
 /* Focuses on the Project Documentation */
+#docIntro {
+    margin: 15px;
+}
+
+#projSearch{
+    padding: 10px;
+    width: 37vw;
+}
+
+#projSection {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 10px;
+}
+
 #thumbnail {
     margin: 10px;
 }
@@ -222,6 +250,12 @@ h2{
 #projPic {
     width: 100%;
     height: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,.20);
+}
+
+#projDesc{
+    margin: 10px;
+    font-size: 11pt;
 }
 
 /* Focuses on Sources Page */
@@ -231,11 +265,6 @@ h2{
 
 #sources{
     padding: 20px;
-}
-
-/* Focuses on the Footer */
-footer{
-    background-color: #839777;
 }
 
 /* --The Social Media Icons */

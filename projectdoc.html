@@ -31,12 +31,14 @@
 
         <div id="content">
             <!-- Select List for the projects -->
-            <div id="projSearch">
+            <div id="docIntro">
                 <p>
                     Welcome to my project library. Here you can look through the projects I've made
                     and find the documentation for each one. They'll tell you their purpose,
                     the goal I had when I created them, what I worked with to make it, and more!
                 </p>
+            </div>
+            <div id="projSearch">
                 <label for="projects">Choose a Project: </label>
                 <select name="projects" id="projList">
                     <option value="LF">Landmark Finder</option>
@@ -45,11 +47,13 @@
 
                 <button id="pickProj">Submit</button>
             </div>
-            <div id="thumbnail">
-                <img id="projPic">
-            </div>
-            <div>
-                <p id="projDesc"></p>
+            <div id="projSection">
+                <div id="thumbnail">
+                    <img id="projPic">
+                </div>
+                <div id="projDetails">
+                    <p id="projDesc"></p>
+                </div>
             </div>
         </div>
 
