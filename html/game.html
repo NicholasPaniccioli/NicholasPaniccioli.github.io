@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../style/stylesheet.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <script src="../src/guess game/gameController.js"></script>
 
         <title>Nicholas Paniccioli Portfolio</title>
     </head>
@@ -29,15 +29,18 @@
         </div>
 
         <!-- Guessing Game wil be in here -->
-        <div id="gameContainer">
+        <div id="content">
             <div id="gameFeedback">
                 <p id="gameText"></p>
             </div>
             <div id="gameControls">
-
+                
+                <label for="numGuess">Guess a Number: </label>
+                <input type="text" id="numGuess" name="numGuess">
+                <input type="button" value="Guess" onclick="logged()">
+                
             </div>
         </div>
-
     </body>
 
     <!-- The bottom bar of the page -->

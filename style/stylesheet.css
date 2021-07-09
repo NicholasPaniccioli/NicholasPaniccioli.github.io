@@ -28,7 +28,7 @@ footer{
     background-color: #839777;
 }
 
-/*Helps get rid of whitespace after footer TAKEN from StackOverflow*/
+/*Helps get rid of whitespace after footer TAKEN from StackOverflow, check sources page*/
 html,body,header { height:100%;}
 #content{
     min-height: calc(100% - 285px);
