@@ -21,7 +21,7 @@ function getProject (){
 
 //Landmark Finder
 function getProjLandmark (desc, thumbnail){
-    thumbnail.src = "images/mapboxAPI.JPG";
+    thumbnail.src = "../images/mapboxAPI.JPG";
     desc.innerHTML = "This project was originally created as a school project back in April 2020." +
     " For a month I had to program a site that used Two APIs together to create something useful." +
     " So I designed my own API using PHP to organize and return Landmarks based on user input." +
@@ -37,7 +37,7 @@ function getProjLandmark (desc, thumbnail){
 
 //Outer Space Exprience
 function getProjSpace (desc, thumbnail){
-    thumbnail.src = "images/spaceExp.JPG";
+    thumbnail.src = "../images/spaceExp.JPG";
     desc.innerHTML = "Outer Space Experience was a school projected I worked on in March of 2020." +
     " The goal of the project was to create a visual experience using Canvas and the AudioContext API to" +
     " allow a user to change multiple settings of what was being shown. I gave users the options to change" +

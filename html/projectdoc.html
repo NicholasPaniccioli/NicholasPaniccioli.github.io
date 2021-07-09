@@ -5,17 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="../style/stylesheet.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        
-        <title>Sources</title>
-        
-        <style>
-            #sources{
-                padding: 10px;
-            }
-        </style>
+        <script type="text/javascript" src="../src/projectHandler.js"></script>
+
+        <title>Project Library</title>
     </head>
 
     <body>
@@ -23,10 +18,9 @@
         <div id="header">
             <div id="homeLink">
                 <a href="index.html">Home</a>
-                <a href="projectdoc.html">Projects</a>
             </div>
             <div id="name">
-                <h1>Sources</h1>
+                <h1>Project Library</h1>
             </div>
             <div id="blogLink">
                 <a href="https://trello.com/b/OS7vwvyW/portfolio-website">Trello Board</a>
@@ -36,27 +30,30 @@
         </div>
 
         <div id="content">
-            <div id="welSource">
+            <!-- Select List for the projects -->
+            <div id="docIntro">
                 <p>
-                    Welcome to the sources page. On the off chance something 
-                    on my portfolio wasn't created by me this is where you 
-                    can find the credit and links for it.
+                    Welcome to my project library. Here you can look through the projects I've made
+                    and find the documentation for each one. They'll tell you their purpose,
+                    the goal I had when I created them, what I worked with to make it, and more!
                 </p>
             </div>
-            
-            <hr>
+            <div id="projSearch">
+                <label for="projects">Choose a Project: </label>
+                <select name="projects" id="projList">
+                    <option value="LF">Landmark Finder</option>
+                    <option value="OSE">Outer Space Experience</option>
+                </select>
 
-            <!-- List of resources I've used -->
-            <div id="sources">
-                <h2>Code</h2>
-                <p>
-                    - Code to get rid of white space after footer found on <a href="https://stackoverflow.com/questions/26202321/remove-white-space-under-footer"><strong>Stack Overflow</strong></a> by webkit
-                </p>
-
-                <h2>Icons</h2>
-                <p>
-                    - LinkedIn and Github icons made by <a href="https://www.freepik.com" title="Freepik"><strong>Freepik</strong></a> from <a href="https://www.flaticon.com/" title="Flaticon"><strong>www.flaticon.com</strong></a>
-                </p>
+                <button id="pickProj">Submit</button>
+            </div>
+            <div id="projSection">
+                <div id="thumbnail">
+                    <img id="projPic">
+                </div>
+                <div id="projDetails">
+                    <p id="projDesc"></p>
+                </div>
             </div>
         </div>
 
@@ -66,12 +63,12 @@
                 <div id="socials">
                     <div id="picLiLinks">
                         <a id="linkedlink" href="https://www.linkedin.com/in/nicholas-paniccioli-a829a2154/">
-                            <img id="linkedin" src="images/linkedin.png" alt="LinkedIn">
+                            <img id="linkedin" src="../images/linkedin.png" alt="LinkedIn">
                         </a>
                     </div>
                     <div id="picGitLinks">
                         <a id="gitlink" href="https://github.com/NicholasPaniccioli">
-                            <img id="github" src="images/github.png" alt="GitHub">
+                            <img id="github" src="../images/github.png" alt="GitHub">
                         </a>
                     </div>
                 </div>
@@ -86,5 +83,16 @@
         </footer>
         
     </body>
+
+    <script>
+        //Used to check when button is pressed
+        const init = () => {
+            const button = document.querySelector("#pickProj");
+            button.addEventListener('click', getProject);
+        };
+
+        getProject();
+        window.onload = init;
+    </script>
 
 </html>
