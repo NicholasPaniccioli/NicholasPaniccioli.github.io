@@ -13,6 +13,8 @@ function getProject (){
     } else if(projList === "OSE") {
         //Outer Space Experience
         getProjSpace(desc, thumbnail);
+    } else if(projList === "GTN") {
+        getProjGuess (desc, thumbnail)
     } else {
         //If none is found, default message
         desc.innerHTML = "could not find";
@@ -49,4 +51,12 @@ function getProjSpace (desc, thumbnail){
     " ways to improve on the project." +
     "<br><br>" +
     "Summed up this project dealt with HTML/CSS, JSON, AudioContext API, and Canvas.";
+};
+
+//Guess The Number
+function getProjGuess (desc, thumbnail){
+    thumbnail.src = "";
+    thumbnail.alt = "under construction"
+    desc.innerHTML = "Hey I apologize for the look, currently working on the project live so I need" +
+    " some time to work on it";
 };
