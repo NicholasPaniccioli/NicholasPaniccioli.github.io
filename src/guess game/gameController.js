@@ -51,9 +51,11 @@ function guess() {
 function gameLogic(){
     let gameText = document.querySelector("#gameText");
     let numGuess = document.querySelector("#numGuess").value
+    let numberCheck = isNaN(numGuess);
+    console.log(numberCheck);
 
-    //Checks that the user has guesses remaining
-    if(guesses > 0){
+    //Checks that the user has guesses remaining and that the guess is a
+    if(guesses > 0 && numberCheck == false){
         //Checks if user's guess was correct
         if(numGuess == numToGuess) {
             //If correct
@@ -80,9 +82,16 @@ function gameLogic(){
             }
         }
     } else {
-        //If not the game doesn't check and warns the player
-        gameText.innerHTML = "You have no more guesses left." +
-        "<br>If you want to keep playing restart the game.";
+        if(guesses == 0) {
+            //If not the game doesn't check and warns the player
+            gameText.innerHTML = "You have no more guesses left." +
+            "<br>If you want to keep playing restart the game.";
+        }
+        else if(numberCheck == true) {
+            gameText.innerHTML = "The answer you guessed is not a number." +
+            "<br>You still have " + guesses + " guesses left!" +
+            "<br>Try again!";
+        }
     }
 }
 
