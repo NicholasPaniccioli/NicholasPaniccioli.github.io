@@ -93,10 +93,10 @@ function checkHighOrLow(numToGuess, numGuess){
     if(numGuess == Math.max(numToGuess, numGuess))
     {
         let gameText = document.querySelector("#gameText");
-        gameText.innerHTML += "<br> Your guess is <strong>higher</strong> than the random number"
+        gameText.innerHTML += "<br>The random number is <strong>lower</strong>"
     } else {
         let gameText = document.querySelector("#gameText");
-        gameText.innerHTML += "<br> Your guess is <strong>lower</strong> than the random number"
+        gameText.innerHTML += "<br>The random number is <strong>higher</strong> "
     }
 }
 
