@@ -1,6 +1,9 @@
 let numToGuess;
+let guesses;
+let attempts;
 
-//Starts the game, adds appropriate html elements, and picks a random number
+//Starts the game, adds appropriate html elements, 
+//Picks a random number, and sets life and attempt value
 function startGame() {
     setUpHTML();
     
@@ -8,13 +11,59 @@ function startGame() {
     gameText.innerHTML = "Game has started and the number has been picked. Time to Guess!"
 
     numToGuess = randNum();
+    guesses = 5;
+    attempts = 1;
     console.log(numToGuess);
 }
 
-//Creates a new random number
+//Creates a new random number and resets html, lives, and attempts
 function restartGame(){
+    let gameText = document.querySelector("#gameText");
+    gameText.innerHTML = "Game has been reset and the number has been picked. Time to Guess!"
+    
     numToGuess = randNum();
+    guesses = 5;
+    attempts = 1;
     console.log(numToGuess);
+}
+
+//When the player guesses, changes the html and adjusts the attempt value
+function guess() {
+    let gameText = document.querySelector("#gameText");
+    let numGuess = document.querySelector("#numGuess").value
+
+    //Checks that the user has guesses remaining
+    if(guesses > 0){
+        //Checks if guess was correct
+        if(numGuess == numToGuess) {
+            //If correct
+            gameText.innerHTML = "You guessed: " + numGuess +
+            "<br>You guessed correctly! Congrats!" +
+            "<br>You got the number in " + attempts + " guess(es)."
+        }
+        else {
+            //If incorrect, takes away an attempt
+            guesses--;
+            attempts++;
+
+            //Checks if any guesses are left
+            if(guesses > 0) {
+                gameText.innerHTML = "You guessed: " + numGuess +
+                "<br>That was not correct" +
+                "<br>You have: " + guesses + " guesses left!";
+            }
+            else {
+                //With no attempts left, GAME OVER
+                gameText.innerHTML = "You guessed: " + numGuess +
+                "<br>That was not correct and you used your last guess";
+            }
+        }
+    }
+    else {
+        //If not the game doesn't check and warns the player
+        gameText.innerHTML = "You have no more guesses left." +
+        "<br>If you want to keep playing restart the game.";
+    }
 }
 
 //Returns a random number bewtween 1 and 100
@@ -31,10 +80,10 @@ function setUpHTML(){
     resetButton.value = "Restart";
     resetButton.onclick = restartGame;
 
-    //Grabs the div where the created elemetns will be stored
+    //Grabs the div where the created elements will be stored
     let gameControls = document.querySelector("#gameControls");
 
-    //Creates the elements and adds the to the div
+    //Creates the elements and adds them to the div
     let guessLabel = document.createElement("label");
     gameControls.appendChild(guessLabel);
     let guessInput = document.createElement("input");
@@ -52,12 +101,6 @@ function setUpHTML(){
     //Adds to Submit
     guessSubmit.innerHTML = "Guess";
     guessSubmit.type = "button";
-    //Gives test function to onclick on submit button
+    //Gives guess function to onclick on guess button
     guessSubmit.onclick = guess;
-}
-
-function guess() {
-    let gameText = document.querySelector("#gameText");
-    let numGuess = document.querySelector("#numGuess").value
-    gameText.innerHTML = "You guessed: " + numGuess;
 }
