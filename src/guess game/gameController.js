@@ -1,6 +1,7 @@
 let numToGuess;
 let guesses;
 let attempts;
+let correct;
 
 //Starts the game, adds appropriate html elements, 
 //Picks a random number, and sets life and attempt value
@@ -13,6 +14,7 @@ function startGame() {
     numToGuess = randNum();
     guesses = 5;
     attempts = 1;
+    correct = false;
     console.log(numToGuess);
 }
 
@@ -24,25 +26,43 @@ function restartGame(){
     numToGuess = randNum();
     guesses = 5;
     attempts = 1;
+    correct = false;
     console.log(numToGuess);
 }
 
-//When the player guesses, changes the html and adjusts the attempt value
+//When the player guesses, checks if the game runs the logic function
 function guess() {
+
+    //Checks if user has guessed correctly
+    //Prevents user from guessing afterwards
+    if(correct == false)
+    {
+        gameLogic();
+    } else{
+        let gameText = document.querySelector("#gameText");
+        gameText.innerHTML = "You got the number right already." +
+        "<br>Restart to play again!";
+    }
+
+}
+
+//Checks if the user guessed the number correctly
+//Changes the html accordingly and adjusts the attempt value
+function gameLogic(){
     let gameText = document.querySelector("#gameText");
     let numGuess = document.querySelector("#numGuess").value
 
     //Checks that the user has guesses remaining
     if(guesses > 0){
-        //Checks if guess was correct
+        //Checks if user's guess was correct
         if(numGuess == numToGuess) {
             //If correct
             gameText.innerHTML = "You guessed: " + numGuess +
             "<br>You guessed correctly! Congrats!" +
             "<br>You got the number in " + attempts + " guess(es)."
-        }
-        else {
-            //If incorrect, takes away an attempt
+            correct = true;
+        } else {
+            //If incorrect, takes away a guess, adds to attempts
             guesses--;
             attempts++;
 
@@ -51,18 +71,32 @@ function guess() {
                 gameText.innerHTML = "You guessed: " + numGuess +
                 "<br>That was not correct" +
                 "<br>You have: " + guesses + " guesses left!";
-            }
-            else {
+                checkHighOrLow(numToGuess, numGuess);
+            } else {
                 //With no attempts left, GAME OVER
                 gameText.innerHTML = "You guessed: " + numGuess +
-                "<br>That was not correct and you used your last guess";
+                "<br>That was not correct and you used your last guess"+
+                "<br>The correct number was: " + numToGuess + "!";
             }
         }
-    }
-    else {
+    } else {
         //If not the game doesn't check and warns the player
         gameText.innerHTML = "You have no more guesses left." +
         "<br>If you want to keep playing restart the game.";
+    }
+}
+
+//Indicates if the random number is higher or lower to user's guess
+function checkHighOrLow(numToGuess, numGuess){
+    
+    //Checks if users guess is higher
+    if(numGuess == Math.max(numToGuess, numGuess))
+    {
+        let gameText = document.querySelector("#gameText");
+        gameText.innerHTML += "<br> Your guess is <strong>higher</strong> than the random number"
+    } else {
+        let gameText = document.querySelector("#gameText");
+        gameText.innerHTML += "<br> Your guess is <strong>lower</strong> than the random number"
     }
 }
 
