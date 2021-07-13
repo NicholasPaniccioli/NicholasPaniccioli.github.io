@@ -376,9 +376,33 @@ a:active{
     grid-template-columns: auto;
 }
 
+#guessSection{
+    margin:10px;
+}
+
 #startButtonDiv, #guessSection, #guessButtonDiv{
     margin-left: auto;
     margin-right: auto;
+}
+
+#startButton, #guessButton{
+    border:solid 1px black;
+    color: white;
+    padding: 5px 10px;
+    max-height: 50px;
+    width: 100%;
+    height: 100%; 
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#startButton{
+    background-color: red;
+}
+
+#guessButton{
+    background-color: green;
 }
 
 /* Adjusts for smaller windows and phone screens */

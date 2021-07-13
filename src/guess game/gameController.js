@@ -44,6 +44,9 @@ function guess() {
         "<br>Restart to play again!";
     }
 
+    //empty the text box
+    let gamebox = document.querySelector("#numGuess");
+    gamebox.value = "";
 }
 
 //Checks if the user guessed the number correctly
