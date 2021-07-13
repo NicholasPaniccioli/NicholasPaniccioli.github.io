@@ -9,7 +9,7 @@ function startGame() {
     setUpHTML();
     
     let gameText = document.querySelector("#gameText");
-    gameText.innerHTML = "Game has started and the number has been picked. Time to Guess!"
+    gameText.innerHTML = "Game has started and the number has been picked.<br> Time to Guess!"
 
     numToGuess = randNum();
     guesses = 5;
@@ -21,7 +21,7 @@ function startGame() {
 //Creates a new random number and resets html, lives, and attempts
 function restartGame(){
     let gameText = document.querySelector("#gameText");
-    gameText.innerHTML = "Game has been reset and the number has been picked. Time to Guess!"
+    gameText.innerHTML = "Game has been reset and the number has been picked.<br> Time to Guess!"
     
     numToGuess = randNum();
     guesses = 5;
@@ -124,15 +124,16 @@ function setUpHTML(){
     resetButton.onclick = restartGame;
 
     //Grabs the div where the created elements will be stored
-    let gameControls = document.querySelector("#gameControls");
+    let guessSection = document.querySelector("#guessSection");
+    let guessButtonDiv = document.querySelector("#guessButtonDiv");
 
-    //Creates the elements and adds them to the div
+    //Creates the elements and adds them to their divs
     let guessLabel = document.createElement("label");
-    gameControls.appendChild(guessLabel);
+    guessSection.appendChild(guessLabel);
     let guessInput = document.createElement("input");
-    gameControls.appendChild(guessInput);
+    guessSection.appendChild(guessInput);
     let guessSubmit = document.createElement("button");
-    gameControls.appendChild(guessSubmit);
+    guessButtonDiv.appendChild(guessSubmit);
 
     //Adds to Input
     guessInput.type = "text";
@@ -141,9 +142,11 @@ function setUpHTML(){
     //Adds to Label
     guessLabel.innerHTML = "Guess a Number: ";
     guessLabel.htmlFor = numGuess;
+    guessLabel.id = "numGuessLabel";
     //Adds to Submit
     guessSubmit.innerHTML = "Guess";
     guessSubmit.type = "button";
+    guessSubmit.id = "guessButton"
     //Gives guess function to onclick on guess button
     guessSubmit.onclick = guess;
 }

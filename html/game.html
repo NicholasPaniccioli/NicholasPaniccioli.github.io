@@ -29,15 +29,21 @@
         </div>
 
         <!-- Guessing Game wil be in here -->
-        <div id="content">
+        <div id="gameContent">
             <div id="gameFeedback">
-                <p id="gameText">
-                    Welcome to the guessing game. When you press start a number from 1-100 will be picked
-                    and you have to guess it. Good luck!
-                </p>
+                <div id="gameTextDiv">
+                    <p id="gameText">
+                        Welcome to the guessing game. When you press start a number from 1-100 will be picked
+                        and you have to guess it. Good luck!
+                    </p>
+                </div>
             </div>
-            <div id="gameControls">        
-                <input type="button" id="startButton" value="Start" onclick="startGame()">            
+            <div id="gameControls">
+                <div id="startButtonDiv">
+                    <input type="button" id="startButton" value="Start" onclick="startGame()">            
+                </div>
+                <div id="guessSection"></div>
+                <div id="guessButtonDiv"></div>
             </div>
         </div>
     </body>
