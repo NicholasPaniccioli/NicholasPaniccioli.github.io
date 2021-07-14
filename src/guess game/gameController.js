@@ -58,7 +58,7 @@ function gameLogic(){
     console.log(numberCheck);
 
     //Checks that the user has guesses remaining and that the guess is a
-    if(guesses > 0 && numberCheck == false){
+    if(guesses > 0 && numberCheck == false && numGuess != ""){
         //Checks if user's guess was correct
         if(numGuess == numToGuess) {
             //If correct
@@ -90,7 +90,7 @@ function gameLogic(){
             gameText.innerHTML = "You have no more guesses left." +
             "<br>If you want to keep playing restart the game.";
         }
-        else if(numberCheck == true) {
+        else if(numberCheck == true || numGuess == "") {
             gameText.innerHTML = "The answer you guessed is not a number." +
             "<br>You still have " + guesses + " guesses left!" +
             "<br>Try again!";
