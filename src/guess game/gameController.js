@@ -82,8 +82,6 @@ function gameLogic(){
                 "<br>You earned 1 point. Total points: <strong>" + points + "</strong>!";
                 correct = true;
             }
-            
-
         } else {
 
             //If incorrect, takes away a guess, adds to attempts

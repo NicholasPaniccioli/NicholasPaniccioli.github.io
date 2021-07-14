@@ -55,7 +55,7 @@ function getProjSpace (desc, thumbnail){
 
 //Guess The Number
 function getProjGuess (desc, thumbnail){
-    thumbnail.src = "";
+    thumbnail.src = "../images/guessGame.jpg";
     thumbnail.alt = "under construction"
     desc.innerHTML = "Hey I apologize for the look, currently working on the project live so I need" +
     " some time to work on it";
