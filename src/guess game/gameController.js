@@ -60,13 +60,29 @@ function gameLogic(){
     if(guesses > 0 && numberCheck == false && numGuess != ""){
         //Checks if user's guess was correct
         if(numGuess == numToGuess) {
-            //If correct
-            addPoints(1);
-            gameText.innerHTML = "You guessed: " + numGuess +
-            "<br>Congrats! You guess correctly!" +
-            "<br>Got the number in " + attempts + " guess(es)." +
-            "<br>You earned a point. Total points: <strong>" + points + "</strong>!";
-            correct = true;
+            //If correct checks attempts for appropriate flavor text
+            if(attempts == 1) {
+                addPoints(5);
+                gameText.innerHTML = "You guessed: " + numGuess +
+                "<br>Congrats! You guessed correctly on your 1st attempt!!" +
+                "<br>You earned 5 points. Total points: <strong>" + points + "</strong>!";
+                correct = true;
+            } else if(attempts == 2 || attempts == 3) {
+                addPoints(3);
+                gameText.innerHTML = "You guessed: " + numGuess +
+                "<br>Congrats! You guessed correctly!" +
+                "<br>Got the number in " + attempts + " guess(es)." +
+                "<br>You earned 3 points. Total points: <strong>" + points + "</strong>!";
+                correct = true;
+            } else {
+                addPoints(1);
+                gameText.innerHTML = "You guessed: " + numGuess +
+                "<br>Congrats! You guessed correctly!" +
+                "<br>Got the number in " + attempts + " guess(es)." +
+                "<br>You earned 1 point. Total points: <strong>" + points + "</strong>!";
+                correct = true;
+            }
+            
 
         } else {
 
@@ -172,9 +188,9 @@ else{
     points = parseInt(localStorage.getItem("Points"));
 }
 
-//Adds points to players total, sets it to the local storage
+//Adds points to players total based on attempts, sets it to the local storage
 function addPoints(add) {
-    points += 1;
+    points += add;
 
     localStorage.setItem("Points", points);
     console.log(points);
