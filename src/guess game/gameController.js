@@ -55,18 +55,21 @@ function gameLogic(){
     let gameText = document.querySelector("#gameText");
     let numGuess = document.querySelector("#numGuess").value
     let numberCheck = isNaN(numGuess);
-    console.log(numberCheck);
 
     //Checks that the user has guesses remaining and that the guess is a
     if(guesses > 0 && numberCheck == false && numGuess != ""){
         //Checks if user's guess was correct
         if(numGuess == numToGuess) {
             //If correct
+            addPoints(1);
             gameText.innerHTML = "You guessed: " + numGuess +
-            "<br>You guessed correctly! Congrats!" +
-            "<br>You got the number in " + attempts + " guess(es)."
+            "<br>Congrats! You guess correctly!" +
+            "<br>Got the number in " + attempts + " guess(es)." +
+            "<br>You earned a point. Total points: <strong>" + points + "</strong>!";
             correct = true;
+
         } else {
+
             //If incorrect, takes away a guess, adds to attempts
             guesses--;
             attempts++;
@@ -152,4 +155,40 @@ function setUpHTML(){
     guessSubmit.id = "guessButton"
     //Gives guess function to onclick on guess button
     guessSubmit.onclick = guess;
+}
+
+
+///Works with the point system
+
+//Checks if points exist in local storage. If not creates them for the player
+//Otherwise saves last sessions points to be added on
+let points;
+if(localStorage.getItem("Points") == null)
+{
+    localStorage.setItem("Points", 0);
+    points = 0;
+}
+else{
+    points = parseInt(localStorage.getItem("Points"));
+}
+
+//Adds points to players total, sets it to the local storage
+function addPoints(add) {
+    points += 1;
+
+    localStorage.setItem("Points", points);
+    console.log(points);
+}
+
+//Subtracts points from players total
+function subtractPoints(playerPoints, subtract) {
+    //Checks points won't go below 0
+    if(playerPoints - subtract > 0)
+    {
+        points = 0;
+    } else {
+        points = playerPoints - subtract;
+    }
+
+    console.log(points);
 }
