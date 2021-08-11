@@ -21,8 +21,6 @@
     margin: auto 20px auto auto;
 }
 
-
-
 /* Focuses on the Footer */
 footer{
     background-color: #839777;
@@ -250,6 +248,7 @@ h2{
 
 #thumbnail {
     margin: 10px;
+    max-height: 300px;
 }
 
 #projPic {
@@ -522,6 +521,11 @@ a:active{
     #about{
         display: flex;
         justify-content: center;
+    }
+
+    /* Focuses Project documentation */
+    #projSection {
+        grid-template-columns: auto;
     }
 
     /* Focuses on the Footer */
