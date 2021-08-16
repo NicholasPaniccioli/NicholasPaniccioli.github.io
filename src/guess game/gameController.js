@@ -82,6 +82,10 @@ function gameLogic(){
                 "<br>You earned 1 point. Total points: <strong>" + points + "</strong>!";
                 correct = true;
             }
+
+            //As the player has been confirmed right,
+            //YAY confetti is shown
+            confettiDisplay(true);
         } else {
 
             //If incorrect, takes away a guess, adds to attempts
@@ -127,6 +131,19 @@ function checkHighOrLow(numToGuess, numGuess){
         let gameText = document.querySelector("#gameText");
         gameText.innerHTML += "<br>The random number is <strong>higher</strong> "
     }
+}
+
+//Displays Confetti on call
+function confettiDisplay(on){
+    let confettiOverlay = document.querySelector("#overlay"); //grabs the overlay div
+
+    if(on == true){
+        confettiOverlay.style.display = "block";
+    }
+    else if(on == false){
+        confettiOverlay.style.display = "none";
+    }
+    
 }
 
 //Returns a random number bewtween 1 and 100
@@ -191,7 +208,6 @@ function addPoints(add) {
     points += add;
 
     localStorage.setItem("Points", points);
-    console.log(points);
 }
 
 //Subtracts points from players total
@@ -203,6 +219,4 @@ function subtractPoints(playerPoints, subtract) {
     } else {
         points = playerPoints - subtract;
     }
-
-    console.log(points);
 }

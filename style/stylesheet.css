@@ -404,6 +404,24 @@ a:active{
     background-color: green;
 }
 
+#overlay{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#test{
+    width: 100%;
+    height: 100%;
+}
+
 /* Adjusts for smaller windows and phone screens */
 @media screen and (max-width: 700px)
 {
