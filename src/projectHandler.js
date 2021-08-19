@@ -59,13 +59,13 @@ function getProjSpace (desc, thumbnail){
 function getProjGuess (desc, thumbnail){
     thumbnail.src = "../images/guess game/guessGame.jpg";
     thumbnail.alt = "under construction"
-    desc.innerHTML = "The development of this project started July 9th 2021, " +
+    desc.innerHTML = "The development of this project started <strong>July 9th 2021</strong>, " +
     "as a means of something fun for me to create while expanding my knowledge " +
     "on Javascript and CSS. I wanted to create something where I can use both " +
     "my gaming and web design skills.<br>" +
     
     "<br><strong>July 11th 2021</strong><br>" +
-    "After a bit of time and effort the game is finally done. WELL almost done, " +
+    "After a bit of time and effort the game is finally done. Almost done anyways, " +
     "from the V1.0 image we have a look, where the game is very bland in style " +
     "and not a lot of logic is finished yet. The game at this point checks if the " +
     "user has guesses left and if they answer correctly. But it does not check to " +
@@ -84,7 +84,7 @@ function getProjGuess (desc, thumbnail){
     "<br><strong>July 12th 2021</strong><br>" +
     "It’s late and not even a minute has passed 12am and Im continuing work on this " +
     "project. And V1.1 is done (No new picture as only new text has been added so " +
-    "nothing visual has changed! I added some more logic and conditions so now " +
+    "nothing visual has changed) I added some more logic and conditions so now " +
     "even with a correct answer the player can no longer continue to guess. Now " +
     "on to working on the higher and lower system. " +
     "Okay it is 1:16am and the Higher or Lower function now works! When a user guess " +
@@ -95,7 +95,7 @@ function getProjGuess (desc, thumbnail){
     
     "<br><strong>July 14th</strong><br>" +
     "As the game and its main mechanics have been finished I have finally implemented " +
-    "a point system upon playing the game completing V1.2. Using local storage points are saved and " +
+    "a point system upon playing the game completing V1.2. Using local storage, points are saved and " +
     "then earned upon wins in the game, And because they are in local storage you can " +
     "leave the site and come back and still have your points! As of now though not much " +
     "can be done with them, but plans to integrate a shop with different backgrounds and " +
@@ -109,5 +109,11 @@ function getProjGuess (desc, thumbnail){
     "has proven more difficult as I need to find a way to layer it over the screen and also " +
     "should I make my own? Should I use canvas? Pixel art? Or do I just find a royalty free GIF " +
     "online and use that? I’m exploring my options, so in the meantime I plan to work on the store " +
-    "and have purchasable items that will change the background and button colors, and even maybe the style.<br>";
+    "and have purchasable items that will change the background and button colors, and even maybe the style.<br>" +
+    
+    "<br><strong>August 15th 2021</strong><br>" +
+    "After doing some research and figuring out how to do a proper overlay I have finally implemented " +
+    "V1.3 which adds the long awaited confetti! Well not 100%. The logic is there and now it's easy to " +
+    "put any picture or GIF in place of the current test GIF that I made. Now to make " +
+    "better looking confetti and then create a store.";
 };
