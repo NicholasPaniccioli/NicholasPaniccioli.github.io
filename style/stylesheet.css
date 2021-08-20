@@ -347,9 +347,12 @@ a:active{
 }
 
 /* Focuses on Game HTML */
-#gameContent{
+#gameTabs{
     min-height: calc(100% - 285px);
     margin: 20px;
+}
+
+#gameContent{
     display: grid;
     grid-template-columns: auto;
 }

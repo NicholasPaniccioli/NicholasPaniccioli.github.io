@@ -27,51 +27,112 @@
                 <a href="documentation.html">Blog</a>
             </div>
         </div>
+
+        <!-- tabs to interact with the gameTabs -->
+        <div id="tabSelector">
+            <button onclick="currentTab(1)">The Game</button> 
+            <button onclick="currentTab(2)">Store</button> 
+            <button onclick="currentTab(3)">Stats</button> 
+            <button onclick="currentTab(4)">Achievements</button> 
+        </div>
         
-        <!-- Guessing Game wil be in here -->
-        <div id="gameContent">
-            <div id="gameFeedback">
-                <div id="overlay" onclick="confettiDisplay(false)">
-                    <img id="festive" src="../images/guess game/Test-confetti.gif" alt="confetti">
+        <!-- Holds all the tabs for the game ie. Game, Store, Stats, and Achievements -->
+        <div id="gameTabs">
+            <!-- Guessing Game will be in here -->
+            <div class="tabs" id="gameContent">
+                <div id="gameFeedback">
+                    <div id="overlay" onclick="confettiDisplay(false)">
+                        <img id="festive" src="../images/guess game/Test-confetti.gif" alt="confetti">
+                    </div>
+                    <div id="gameTextDiv">
+                        <p id="gameText">
+                            Welcome to the guessing game. When you press start a number from 1-100 will be picked
+                            and you have to guess it. Good luck!
+                        </p>
+                    </div>
                 </div>
-                <div id="gameTextDiv">
-                    <p id="gameText">
-                        Welcome to the guessing game. When you press start a number from 1-100 will be picked
-                        and you have to guess it. Good luck!
-                    </p>
+                <div id="gameControls">
+                    <div id="startButtonDiv">
+                        <input type="button" id="startButton" value="Start" onclick="startGame()">            
+                    </div>
+                    <div id="guessSection"></div>
+                    <div id="guessButtonDiv"></div>
                 </div>
             </div>
-            <div id="gameControls">
-                <div id="startButtonDiv">
-                    <input type="button" id="startButton" value="Start" onclick="startGame()">            
+
+            <!-- Store and purchasable items in here -->
+            <div class="tabs" id="storeContent">
+                <div id="storeItems">
+                    <p id="test">This is the store page, its not done but just testing the tab functions</p>
                 </div>
-                <div id="guessSection"></div>
-                <div id="guessButtonDiv"></div>
+            </div>
+
+            <!-- Stats and player info -->
+            <div class="tabs" id="statContent">
+                <div id="stats">
+                    <p id="test">This is the stats page, its not done but just testing the tab functions</p>
+                </div>
+            </div>
+
+            <!-- Achievements by the player -->
+            <div class="tabs" id="achieveContent">
+                <div id="achievements">
+                    <p id="test">This is the achievements page, its not done but just testing the tab functions</p>
+                </div>
             </div>
         </div>
+
+        <!-- The bottom bar of the page -->
+        <footer>
+            <div id="linkBox">
+                <div id="socials">
+                    <div id="picLiLinks">
+                        <a id="linkedlink" href="https://www.linkedin.com/in/nicholas-paniccioli-a829a2154/">
+                            <img id="linkedin" src="../images/linkedin.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                    <div id="picGitLinks">
+                        <a id="gitlink" href="https://github.com/NicholasPaniccioli">
+                            <img id="github" src="../images/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="links">
+                    <a id="sourcelink" href="sources.html">Sources</a>
+                </div>
+                <div class ="links">
+                    <a id="doclink" href="documentation.html">Documentation/Blog</a>
+                </div>
+            </div>
+        </footer>
+
     </body>
 
-    <!-- The bottom bar of the page -->
-    <footer>
-        <div id="linkBox">
-            <div id="socials">
-                <div id="picLiLinks">
-                    <a id="linkedlink" href="https://www.linkedin.com/in/nicholas-paniccioli-a829a2154/">
-                        <img id="linkedin" src="../images/linkedin.png" alt="LinkedIn">
-                    </a>
-                </div>
-                <div id="picGitLinks">
-                    <a id="gitlink" href="https://github.com/NicholasPaniccioli">
-                        <img id="github" src="../images/github.png" alt="GitHub">
-                    </a>
-                </div>
-            </div>
-        
-            <div class="links">
-                <a id="sourcelink" href="sources.html">Sources</a>
-            </div>
-            <div class ="links">
-                <a id="doclink" href="documentation.html">Documentation/Blog</a>
-            </div>
-        </div>
-    </footer>
+    <script>
+        let tabPicked = 1;
+
+        //Shows the game tab by default
+        showTab(tabPicked);
+
+        //When a tab is clicked shows that tab
+        function currentTab(n) {
+            showTab(tabPicked = n);
+        }
+
+        //Decides which tab to show
+        function showTab(n) {
+            let totalTabs = document.getElementsByClassName("tabs");
+
+            //Loops through and sets all tabs display to none
+            for(let i = 0; i < totalTabs.length; i++)
+            {
+                totalTabs[i].style.display= "none";
+            }
+
+            //Which ever tab is selected will be shown
+            totalTabs[tabPicked-1].style.display= "grid";
+        }
+    </script>
+
+</html>
