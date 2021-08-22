@@ -348,8 +348,22 @@ a:active{
 
 /* Focuses on Game HTML */
 #gameTabs{
-    min-height: calc(100% - 285px);
-    margin: 20px;
+    min-height: calc(100% - 280px);
+    margin: 0 20px 20px 20px;
+}
+
+#tabSelector{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 10px 5px 0 5px;
+}
+
+.tabButtons{
+    border: none;
+    text-decoration: none;
+    background-color: white;
+    border-bottom: 3px solid blue;
+    cursor: pointer;
 }
 
 #gameContent{
@@ -367,10 +381,13 @@ a:active{
 
 #gameTextDiv{
     margin: auto;
-    padding: 15px;
     font-family: 'Playfair Display', serif;
     font-size: 20pt;
     text-align: center;
+}
+
+#gameText{
+    margin: 10px;
 }
 
 #gameControls{
@@ -419,11 +436,6 @@ a:active{
     z-index: 2;
     cursor: pointer;
     background-color: rgba(0,0,0, 0.5);
-}
-
-#win{
-    color: white;
-    position: fixed;
 }
 
 #festive{
@@ -553,6 +565,15 @@ a:active{
     /* Focuses Project documentation */
     #projSection {
         grid-template-columns: auto;
+    }
+
+    /* Focuses on Game page */
+    #gameText{
+        font-size: 18pt;
+    }
+
+    #guessSection{
+        text-align: center;
     }
 
     /* Focuses on the Footer */
