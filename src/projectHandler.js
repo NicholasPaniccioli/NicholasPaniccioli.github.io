@@ -116,4 +116,11 @@ function getProjGuess (desc, thumbnail){
     "V1.3 which adds the long awaited confetti! Well not 100%. The logic is there and now it's easy to " +
     "put any picture or GIF in place of the current test GIF that I made. Now to make " +
     "better looking confetti and then create a store.";
+
+    "<br><strong>August 19th 2021</strong><br>" +
+    "Tabs have been added which is paving the way to having a store and other things for my game. " +
+    "V1.4 and V1.41 have been pushed. They bring new tabs and css changes for the tabs and other " +
+    "responsiveness towards smaller screens. Currently tabs are buttons set with the same JS I used " +
+    "on the slideshow on my index page. Only instead of pictures and some buttons its going to be used " +
+    "to switch between the game, the store, and eventually achievements and player stats";
 };
