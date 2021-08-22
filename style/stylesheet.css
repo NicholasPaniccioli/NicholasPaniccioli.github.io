@@ -352,6 +352,18 @@ a:active{
     margin: 0 20px 20px 20px;
 }
 
+.tabs{
+    display: block;
+    position: relative;
+    animation-name: swipeIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes swipeIn {
+    0% {opacity: 15%; left: -50px; top:0px;}
+    100% {opacity: 100%; left: 0px; top:0px;}
+}
+
 #tabSelector{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -364,6 +376,8 @@ a:active{
     background-color: white;
     border-bottom: 4px solid;
     cursor: pointer;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 14pt;
 }
 
 #gameContent{
