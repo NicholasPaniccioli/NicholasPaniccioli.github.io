@@ -123,15 +123,18 @@
         //Decides which tab to show
         function showTab(n) {
             let totalTabs = document.getElementsByClassName("tabs");
+            let tabButtons = document.getElementsByClassName("tabButtons");
 
-            //Loops through and sets all tabs display to none
+            //Loops through and sets all tabs display to none and dulls border
             for(let i = 0; i < totalTabs.length; i++)
             {
                 totalTabs[i].style.display= "none";
+                tabButtons[i].style.borderBottomColor="rgba(0,0,99,0.5)"
             }
 
-            //Which ever tab is selected will be shown
+            //Which ever tab is selected will be shown and border made brighter
             totalTabs[tabPicked-1].style.display= "grid";
+            tabButtons[tabPicked-1].style.borderBottomColor="rgba(0,0,99,1)";
         }
     </script>
 

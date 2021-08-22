@@ -362,7 +362,7 @@ a:active{
     border: none;
     text-decoration: none;
     background-color: white;
-    border-bottom: 3px solid blue;
+    border-bottom: 4px solid;
     cursor: pointer;
 }
 
