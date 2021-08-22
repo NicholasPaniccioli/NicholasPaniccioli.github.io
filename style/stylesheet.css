@@ -145,7 +145,6 @@ hr{
     animation-name: fadeIn;
     animation-duration: 1.5s;
 }
-
 @keyframes fadeIn {
     from {opacity: 25%;}
     to {opacity: 100%;}
@@ -358,7 +357,6 @@ a:active{
     animation-name: swipeIn;
     animation-duration: 1.5s;
 }
-
 @keyframes swipeIn {
     0% {opacity: 15%; left: -50px; top:0px;}
     100% {opacity: 100%; left: 0px; top:0px;}
@@ -388,9 +386,8 @@ a:active{
 #gameFeedback{
     display: grid;
     grid-template-columns: auto;
-    border: solid 1px black;
+    border: solid 2px black;
     margin: 10px;
-    max-height: 40vh;
 }
 
 #gameTextDiv{
@@ -464,7 +461,7 @@ a:active{
     html {
         overflow-x: scroll;
         overflow-x: hidden;
-        -ms-touch-action: none; 
+        touch-action: none; 
         -ms-overflow-style: none;
         -ms-scroll-chaining: none; 
     }
@@ -582,6 +579,10 @@ a:active{
     }
 
     /* Focuses on Game page */
+    .tabButtons{
+        font-size: 13pt;
+    }
+
     #gameText{
         font-size: 18pt;
     }

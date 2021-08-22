@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <script src="../src/guess game/gameController.js"></script>
+        <script src="../src/guess game/storeController.js"></script>
 
         <title>Nicholas Paniccioli Portfolio</title>
     </head>
@@ -38,6 +39,7 @@
         
         <!-- Holds all the tabs for the game ie. Game, Store, Stats, and Achievements -->
         <div id="gameTabs">
+
             <!-- Guessing Game will be in here -->
             <div class="tabs" id="gameContent">
                 <div id="gameFeedback">
@@ -63,21 +65,26 @@
             <!-- Store and purchasable items in here -->
             <div class="tabs" id="storeContent">
                 <div id="storeItems">
-                    <p id="test">This is the store page, its not done but just testing the tab functions</p>
+                    <p class="test">This is the store page, it's not done, but currently being worked on</p>
+                    <h2>Background Colors</h2>
+                    <input type="button" class="colorButton" id="wB" name="White" value="Default" onclick="changeBackground('White')">
+                    <input type="button" class="colorButton" id="rB" name="Red" value="Unlock Red" onclick="unlockColor('Red')">
+                    <input type="button" class="colorButton" id="bB" name="Blue" value="Unlock Blue" onclick="unlockColor('Blue')">
+                    <input type="button" class="colorButton" id="gB" name="Green" value="Unlock Green" onclick="unlockColor('Green')">
                 </div>
             </div>
 
             <!-- Stats and player info -->
             <div class="tabs" id="statContent">
                 <div id="stats">
-                    <p id="test">This is the stats page, its not done but just testing the tab functions</p>
+                    <p class="test">This is the stats page, it's not done, but just testing the tab functions</p>
                 </div>
             </div>
 
             <!-- Achievements by the player -->
             <div class="tabs" id="achieveContent">
                 <div id="achievements">
-                    <p id="test">This is the achievements page, its not done but just testing the tab functions</p>
+                    <p class="test">This is the achievements page, it's not done, but just testing the tab functions</p>
                 </div>
             </div>
         </div>
@@ -110,7 +117,7 @@
     </body>
 
     <script>
-        let tabPicked = 1;
+        let tabPicked = 2;
 
         //Shows the game tab by default
         showTab(tabPicked);
@@ -126,8 +133,7 @@
             let tabButtons = document.getElementsByClassName("tabButtons");
 
             //Loops through and sets all tabs display to none and dulls border
-            for(let i = 0; i < totalTabs.length; i++)
-            {
+            for(let i = 0; i < totalTabs.length; i++) {
                 totalTabs[i].style.display= "none";
                 tabButtons[i].style.borderBottomColor="rgba(0,0,99,0.5)"
             }
