@@ -13,10 +13,35 @@ function unlockColor(color){
     for(let i = 0; i < colorButtons.length; i++) {
         let col = colorButtons[i].getAttribute("name");
 
-        if(col == color && points > 10) //If the color matches and enough points, unlocks that button and changes text
+        if(col == color) //Checks color matches
         {
-            colorButtons[i].value = color;
-            colorButtons[i].addEventListener("click", changeBackground(color)); //'unlocks' and gives it option to change color
+            if(checkUnlock(points, 5)) //Checks if player has enough points
+            {
+                subtractPoints(points, 5); //Spends points for the color
+                colorButtons[i].value = color;
+                colorButtons[i].addEventListener("click", changeBackground(color)); //'unlocks' and gives it option to change color
+            }
+            else{
+                console.log("Not Enough Points")
+            }
         }
     }
+}
+
+//Subtracts points from players total
+function subtractPoints(playerPoints, subtract) {
+    //Checks points won't go below 0
+    if(playerPoints - subtract >= 0) {
+        points = playerPoints - subtract;
+        localStorage.setItem("Points", points);
+    }
+}
+
+//Helper function to see if unlock should go through.
+function checkUnlock(playerPoints, subtract)
+{
+    if(playerPoints - subtract >= 0) {
+        return true
+    }
+    return false;
 }

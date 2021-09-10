@@ -209,14 +209,3 @@ function addPoints(add) {
 
     localStorage.setItem("Points", points);
 }
-
-//Subtracts points from players total
-function subtractPoints(playerPoints, subtract) {
-    //Checks points won't go below 0
-    if(playerPoints - subtract > 0)
-    {
-        points = 0;
-    } else {
-        points = playerPoints - subtract;
-    }
-}
