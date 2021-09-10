@@ -1,3 +1,12 @@
+let unlockedColors = [];
+if(localStorage.getItem("UnlockedColors") == null) //Checks if unlocked color exists
+{
+    localStorage.setItem("UnlockedColors", JSON.stringify(unlockedColors)); //If not, creates it
+}
+else{
+    unlockedColors = JSON.parse(localStorage.getItem("UnlockedColors")); //Otherwise updates and refreshes
+}
+
 //Changes background color of the game
 function changeBackground(value) {
     let gameBack = document.querySelector("#gameTextDiv");
@@ -19,11 +28,30 @@ function unlockColor(color){
             {
                 subtractPoints(points, 5); //Spends points for the color
                 colorButtons[i].value = color;
+                unlockedColors.push(color);
+                localStorage.setItem("UnlockedColors", JSON.stringify(unlockedColors)); //Updates local storage
                 colorButtons[i].addEventListener("click", changeBackground(color)); //'unlocks' and gives it option to change color
             }
             else{
                 console.log("Not Enough Points")
             }
+        }
+    }
+}
+
+//Unlocks already bought and unlocked colors
+function unlockBoughtColors(){
+    let colorButtons = document.getElementsByClassName("colorButton");
+
+    //loops through color buttons
+    for(let i = 0; i < colorButtons.length; i++) {
+        let col = colorButtons[i].getAttribute("name");
+        //Checks if it is unlocked
+        if(unlockedColors.includes(col))
+        {
+            //If so unlocks it again
+            colorButtons[i].value = col;
+            colorButtons[i].addEventListener("click", changeBackground(col));
         }
     }
 }
