@@ -208,4 +208,5 @@ function addPoints(add) {
     points += add;
 
     localStorage.setItem("Points", points);
+    showPoints(); //When points are added, updated the display
 }
