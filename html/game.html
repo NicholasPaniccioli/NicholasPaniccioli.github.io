@@ -30,11 +30,13 @@
         </div>
 
         <!-- tabs to interact with the gameTabs -->
-        <div id="tabSelector">
-            <button class="tabButtons" onclick="currentTab(1)">The Game</button> 
-            <button class="tabButtons" onclick="currentTab(2)">Store</button> 
-            <button class="tabButtons" onclick="currentTab(3)">Stats</button> 
-            <button class="tabButtons" onclick="currentTab(4)">Achievements</button> 
+        <div id="tabDiv">
+            <div id="tabSelector">
+                <button class="tabButtons" onclick="currentTab(1)">Game</button> 
+                <button class="tabButtons" onclick="currentTab(2)">Store</button> 
+                <button class="tabButtons" onclick="currentTab(3)">Stats</button> 
+                <button class="tabButtons" onclick="currentTab(4)">Achievements</button> 
+            </div>
         </div>
         
         <!-- Holds all the tabs for the game ie. Game, Store, Stats, and Achievements -->
@@ -66,8 +68,17 @@
             <div class="tabs" id="storeContent">
                 <div id="storeItems">
                     <p class="test">This is the store page, it's not done, but currently being worked on</p>
+
+                    <h2>Points Saved</h2>
+                    <p id="pointSaved"></p>
+
+                    <h2>Unlocked Colors</h2>
+                    <input type="button" class="boughtColor" id="wB" name="White" value="Default" onclick="changeBackground('White')">
+                    <input type="button" class="boughtColor" id="rB" name="Red" value="Red" onclick="changeBackground('Red')" style="display: none;">
+                    <input type="button" class="boughtColor" id="bB" name="Blue" value="Blue" onclick="changeBackground('Blue')" style="display: none;">
+                    <input type="button" class="boughtColor" id="gB" name="Green" value=" Green" onclick="changeBackground('Green')" style="display: none;">
+
                     <h2>Background Colors</h2>
-                    <input type="button" class="colorButton" id="wB" name="White" value="Default" onclick="changeBackground('White')">
                     <input type="button" class="colorButton" id="rB" name="Red" value="Unlock Red - 5 Points" onclick="unlockColor('Red')">
                     <input type="button" class="colorButton" id="bB" name="Blue" value="Unlock Blue - 5 Points" onclick="unlockColor('Blue')">
                     <input type="button" class="colorButton" id="gB" name="Green" value="Unlock Green - 5 Points" onclick="unlockColor('Green')">
@@ -117,7 +128,7 @@
     </body>
 
     <script>
-        let tabPicked = 1;
+        let tabPicked = 2;
 
         //Shows the game tab by default
         showTab(tabPicked);
@@ -142,6 +153,14 @@
             totalTabs[tabPicked-1].style.display= "grid";
             tabButtons[tabPicked-1].style.borderBottomColor="rgba(0,0,99,1)";
         }
+        
+        //Displays points in the store
+        function showPoints() {
+            let pointSaved = document.querySelector("#pointSaved");
+            pointSaved.innerHTML = "<strong>" + points + "</strong> points left";
+        }
+
+        showPoints();
 
         unlockBoughtColors()
     </script>

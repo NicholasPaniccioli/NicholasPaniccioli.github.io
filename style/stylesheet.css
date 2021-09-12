@@ -362,10 +362,13 @@ a:active{
     100% {opacity: 100%; left: 0px; top:0px;}
 }
 
+#tabDiv{
+    margin: 15px;
+}
+
 #tabSelector{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    margin: 10px 5px 0 5px;
 }
 
 .tabButtons{
@@ -579,8 +582,12 @@ a:active{
     }
 
     /* Focuses on Game page */
+    #tabDiv{
+        margin: 5px;
+    }
+
     .tabButtons{
-        font-size: 13pt;
+        font-size: 10pt;
     }
 
     #gameText{
