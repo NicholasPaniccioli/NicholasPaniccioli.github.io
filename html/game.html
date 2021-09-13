@@ -46,7 +46,6 @@
             <div class="tabs" id="gameContent">
                 <div id="gameFeedback">
                     <div id="overlay" onclick="confettiDisplay(false)">
-
                         <div id="winDiv">
                             <div id="winText">
                                 <h3>YOU WIN</h3>
@@ -79,16 +78,27 @@
                     <h2>Points Saved</h2>
                     <p id="pointSaved"></p>
 
-                    <h2>Unlocked Colors</h2>
-                    <input type="button" class="boughtColor" id="wB" name="White" value="Default" onclick="changeBackground('White')">
-                    <input type="button" class="boughtColor" id="rB" name="Red" value="Red" onclick="changeBackground('Red')" style="display: none;">
-                    <input type="button" class="boughtColor" id="bB" name="Blue" value="Blue" onclick="changeBackground('Blue')" style="display: none;">
-                    <input type="button" class="boughtColor" id="gB" name="Green" value=" Green" onclick="changeBackground('Green')" style="display: none;">
+                    <div id="unlocked">
+                        <h2>Unlocked Colors</h2>
+                        <input type="button" class="boughtColor" id="wUB" name="White" value="Default" onclick="changeBackground('White')">
+                        <input type="button" class="boughtColor" id="frUB" name="#FF4769" value="Fiery Rose" onclick="changeBackground('#FF4769')" style="display: none;">
+                        <input type="button" class="boughtColor" id="abUB" name="#66B7F5" value="Aero Blue" onclick="changeBackground('#66B7F5')" style="display: none;">
+                        <input type="button" class="boughtColor" id="pgUB" name="#157A6E" value="Pine Green" onclick="changeBackground('#157A6E')" style="display: none;">
+                        <input type="button" class="boughtColor" id="brgUB" name="#800020" value="Burgundy" onclick="changeBackground('#800020')" style="display: none;">
+                        <input type="button" class="boughtColor" id="ayUB" name="#DBD053" value="Arylide Yellow" onclick="changeBackground('#DBD053')" style="display: none;">
+                        <input type="button" class="boughtColor" id="dbyUB" name="#694966" value="Dark Byzantium" onclick="changeBackground('#694966')" style="display: none;">    
+                        
+                    </div>
+                    <div id="storeColors">
+                        <h2>Background Colors</h2>
+                        <input type="button" class="colorButton" id="frSB" name="#FF4769" value="Unlock Fiery Rose - 5 Points" onclick="unlockColor('#FF4769')">
+                        <input type="button" class="colorButton" id="abSB" name="#66B7F5" value="Unlock Aero Blue - 5 Points" onclick="unlockColor('#66B7F5')">
+                        <input type="button" class="colorButton" id="pgSB" name="#157A6E" value="Unlock Pine Green - 5 Points" onclick="unlockColor('#157A6E')">
+                        <input type="button" class="colorButton" id="brgSB" name="#800020" value="Unlock Burgundy - 5 Points" onclick="unlockColor('#800020')">
+                        <input type="button" class="colorButton" id="aySB" name="#DBD053" value="Unlock Arylide Yellow - 5 Points" onclick="unlockColor('#DBD053')">
+                        <input type="button" class="colorButton" id="dbySB" name="#694966" value="Unlock Dark Byzantium - 5 points" onclick="unlockColor('#694966')">    
 
-                    <h2>Background Colors</h2>
-                    <input type="button" class="colorButton" id="rB" name="Red" value="Unlock Red - 5 Points" onclick="unlockColor('Red')">
-                    <input type="button" class="colorButton" id="bB" name="Blue" value="Unlock Blue - 5 Points" onclick="unlockColor('Blue')">
-                    <input type="button" class="colorButton" id="gB" name="Green" value="Unlock Green - 5 Points" onclick="unlockColor('Green')">
+                    </div>
                 </div>
             </div>
 
@@ -169,7 +179,9 @@
 
         showPoints();
 
-        unlockBoughtColors()
+        unlockBoughtColors();
+        setUpStore();
+        
     </script>
 
 </html>

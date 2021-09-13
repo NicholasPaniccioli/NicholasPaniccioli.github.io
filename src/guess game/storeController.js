@@ -7,17 +7,54 @@ else{
     unlockedColors = JSON.parse(localStorage.getItem("UnlockedColors")); //Otherwise updates and refreshes
 }
 
-//Changes background color of the game
+//Changes colors of buttons to match the value color
+function setUpStore(){
+    let colorButton = document.getElementsByClassName("colorButton");
+    let boughtColor = document.getElementsByClassName("boughtColor");
+    let hex;
+
+    for(let c = 0; c < colorButton.length; c++) {
+        hex = colorButton[c].getAttribute("name");
+        colorButton[c].style.backgroundColor = hex;
+    }
+
+    for(let b = 0; b < boughtColor.length; b++) {
+        hex = boughtColor[b].getAttribute("name");
+        boughtColor[b].style.backgroundColor = hex;
+        boughtColor[b].style.borderColor="rgba(210,210,210,1)"; //Refreshes button borders
+    }
+}
+
+//Changes background color of the button
+//Shows which one is equipped
 function changeBackground(value) {
     let gameBack = document.querySelector("#gameFeedback");
     gameBack.style.backgroundColor = value;
+
+    let totalColors = document.getElementsByClassName("boughtColor");
+    let name;
+
+    //Refreshes all the border changes
+    for(let i = 0; i < totalColors.length; i++) {
+        totalColors[i].style.borderColor="rgba(210,210,210,1)";
+    }
+
+    //Depeding on the button clicked, surrounds it in black border
+    for(let x = 0; x < totalColors.length; x++) {
+        name = totalColors[x].getAttribute("name");
+        if(name == value)
+        {
+            totalColors[x].style.borderColor="rgba(0,0,0,1)";
+            break;
+        }
+    }
 }
 
 //Unlocks selected color
 function unlockColor(color){
     let colorButton = document.getElementsByClassName("colorButton");
-    let boughtColor = document.getElementsByClassName("boughtColor")
-    let points = parseInt(localStorage.getItem("Points"))
+    let boughtColor = document.getElementsByClassName("boughtColor");
+    let points = parseInt(localStorage.getItem("Points"));
 
     //loops through and matches color with name
     for(let i = 0; i < colorButton.length; i++) {
@@ -34,7 +71,7 @@ function unlockColor(color){
                 //Loops through to unlock the bought color 
                 for(let x = 0; x < boughtColor.length; x++) {
                     if(col == boughtColor[x].name) {
-                        boughtColor[x].style.display = "inline";
+                        boughtColor[x].style.display = "inline"; //if bought, shows equip button
                         break;
                     }
                 }
@@ -49,7 +86,7 @@ function unlockColor(color){
                 
             }
             else{
-                console.log("Not Enough Points")
+                console.log("Not Enough Points");
             }
         }
     }
@@ -61,7 +98,6 @@ function unlockBoughtColors(){
     let unlCol = JSON.parse(localStorage.getItem("UnlockedColors"));
     let colorButton = document.getElementsByClassName("colorButton");
     let boughtColor = document.getElementsByClassName("boughtColor");
-    console.log(unlCol[0]);
 
     //loops through bought buttons
     for(let i = 0; i < unlCol.length; i++) {
@@ -101,7 +137,7 @@ function subtractPoints(playerPoints, subtract) {
 function checkUnlock(playerPoints, subtract)
 {
     if(playerPoints - subtract >= 0) {
-        return true
+        return true;
     }
     return false;
 }

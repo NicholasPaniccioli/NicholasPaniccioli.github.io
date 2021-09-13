@@ -381,6 +381,7 @@ a:active{
     font-size: 14pt;
 }
 
+/* GameTab */
 #gameContent{
     display: grid;
     grid-template-columns: auto;
@@ -449,7 +450,7 @@ a:active{
     bottom: 0;
     z-index: 2;
     cursor: pointer;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0,0,0, 0.8);
 }
 
 #festive{
@@ -458,13 +459,23 @@ a:active{
 }
 
 #winText{
-    color: rgba(255,255, 255,0.6);
+    color: rgba(255,255, 255,0.7);
+    font-size: 18pt;
     text-align: center;
-    background-color: black;
+    text-shadow: 1px 1px black;
     padding: 15px;
     position: absolute;
-    top:40%;
-    left:40%;
+    top: 40%;
+    left: 40%;
+}
+
+/* Store Tab */
+#unlocked, #storeColors{
+    padding: 10px;
+}
+
+.colorButton, .boughtColor{
+    cursor: pointer;
 }
 
 /* Adjusts for smaller windows and phone screens */
@@ -611,6 +622,7 @@ a:active{
     #winText{
         padding: 5px;
         position: absolute;
+        font-size: 14pt;
         top:40%;
         left:30%;
         width: 20%;
