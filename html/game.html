@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <script src="../src/guess game/gameController.js"></script>
         <script src="../src/guess game/storeController.js"></script>
+        <script src="../src/guess game/statController.js"></script>
 
         <title>Nicholas Paniccioli Portfolio</title>
     </head>
@@ -106,6 +107,14 @@
             <div class="tabs" id="statContent">
                 <div id="stats">
                     <p class="test">This is the stats page, it's not done, but just testing the tab functions</p>
+                    <p id="gamesPlayed">Number of Games Played: </p>
+                    <p id="gamesWon">Number of Games Won: </p>
+                    <p id="winPercent">Win Percentage: </p>
+                    <p id="attemptAvg">Attempt Average: </p>
+                    <p id="currPoints">Current Points: </p>
+                    <p id="allPoints">Overall Points: </p>
+                    <p id="firstGuess">1st Guess Wins: </p>
+                    <p id="lastGuess">Last Guess Wins: </p>
                 </div>
             </div>
 
@@ -145,7 +154,7 @@
     </body>
 
     <script>
-        let tabPicked = 1;
+        let tabPicked = 3;
 
         //Shows the game tab by default
         showTab(tabPicked);
@@ -178,6 +187,7 @@
         }
 
         showPoints();
+        updateStat();
 
         unlockBoughtColors();
         setUpStore();

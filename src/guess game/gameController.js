@@ -16,6 +16,7 @@ function startGame() {
     attempts = 1;
     correct = false;
     console.log(numToGuess);
+    addGamesPlayed();
 }
 
 //Creates a new random number and resets html, lives, and attempts
@@ -28,6 +29,7 @@ function restartGame(){
     attempts = 1;
     correct = false;
     console.log(numToGuess);
+    addGamesPlayed();
 }
 
 //When the player guesses, checks if the game runs the logic function
@@ -86,6 +88,8 @@ function gameLogic(){
             //As the player has been confirmed right,
             //YAY confetti is shown
             confettiDisplay(true);
+            addGamesWon();
+            calcWinPercent();
         } else {
 
             //If incorrect, takes away a guess, adds to attempts
@@ -103,6 +107,7 @@ function gameLogic(){
                 gameText.innerHTML = "You guessed: " + numGuess +
                 "<br>That was not correct and you used your last guess"+
                 "<br>The correct number was: " + numToGuess + "!";
+                calcWinPercent();
             }
         }
     } else {
