@@ -1,12 +1,5 @@
-let gamesPlayed = 0;
-let gamesWon= 0;
-let winPercent = 0;
-let attemptAvg = 0;
-let currPoints = 0;
-let allPoints = 0;
-let firstGuess = 0;
-let lastGuess = 0;
-let stats = [gamesPlayed, gamesWon, winPercent, attemptAvg, currPoints, allPoints, firstGuess, lastGuess];
+//Games Played, Game Won, win Percent, total attempts, attempt Avg, Current Points, All Points, First Guess, Last Guess 
+let stats = [0,0,0,0,0,0,0,0,0];
 
 if(localStorage.getItem("Stats") == null) {
     localStorage.setItem("Stats", JSON.stringify(stats));
@@ -27,22 +20,40 @@ function addGamesWon(){
     updateStat();
 }
 
-//Calculates win percentage
+//Calculates player's win percentage
 function calcWinPercent(){
+    //Checks that total games played isn't 0 to avoid errors
     if(stats[0] > 0) {
         let percent = (stats[1] * 100)/stats[0];
-        
-        stats[3] = percent.toFixed(2);
+        stats[2] = parseFloat(percent.toFixed(2)); //Resets the number to a float and sets it to at least 2 decimal points
     }
+    updateStat();
+}
+
+//Calculates the total attempts
+function addAttempts(attempts){
+    stats[3] += attempts;
+    updateStat();
+}
+
+//Calculates average of players attempts
+function calcAttemptAverage(attempts){
+    stats[4] = (attempts + stats[3])/stats[0];
     updateStat();
 }
 
 //Displays Current Points
 function displayCurrentPoints(){
-    stats[4] = localStorage.getItem("Points");
+    stats[5] = parseInt(localStorage.getItem("Points"));
+}
+
+//Adds all points earned by the player
+function addAllPoints(points){
+    stats[6] += points;
     updateStat();
 }
 
 function updateStat(){
+    displayCurrentPoints();
     localStorage.setItem("Stats", JSON.stringify(stats));
 }

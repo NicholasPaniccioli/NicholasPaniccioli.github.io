@@ -63,12 +63,15 @@ function gameLogic(){
         //Checks if user's guess was correct
         if(numGuess == numToGuess) {
             //If correct checks attempts for appropriate flavor text
+            //Also based on attempts calculates averages for the stats page
             if(attempts == 1) {
                 addPoints(5);
                 gameText.innerHTML = "You guessed: " + numGuess +
                 "<br>Congrats! You guessed correctly on your 1st attempt!!" +
                 "<br>You earned 5 points. Total points: <strong>" + points + "</strong>!";
                 correct = true;
+                calcAttemptAverage(attempts);
+                addAttempts(attempts);
             } else if(attempts == 2 || attempts == 3) {
                 addPoints(3);
                 gameText.innerHTML = "You guessed: " + numGuess +
@@ -76,6 +79,8 @@ function gameLogic(){
                 "<br>Got the number in " + attempts + " guess(es)." +
                 "<br>You earned 3 points. Total points: <strong>" + points + "</strong>!";
                 correct = true;
+                calcAttemptAverage(attempts);
+                addAttempts(attempts);
             } else {
                 addPoints(1);
                 gameText.innerHTML = "You guessed: " + numGuess +
@@ -83,6 +88,8 @@ function gameLogic(){
                 "<br>Got the number in " + attempts + " guess(es)." +
                 "<br>You earned 1 point. Total points: <strong>" + points + "</strong>!";
                 correct = true;
+                calcAttemptAverage(attempts);
+                addAttempts(attempts);
             }
 
             //As the player has been confirmed right,
@@ -108,6 +115,8 @@ function gameLogic(){
                 "<br>That was not correct and you used your last guess"+
                 "<br>The correct number was: " + numToGuess + "!";
                 calcWinPercent();
+                calcAttemptAverage(0);
+                addAttempts(0);
             }
         }
     } else {
@@ -212,6 +221,7 @@ else{
 function addPoints(add) {
     points += add;
 
+    addAllPoints(add); //Adds points earned to overall total in the stats page
     localStorage.setItem("Points", points);
     showPoints(); //When points are added, updated the display
 }
