@@ -459,7 +459,7 @@ a:active{
 }
 
 #winText{
-    color: rgba(255,255, 255,0.7);
+    color: rgb(255,255, 255);
     font-size: 18pt;
     text-align: center;
     text-shadow: 1px 1px black;
@@ -467,6 +467,12 @@ a:active{
     position: absolute;
     top: 40%;
     left: 40%;
+    animation: pulse 1s infinite;
+    animation-direction: alternate;
+}
+@keyframes pulse {
+    from {opacity: 50%;}
+    to {opacity: 100%; }
 }
 
 /* Store Tab */
