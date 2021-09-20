@@ -140,6 +140,20 @@ function getProjGuess (desc, thumbnail){
     "and worst of all unlocked colors still took points when you wanted to use them. So I had to redo " +
     "the way my buttons worked. I created a whole new section of buttons that are now responsible for " +
     "color changing and one row responsible for unlocking. So now when clicked the unlock button hides and " + 
-    "the color changing buttons appears. Lastly made a few adjustments to the function that keeps things unlocked and the store now works! Again </p>";
+    "the color changing buttons appears. Lastly made a few adjustments to the function that keeps things unlocked and the store now works! Again </p>" +
+    
+    "<br><strong>September 20th 2021</strong><br>" +
+    "<p>V2.0 is complete and brings with it a newly completed tab! Stats has been a long term goal " + 
+    "that I'm excited to finally have completed. Now players who play the guessing game can find all the " +
+    "fun little statistics about how they play, from the number of times they've won to how many points " +
+    "they've earned over the course of their entire time playing. All of this was accomplished by working " +
+    "with some JS and the local storage. Creating some logic for each stat and placing those functions " +
+    "in the correct spot allow me to update and change the stats that I have created for the player." +
+    "Now while this doesn't changemuch in the way of game mechanics it's fun to see the numbers grow " + 
+    "and answer the question of 'how good am I?'.<br>" +
+    "With the stats tab finished that leaves one big challenge left, Achievements. Currently the plan " +
+    "is to write/put 10 or so individual achievements players can earn. Do some art assets so when " +
+    "they do earn them they get fun pixel art badges. And when all of that is done, start to write out " +
+    "the JS functions that will overwatch and reward players with these badges. That concludes the V2.0 update!</p><br>";
 
 };
