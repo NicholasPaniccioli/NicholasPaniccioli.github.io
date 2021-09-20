@@ -74,8 +74,6 @@
             <!-- Store and purchasable items in here -->
             <div class="tabs" id="storeContent">
                 <div id="storeItems">
-                    <p class="test">This is the store page, it's not done, but currently being worked on</p>
-
                     <h2>Points Saved</h2>
                     <p id="pointSaved"></p>
 
@@ -106,16 +104,17 @@
             <!-- Stats and player info -->
             <div class="tabs" id="statContent">
                 <div id="stats">
-                    <p class="test">This is the stats page, it's not done, but just testing the tab functions</p>
-                    <p id="gamesPlayed">Number of Games Played: </p>
-                    <p id="gamesWon">Number of Games Won: </p>
-                    <p id="winPercent">Win Percentage: </p>
-                    <p id="attemptTotal">Total Attempts: </p>
-                    <p id="attemptAvg">Attempt Average: </p>
-                    <p id="currPoints">Current Points: </p>
-                    <p id="allPoints">Overall Points: </p>
-                    <p id="firstGuess">1st Guess Wins: </p>
-                    <p id="lastGuess">Last Guess Wins: </p>
+                    <ul id="statList">
+                        <li><span>Number of Games Played: </span><span class="statHTML" id="gamesPlayed"></span></li>
+                        <li><span>Number of Games Won: </span><span class="statHTML" id="gamesWon"></span></li>
+                        <li><span>Win Percentage: </span><span class="statHTML" id="winPercent"></span><span>%</span></li>
+                        <li><span>Total Attempts: </span><span class="statHTML" id="attemptTotal"></span></li>
+                        <li><span>Attempt Average: </span><span class="statHTML" id="attemptAvg"></span><span> A/G</span></li>
+                        <li><span>Current Points: </span><span class="statHTML" id="currPoints"></span></li>
+                        <li><span>Overall Points: </span><span class="statHTML" id="allPoints"></span></li>
+                        <li><span>First Guess Wins: </span><span class="statHTML" id="firstGuess"></span></li>
+                        <li><span>Last Guess Wins: </span><span class="statHTML" id="lastGuess"></span></li>
+                    </ul>
                 </div>
             </div>
 

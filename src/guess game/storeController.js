@@ -131,6 +131,7 @@ function subtractPoints(playerPoints, subtract) {
     }
 
     showPoints(); //When points are used, updates display
+    updateStat(); //updates current points after losing some
 }
 
 //Helper function to see if unlock should go through.

@@ -38,7 +38,8 @@ function addAttempts(attempts){
 
 //Calculates average of players attempts
 function calcAttemptAverage(attempts){
-    stats[4] = (attempts + stats[3])/stats[0];
+    let average = (attempts + stats[3])/stats[0];
+    stats[4] =  parseFloat(average.toFixed(2)) //Resets the number to a float and sets it to at least 2 decimal points
     updateStat();
 }
 
@@ -53,7 +54,30 @@ function addAllPoints(points){
     updateStat();
 }
 
+//Increases first guess win stat
+function addFirstGuess(){
+    stats[7] += 1;
+    updateStat();
+}
+
+//Increases last guess win stat
+function addLastGuess(){
+    stats[8] += 1;
+    updateStat();
+}
+
+//When called, updates the local storage stat with the newly updated stat array
+//Also writes/adds html to the stat page
 function updateStat(){
     displayCurrentPoints();
     localStorage.setItem("Stats", JSON.stringify(stats));
+
+    let statHTML = document.getElementsByClassName("statHTML");
+    let statArray = JSON.parse(localStorage.getItem("Stats"));
+
+    for(let s = 0; s < statHTML.length; s++){
+        statHTML[s].innerHTML = ""; //Refreshes the html line
+        statHTML[s].innerHTML += "<strong>" + statArray[s] + "</strong>";
+    }
+
 }

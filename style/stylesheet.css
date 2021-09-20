@@ -484,6 +484,15 @@ a:active{
     cursor: pointer;
 }
 
+/* Stats Tab */
+#statList{
+    list-style: none;
+}
+#statList, li {
+    margin: 5px;
+}
+
+
 /* Adjusts for smaller windows and phone screens */
 @media screen and (max-width: 700px)
 {

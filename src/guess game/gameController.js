@@ -72,6 +72,7 @@ function gameLogic(){
                 correct = true;
                 calcAttemptAverage(attempts);
                 addAttempts(attempts);
+                addFirstGuess();
             } else if(attempts == 2 || attempts == 3) {
                 addPoints(3);
                 gameText.innerHTML = "You guessed: " + numGuess +
@@ -90,6 +91,9 @@ function gameLogic(){
                 correct = true;
                 calcAttemptAverage(attempts);
                 addAttempts(attempts);
+                if(attempts == 5){
+                    addLastGuess();
+                }
             }
 
             //As the player has been confirmed right,
