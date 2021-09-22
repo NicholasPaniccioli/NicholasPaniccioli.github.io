@@ -17,6 +17,8 @@ function startGame() {
     correct = false;
     console.log(numToGuess);
     addGamesPlayed();
+
+    soItBegins();
 }
 
 //Creates a new random number and resets html, lives, and attempts
