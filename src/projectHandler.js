@@ -154,6 +154,15 @@ function getProjGuess (desc, thumbnail){
     "With the stats tab finished that leaves one big challenge left, Achievements. Currently the plan " +
     "is to write/put 10 or so individual achievements players can earn. Do some art assets so when " +
     "they do earn them they get fun pixel art badges. And when all of that is done, start to write out " +
-    "the JS functions that will overwatch and reward players with these badges. That concludes the V2.0 update!</p><br>";
+    "the JS functions that will overwatch and reward players with these badges. That concludes the V2.0 update!</p><br>" +
+
+    "<br><strong>September 23rd 2021</strong><br>" +
+    "<p>V2.5 is out and players can now start earning achievements! All the logic is placed and everything " +
+    "seems to work without a hitch, but some longer playtesting will make that certain. With the game pretty much " +
+    "finished, what next? Well for starters, I still need to design and implement the pixel art badges. As of now it's " +
+    "just text, so not a full update which is why it's 2.5 and not 3.0. However once I get that done, I need to add some " +
+    "more content to the store, meaning new confetti more colors, text color options etc. Which will include more JS changes. " +
+    "But once all of that is said and done I have plans to work on the CSS to really clean up the look of the game." +
+    "After that the game will be done and we will see whether or not I have further plans to work on the game.</p><br>";
 
 };
