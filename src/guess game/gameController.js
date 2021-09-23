@@ -17,8 +17,7 @@ function startGame() {
     correct = false;
     console.log(numToGuess);
     addGamesPlayed();
-
-    soItBegins();
+    popUpCheck("SIB"); //Player gets So It Begins achievement
 }
 
 //Creates a new random number and resets html, lives, and attempts
@@ -75,6 +74,7 @@ function gameLogic(){
                 calcAttemptAverage(attempts);
                 addAttempts(attempts);
                 addFirstGuess();
+                popUpCheck("OIO"); //Player gets 1 in 100 achievement
             } else if(attempts == 2 || attempts == 3) {
                 addPoints(3);
                 gameText.innerHTML = "You guessed: " + numGuess +
@@ -95,6 +95,7 @@ function gameLogic(){
                 addAttempts(attempts);
                 if(attempts == 5){
                     addLastGuess();
+                    popUpCheck("AON"); //Player gets All or nothing achievement
                 }
             }
 
@@ -103,6 +104,11 @@ function gameLogic(){
             confettiDisplay(true);
             addGamesWon();
             calcWinPercent();
+            guessingVet(); //Achievement check
+            pointRaker(); //Achievement check
+            insanity(true); //Resets insanity
+            onARoll(false); //Achievement check
+            whenInDoubt(); //Achievement check
         } else {
 
             //If incorrect, takes away a guess, adds to attempts
@@ -123,6 +129,9 @@ function gameLogic(){
                 calcWinPercent();
                 calcAttemptAverage(0);
                 addAttempts(0);
+                insanity(false); //achievement check
+                suckerForPain(); //achievement check
+                onARoll(true); //Resets On A Roll
             }
         }
     } else {
