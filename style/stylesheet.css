@@ -485,11 +485,30 @@ a:active{
 }
 
 /* Stats Tab */
+
 #statList{
     list-style: none;
 }
+
 #statList, li {
     margin: 5px;
+}
+
+/* Achievements Tab */
+#achievements{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+}
+
+.achievementName{
+    margin: 10px;
+    font-size: 18pt;
+}
+
+.achBadge{
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -643,6 +662,20 @@ a:active{
         width: 20%;
         height: 25%;
     }
+
+    /* Achievement Tab */
+    #achievements{
+        grid-template-columns: auto auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    
+    .achItem{
+        width: 100%;
+        height: 100%;
+    }
+    
 
     /* Focuses on the Footer */
     #socials{

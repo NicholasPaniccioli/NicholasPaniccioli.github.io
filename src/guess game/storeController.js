@@ -90,7 +90,7 @@ function unlockColor(color){
                 
             }
             else{
-                console.log("Not Enough Points");
+                alert("Not Enough Points");
             }
         }
     }

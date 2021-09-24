@@ -99,12 +99,12 @@ function whenInDoubt(){
 
 //When called updates local storage for the achievements
 function updateAchievements(){
-    let achievementName = document.getElementsByClassName("achievementName");
+    let achItems= document.getElementsByClassName("achItem");
     localStorage.setItem("Achievements", JSON.stringify(achievements));
 
-    for(let a = 0; a < achievementName.length; a++){
+    for(let a = 0; a < achItems.length; a++){
         if(achievements[a] == true){
-            achievementName[a].style.display = "inline";
+            achItems[a].style.display = "inline";
         }
     }
 }

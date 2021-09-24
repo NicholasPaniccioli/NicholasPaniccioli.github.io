@@ -127,8 +127,8 @@ function gameLogic(){
                 "<br>That was not correct and you used your last guess"+
                 "<br>The correct number was: " + numToGuess + "!";
                 calcWinPercent();
-                calcAttemptAverage(0);
-                addAttempts(0);
+                calcAttemptAverage(6);
+                addAttempts(6);
                 insanity(false); //achievement check
                 suckerForPain(); //achievement check
                 onARoll(true); //Resets On A Roll
