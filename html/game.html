@@ -10,6 +10,8 @@
         <script src="../src/guess game/gameController.js"></script>
         <script src="../src/guess game/storeController.js"></script>
         <script src="../src/guess game/statController.js"></script>
+        <script src="../src/guess game/achievementController.js"></script>
+
 
         <title>Nicholas Paniccioli Portfolio</title>
     </head>
@@ -121,7 +123,17 @@
             <!-- Achievements by the player -->
             <div class="tabs" id="achieveContent">
                 <div id="achievements">
-                    <p class="test">This is the achievements page, it's not done, but just testing the tab functions</p>
+                    <p class="test">Excuse the look, testing and work is being done!</p>
+                    <span class="achievementName" style="display: none;">So It Begins</span>
+                    <span class="achievementName" style="display: none;">All Or Nothing</span>
+                    <span class="achievementName" style="display: none;">Guessing Veteran</span>
+                    <span class="achievementName" style="display: none;">Point Raker</span>
+                    <span class="achievementName" style="display: none;">Design Simulator</span>
+                    <span class="achievementName" style="display: none;">Insanity</span>
+                    <span class="achievementName" style="display: none;">Sucker For Pain</span>
+                    <span class="achievementName" style="display: none;">On A Roll</span>
+                    <span class="achievementName" style="display: none;">When In Doubt</span>
+                    <span class="achievementName" style="display: none;">1 In 100</span>
                 </div>
             </div>
         </div>
@@ -188,6 +200,7 @@
 
         showPoints();
         updateStat();
+        updateAchievements();
 
         unlockBoughtColors();
         setUpStore();
