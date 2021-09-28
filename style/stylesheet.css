@@ -358,7 +358,7 @@ a:active{
     animation-duration: 1.5s;
 }
 @keyframes swipeIn {
-    0% {opacity: 15%; left: -50px; top:0px;}
+    0% {opacity: 35%; left: -50px; top:0px;}
     100% {opacity: 100%; left: 0px; top:0px;}
 }
 

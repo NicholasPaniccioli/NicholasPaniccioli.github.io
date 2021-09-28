@@ -36,16 +36,18 @@ else{
 
 //Unlocks when 5 Games are won
 function guessingVet(){
-    let wins = localStorage.getItem("Stats")[1];
-    if(wins == 5){
-        popUpCheck("AON");
+    let wins = JSON.parse(localStorage.getItem("Stats"))[1];
+    if(wins >= 5){
+        console.log(wins);
+        popUpCheck("GV");
     }
+    console.log(wins);
 }
 
 //Unlocks when player has earned a total of 10 points
 function pointRaker(){
-    let points = localStorage.getItem("Stats")[6];
-    if(points >= 10){
+    let poi = JSON.parse(localStorage.getItem("Stats"))[6];
+    if(poi >= 10){
         popUpCheck("PR");
     }
 }
@@ -69,7 +71,7 @@ function suckerForPain(){
     let wins = JSON.parse(localStorage.getItem("Stats"))[1];
     let totalGames = JSON.parse(localStorage.getItem("Stats"))[0];
 
-    if(totalGames - wins == 20){
+    if(totalGames - wins >= 20){
         popUpCheck("SFP");
     }
 }
@@ -99,12 +101,15 @@ function whenInDoubt(){
 
 //When called updates local storage for the achievements
 function updateAchievements(){
-    let achItems= document.getElementsByClassName("achItem");
+    let achLocks = document.getElementsByClassName("achLock");
+    let achBadges= document.getElementsByClassName("achBadge");
     localStorage.setItem("Achievements", JSON.stringify(achievements));
 
-    for(let a = 0; a < achItems.length; a++){
+    //Loops through, if the achievement is earned, shows the badge and hides the lock
+    for(let a = 0; a < achBadges.length; a++){
         if(achievements[a] == true){
-            achItems[a].style.display = "inline";
+            achLocks[a].style.display = "none";
+            achBadges[a].style.display = "inline";
         }
     }
 }

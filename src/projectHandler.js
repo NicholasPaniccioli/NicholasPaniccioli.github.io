@@ -163,6 +163,15 @@ function getProjGuess (desc, thumbnail){
     "just text, so not a full update which is why it's 2.5 and not 3.0. However once I get that done, I need to add some " +
     "more content to the store, meaning new confetti more colors, text color options etc. Which will include more JS changes. " +
     "But once all of that is said and done I have plans to work on the CSS to really clean up the look of the game." +
-    "After that the game will be done and we will see whether or not I have further plans to work on the game.</p><br>";
+    "After that the game will be done and we will see whether or not I have further plans to work on the game.</p><br>" +
+
+    "<br><strong>September 28th 2021</strong><br>" +
+    "<p>V2.7 is a relatively small and simple update, but much needed. The achievements tab feels more game like as you can see what achievements " +
+    "have been earned and are still locked as opposed to having a blank page. Also went through and fixed some functions where " +
+    "achievements were impossible to unlock. Also added a new image to clearly show which achievements have not been unlocked " +
+    "So instead of just displaying once invisible achievements, the achievements are always shown but now only the images change. " +
+    "With this new update the game feels much more alive and playful. So I feel comfortable now switching my time from doing programming " +
+    "to a little bit of art. Don't worry I'm not giving up coding as I still have a mechanic I want to add for the achievements that would allow " +
+    "players to use points to get hints for how to earn each achievement.</p><br>";
 
 };
