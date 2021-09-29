@@ -132,6 +132,8 @@ function subtractPoints(playerPoints, subtract) {
     if(playerPoints - subtract >= 0) {
         points = playerPoints - subtract;
         localStorage.setItem("Points", points);
+    } else {
+        alert("Not Enough Points");
     }
 
     showPoints(); //When points are used, updates display

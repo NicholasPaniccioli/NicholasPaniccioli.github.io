@@ -172,6 +172,12 @@ function getProjGuess (desc, thumbnail){
     "So instead of just displaying once invisible achievements, the achievements are always shown but now only the images change. " +
     "With this new update the game feels much more alive and playful. So I feel comfortable now switching my time from doing programming " +
     "to a little bit of art. Don't worry I'm not giving up coding as I still have a mechanic I want to add for the achievements that would allow " +
-    "players to use points to get hints for how to earn each achievement.</p><br>";
+    "players to use points to get hints for how to earn each achievement.</p><br>" +
+
+    "<br><strong>September 29th 2021</strong><br>" +
+    "<p>V2.8 is another small update that adds just a little bit of flair to the game. It adds a hint button to each achievement " +
+    "where players can use there points to unlock a descprition on how to earn the achievement. As of now though the hints " +
+    "do not stay unlocked upon a refresh of the page, so I'll need to add another local storage item to keep track of that. " +
+    "So for my next step I can focus on doing the art for the new badges along with a couple of CSS changes to clean up the look across the game.</p><br>";
 
 };

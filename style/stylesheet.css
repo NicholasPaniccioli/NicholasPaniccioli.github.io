@@ -501,14 +501,18 @@ a:active{
     text-align: center;
 }
 
-.achievementName{
+.achItem{
     margin: 10px;
-    font-size: 18pt;
 }
 
 .achBadge{
     width: 100px;
     height: 100px;
+}
+
+.achievementName{
+    margin: 5px;
+    font-size: 18pt;
 }
 
 

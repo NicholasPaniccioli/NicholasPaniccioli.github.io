@@ -30,6 +30,22 @@ else{
     achNumbers = JSON.parse(localStorage.getItem("achNumbers"));
 }
 
+//Unlock the hint for achievements
+function hint(number){
+    let hints = document.getElementsByClassName("hintButton");
+    let achRequires = document.getElementsByClassName("achievementRequirement");
+    let playerPoints = localStorage.getItem("Points");
+
+    if(playerPoints > 0){
+        subtractPoints(playerPoints, 1);
+        hints[number].style.display = "none";
+        achRequires[number].style.display = "inline"; 
+    } else{
+        alert("Not enough points");
+    }
+}
+
+
 //Each function unlocks it's corresponding badge/achievement
 //So it Begins, All or Nothing, Design Sim, 1 In 100 have no special function
 //As they don't need complex checks. Called mid game
@@ -94,7 +110,7 @@ function onARoll(reset){
 function whenInDoubt(){
     let attempts = JSON.parse(localStorage.getItem("Stats"))[3];
 
-    if(attempts >= 250){
+    if(attempts >= 150){
         popUpCheck("WID");
     }
 }
