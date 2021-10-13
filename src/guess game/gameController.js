@@ -24,6 +24,9 @@ function startGame() {
 function restartGame(){
     let gameText = document.querySelector("#gameText");
     gameText.innerHTML = "Game has been reset and the number has been picked.<br> Time to Guess!"
+
+    let resetButton = document.querySelector("#startButton");
+    resetButton.style.display = "none";
     
     numToGuess = randNum();
     guesses = 5;
@@ -99,6 +102,8 @@ function gameLogic(){
                 }
             }
 
+            let resetButton = document.querySelector("#startButton");
+            resetButton.style.display = "inline";
             //As the player has been confirmed right,
             //YAY confetti is shown
             confettiDisplay(true);
@@ -126,6 +131,10 @@ function gameLogic(){
                 gameText.innerHTML = "You guessed: " + numGuess +
                 "<br>That was not correct and you used your last guess"+
                 "<br>The correct number was: " + numToGuess + "!";
+
+                let resetButton = document.querySelector("#startButton");
+                resetButton.style.display = "inline";
+
                 calcWinPercent();
                 calcAttemptAverage(6);
                 addAttempts(6);
@@ -188,6 +197,7 @@ function setUpHTML(){
     let resetButton = document.querySelector("#startButton");
     resetButton.value = "Restart";
     resetButton.onclick = restartGame;
+    resetButton.style.display = "none";
 
     //Grabs the div where the created elements will be stored
     let guessSection = document.querySelector("#guessSection");
