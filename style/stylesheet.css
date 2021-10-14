@@ -622,7 +622,7 @@ a:active{
     }
 
     #proPic{
-        width: 25vw;
+        max-width: 50%;
         height: auto;
         border-radius: 50%;
         margin-left: auto;
