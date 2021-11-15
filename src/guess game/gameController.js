@@ -141,6 +141,7 @@ function gameLogic(){
                 insanity(false); //achievement check
                 suckerForPain(); //achievement check
                 onARoll(true); //Resets On A Roll
+                whenInDoubt(); //Achievement check
             }
         }
     } else {
