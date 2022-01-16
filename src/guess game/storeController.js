@@ -46,7 +46,7 @@ function changeBackground(value) {
         {
             totalColors[x].style.borderColor="rgba(0,0,0,1)";
             //Checks that player isn't using the default color to get achievement.
-            if(value != "Default White"){
+            if(name != "White"){
                 popUpCheck("DS");
             }
             break;

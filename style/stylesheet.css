@@ -1,35 +1,92 @@
 /* Focuses on Header */
 #header{
     display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #839777;
+    grid-template-columns: auto auto;
+    background-color: #457b9d;
+    padding: 10px;
 }
 
-#name{
+#name {
     margin: auto;
 }
-
-#homeLink{
-    display: grid;
-    grid-template-columns: auto;
-    margin: auto auto auto 20px;
+#name h1{
+    font-size: 20pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    border-bottom: solid 3px #8BCA16;
 }
 
-#blogLink{
-    display: grid;
-    grid-template-columns: auto;
-    margin: auto 20px auto auto;
+#headerLink{
+    display:inline;
+    line-height: 100px;
+    vertical-align: middle;
+}
+#headerLink a{
+    padding: 0px 5px 0px 5px;
+    margin: 0px 15px 0px 15px;
+    font-size: 14pt;
+    text-decoration: none;
+    color: white;
+}
+#headerLink a:hover{
+    border-bottom: solid 3px #8BCA16;
+}
+#headerLink a:active{
+    border-bottom: solid 3px #1d3557;
 }
 
 /* Focuses on the Footer */
 footer{
-    background-color: #839777;
+    background-color: #457b9d;
+    padding: 30px;
+    text-align: center;
+}
+
+/* --The Social Media Icons */
+#github, #linkedin{
+    height: 50px;
+    width: 50px;
+}
+
+#gitlink, #linkedlink{
+    margin: 20px;
+    text-decoration: none;
+}
+
+#github:hover, #linkedin:hover{
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* --The Links */
+#sourcelink, #doclink{
+    padding: 10px 0 10px 0;
+}
+
+.links {
+    list-style-type: none;
+    padding: 0px;
+    font-size: 12pt;
+}
+.links a:link{
+    color:white;
+    text-decoration: none;
+}
+.links a:visited{
+    color:white;
+}
+.links a:hover{
+    color: #a8dadc;
+}
+.links a:active{
+    color: #457b9d;
 }
 
 /*Helps get rid of whitespace after footer TAKEN from StackOverflow, check sources page*/
 html,body,header { height:100%;}
 #content{
     min-height: calc(100% - 285px);
+    margin: 50px 20px 50px 20px;
 }
 
 /* Focuses on the Body */
@@ -40,12 +97,18 @@ body{
 }
 
 /* Focuses on the Content */
-#content{
-    margin: 20px;
+.cardSection{
+    padding: 20px;
+    display: block;
+    animation: cardIn 2s normal;
+}
+@keyframes cardIn {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
 }
 
 hr{
-    border-top: 3px solid #859999;
+    border-top: 3px solid #8BCA16;
     width: 90vw;
 }
 
@@ -73,15 +136,21 @@ hr{
 }
 
 /* Focuses on the Profile Intro */
+#meSection{
+    margin: 50px 20px 50px 20px;
+    padding: 20px;
+}
+
 #intro{
     display: grid;
-    grid-template-columns: 20vw auto auto 20vw;
-    padding: 25px;
+    grid-template-columns: 25% 75%;
+    padding: 25px 25px 0 25px;
 }
 
 #profile{
-    margin-top: auto;
-    margin-bottom: auto;
+    text-align: center;
+    line-height: 100px;
+    vertical-align:middle
 }
 
 #introText{
@@ -89,8 +158,12 @@ hr{
     padding-right: 20px;
 }
 
-#about{
+#aboutHeader{
     text-align: center;
+    font-size: 16pt;
+}
+#aboutText{
+    font-size: 12pt;
 }
 
 #proPic{
@@ -111,12 +184,13 @@ hr{
     margin-right: auto;
     grid-column-start: 2;
     grid-column-end: 3;
-    background-color: #839777; /* Green */
+    background-color: #457B9D; /* Green */
     border:solid 1px black;
     color: white;
     padding: 10px 20px;
     max-height: 50px; 
     text-align: center;
+    text-decoration: none;
     font-size: 20px;
     transition-duration: 0.2s;
     cursor: pointer;
@@ -142,12 +216,12 @@ hr{
     height: 60vh;
     min-height: 65vh;
     max-height: 70vh;
-    animation-name: fadeIn;
-    animation-duration: 1.5s;
+    position: relative;
+    animation: swipeIn 1s normal;
 }
-@keyframes fadeIn {
-    from {opacity: 25%;}
-    to {opacity: 100%;}
+@keyframes swipeIn {
+    0% {opacity: 35%; left: -50px; top:0px;}
+    100% {opacity: 100%; left: 0px; top:0px;}
 }
 
 .cardInfo{
@@ -192,23 +266,25 @@ h2{
     margin-right: auto;
 }
 
-.viewButton{
-    background-color: #839777; /* Green */
+.viewButton, .docButton{
+    background-color: #457B9D;
     border:solid 1px black;
     color: white;
     padding: 10px 20px;
-    /* max-width: 150px; */
+    margin: 10px;
     max-height: 50px;
     width: 100%;
     height: 100%; 
     text-align: center;
+    text-decoration: none;
     font-size: 20px;
     transition-duration: 0.2s;
     cursor: pointer;
 }
-.viewButton:hover, #resumeButton:hover{
-    background-color: black;
+.viewButton:hover, .docButton:hover, #resumeButton:hover{
+    background-color: #A8DADC;
     color: white;
+    border: solid 2px #8BCA16;
 }
 
 .buttonDiv{
@@ -253,6 +329,7 @@ h2{
 .projPic {
     width: 50%;
     height: 100%;
+    max-height: 300px;
     box-shadow: 0 0 10px rgba(0,0,0,.20);
 }
 
@@ -270,81 +347,6 @@ h2{
     padding: 25px;
 }
 
-/* --The Social Media Icons */
-#socials{
-    display: grid;
-    grid-template-columns: auto 10vw 10vw auto;
-    max-width: 100vw;
-    padding: 20px 20px 5px 20px;
-}
-
-#github, #linkedin{
-    height: 50px;
-    width: 50px;
-}
-
-#gitlink, #linkedlink{
-    max-width: 50px;
-    max-height: 50px;
-    margin: 10px;
-}
-
-#picLiLinks{
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-#picGitlinks{
-    grid-column-start: 3;
-    grid-column-end: 4;
-}
-
-#picGitLinks, #picLiLinks{
-    margin: auto;
-}
-
-#github:hover, #linkedin:hover{
-    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.5);
-}
-
-/* --The Links */
-#linkBox{
-    display: grid;
-    grid-template-columns: auto;
-    padding-bottom: 25px;
-}
-
-#sourcelink{
-    padding: 5px;
-}
-
-#doclink{
-    padding: 5px 5px 10px 5px;
-}
-
-.links{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-a:link{
-    color:black;
-    text-decoration: none;
-}
-
-a:visited{
-    color:black;
-}
-
-a:hover{
-    color: white;
-}
-
-a:active{
-    color: #8d6b94;
-}
-
 /* Focuses on Game HTML */
 #gameTabs{
     min-height: calc(100% - 280px);
@@ -354,12 +356,6 @@ a:active{
 .tabs{
     display: block;
     position: relative;
-    animation-name: swipeIn;
-    animation-duration: 1.5s;
-}
-@keyframes swipeIn {
-    0% {opacity: 35%; left: -50px; top:0px;}
-    100% {opacity: 100%; left: 0px; top:0px;}
 }
 
 #tabDiv{
@@ -614,11 +610,9 @@ a:active{
     .empty{
         padding: 0px;
     }
-    
+
     #profile{
-        display: grid;
-        grid-template-columns: auto auto auto;
-        margin: 10px;
+        text-align: center;
     }
 
     #proPic{
@@ -629,11 +623,6 @@ a:active{
         margin-right: auto;
         grid-column-start: 1;
         grid-column-start: 2;
-    }
-    
-    #introText{
-        padding-left: 20px;
-        padding-right: 20px;
     }
 
     #about{
@@ -686,11 +675,5 @@ a:active{
         height: 100%;
         margin-bottom: 10px;
         margin-top: 10px;
-    }
-    
-
-    /* Focuses on the Footer */
-    #socials{
-        grid-template-columns: auto 20vw 20vw auto;
     }
 }
