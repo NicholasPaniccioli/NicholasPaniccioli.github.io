@@ -7,10 +7,11 @@
         <link rel="stylesheet" href="style/stylesheet.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <!-- Used for the download pic -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <title>Nicholas Paniccioli Portfolio</title>
+        <title>My Portfolio</title>
     </head>
 
     <body>
@@ -31,8 +32,22 @@
         <!-- Where all the links and text for past works will go -->
         <div class="cardSection" id="content">
             <!-- Holds all the cards for projects -->
-            <button class="arrow" id="leftArrow" onclick="nextCard(-1)">&#10094;</button>
             <div id="cardsShowContainer">
+                <!-- Card for Guessing Game -->
+                <div class="cardContainer" id="guessing">
+                    <div class="cardPic">
+                        <img class="indexThumbnail" src="images/guess game/guessGame.jpg" alt="Guessing Game">
+                    </div>
+                    <div class="cardInfo">
+                        <h2 class="infoTitle">Guess the Number</h2>
+                        <div class="cardDesc">
+                            <div class="buttonDiv">
+                                <button class="viewButton" onclick="window.open('html/game.html','_blank')">View</button>
+                                <button class="docButton" value="GTN" onclick="window.open('html/projectdoc.html','_blank')">Doc</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Card for Mapbox API -->
                 <div class="cardContainer" id="mapbox">
                     <div class="cardPic">
@@ -41,13 +56,9 @@
                     <div class="cardInfo">
                         <h2 class="infoTitle">Landmark Finder</h2>
                         <div class="cardDesc">
-                            <div class="cardLink">
-                                <div class="buttonDiv">
+                            <div class="buttonDiv">
                                 <button class="viewButton" onclick="window.open('https://people.rit.edu/njp7745/330/exercises/Project-3/','_blank')">View</button>
-                                </div>
-                                <div class="buttonDiv">
                                 <button class="docButton" value="LF" onclick="window.open('html/projectdoc.html','_blank')">Doc</button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,38 +71,20 @@
                     <div class="cardInfo">
                         <h2 class="infoTitle">Space Experience</h2>
                         <div class="cardDesc">
-                            <div class="cardLink">
-                                <div class="buttonDiv">
+                            <div class="buttonDiv">
                                 <button class="viewButton" onclick="window.open('https://people.rit.edu/njp7745/330/exercises/Project-2/','_blank')">View</button>
-                                </div>
-                                <div class="buttonDiv">
                                 <button class="docButton" value="OSE" onclick="window.open('html/projectdoc.html','_blank')">Doc</button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card for Guessing Game -->
-                <div class="cardContainer" id="guessing">
-                    <div class="cardPic">
-                        <img class="indexThumbnail" src="images/guess game/guessGame.jpg" alt="Guessing Game">
-                    </div>
-                    <div class="cardInfo">
-                        <h2 class="infoTitle">Guess the Number</h2>
-                        <div class="cardDesc">
-                            <div class="cardLink">
-                                <div class="buttonDiv">
-                                <button class="viewButton" onclick="window.open('html/game.html','_blank')">View</button>
-                                </div>
-                                <div class="buttonDiv">
-                                <button class="docButton" value="GTN" onclick="window.open('html/projectdoc.html','_blank')">Doc</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="imageSelect">
+                    <img class="thumbSelect" src="images/guess game/guessGame.jpg" alt="Guessing Game" onclick="showSelected(1)">
+                    <img class="thumbSelect" src="images/portfolio/mapboxAPI.JPG" alt="Landmark Finder" onclick="showSelected(2)">
+                    <img class="thumbSelect" src="images/portfolio/spaceExp.JPG" alt="Space Experience" onclick="showSelected(3)">
                 </div>
             </div>
-            <button class="arrow" id="rightArrow" onclick="nextCard(+1)">&#10095;</button>
+
         </div>
 
         <hr>
@@ -141,47 +134,48 @@
     </body>
 
     <script>
-        let cardDisplay = 3;
+        let cardDisplay = 1;
 
         //Shows the 1st default card
         showCard(cardDisplay);
 
-
-        //Used by interval to auto move to next card
-        function autoCard() {
-            nextCard(1);
-        }
-         
         //Shows the next card in line
         function nextCard(n) {
             showCard(cardDisplay +=n);
         }
-
+        function showSelected(n){
+            cardDisplay = n;
+            console.log('Im picked');
+            showCard(cardDisplay);
+        }
+        
         //Dictates which card to show
         function showCard(n) {
             let totalCards = document.getElementsByClassName("cardContainer");
+            let thumbnails = document.getElementsByClassName("thumbSelect");
 
             //If the number is greater, restarts to the beginning of the cards
             if(n > totalCards.length) {
-                cardDisplay = 1
+                cardDisplay = 1;
             }
 
             //If the number goes below, starts from the end of the cards
             if(n < 1) {
-                cardDisplay = totalCards.length
+                cardDisplay = totalCards.length;
             };
 
             //Loops through and sets all cards display to none
             for(let i = 0; i < totalCards.length; i++)
             {
                 totalCards[i].style.display= "none";
+                thumbnails[i].style.opacity=0.4;
             }
 
             //Which ever card is on display will be shown
             totalCards[cardDisplay-1].style.display= "grid";
-        }
+            thumbnails[cardDisplay-1].style.opacity=0.9;
 
-        setInterval(autoCard, 10000);
-    </script>
+        }
+        </script>
 
 </html>

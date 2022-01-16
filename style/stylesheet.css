@@ -10,6 +10,7 @@
     margin: auto;
 }
 #name h1{
+    font-family: 'Roboto Slab', 'Roboto', serif;
     font-size: 20pt;
     padding-left: 5px;
     padding-right: 5px;
@@ -112,29 +113,6 @@ hr{
     width: 90vw;
 }
 
-.arrow{
-    background-color: white;
-    font-size: 26pt;
-    height: 10vh;
-    margin-top: auto;
-    margin-bottom: auto;
-    cursor: pointer;
-}
-
-.arrow:hover{
-    background-color: black;
-    color: white;
-    transition-duration: 0.5s;
-}
-
-#leftArrow:hover {
-    box-shadow: -5px 0 10px 5px rgba(0,0,0, 0.20); 
-}
-
-#rightArrow:hover{
-    box-shadow: 5px 0 10px 5px rgba(0,0,0, 0.20);
-}
-
 /* Focuses on the Profile Intro */
 #meSection{
     margin: 50px 20px 50px 20px;
@@ -159,6 +137,7 @@ hr{
 }
 
 #aboutHeader{
+    font-family: 'Roboto Slab', 'Roboto', serif;
     text-align: center;
     font-size: 16pt;
 }
@@ -198,19 +177,8 @@ hr{
 
 
 /* Focuses on the Cards in Index*/
-#cardsShowContainer{
-    padding: 20px;
-}
-
-.cardSection {
-    display: grid;
-    grid-template-columns: 4vw auto 4vw;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .cardContainer{
-    grid-template-columns: auto auto auto;
+    /* grid-template-columns: auto auto auto; */
     width: 100%;
     min-width:50vw;
     height: 60vh;
@@ -220,30 +188,37 @@ hr{
     animation: swipeIn 1s normal;
 }
 @keyframes swipeIn {
-    0% {opacity: 35%; left: -50px; top:0px;}
+    0% {opacity: 35%; left: 0px; top:50px;}
     100% {opacity: 100%; left: 0px; top:0px;}
 }
 
 .cardInfo{
     padding: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 25%;
+    left: 30%;
 }
 
 .infoTitle{
+    font-family: 'Roboto Slab', 'Roboto', serif;
+    font-size: 18pt;
     text-align: center;
+    color: black;
 }
 
 .cardPic{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-top: auto;
-    margin-bottom: auto;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     height: 50vh;
     width: 60vw;
     max-width: 100%;
     max-height: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,.60);
+    opacity: 0.3;
 }
 
 .indexThumbnail{
@@ -260,12 +235,6 @@ h2{
     font-size: 10pt;
 }
 
-.cardLink{
-    padding: 25px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .viewButton, .docButton{
     background-color: #457B9D;
     border:solid 1px black;
@@ -273,8 +242,8 @@ h2{
     padding: 10px 20px;
     margin: 10px;
     max-height: 50px;
-    width: 100%;
-    height: 100%; 
+    width: 15vw;
+    height: 10vh; 
     text-align: center;
     text-decoration: none;
     font-size: 20px;
@@ -289,6 +258,22 @@ h2{
 
 .buttonDiv{
     margin: 5px;
+}
+
+#imageSelect{
+    text-align: center;
+    margin-top: -75px;
+}
+.thumbSelect{
+    width: 20%;
+    height: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,.60);
+    transition: 1s;
+    z-index: 1;
+}
+.thumbSelect:hover{
+    width: 23%;
+    transition: 1s;
 }
 
 /* Focuses on Updates in Documentation */
@@ -556,10 +541,6 @@ h2{
     #name{grid-area: title;}
 
     /* Focuses on the Cards in Index*/
-
-    .arrow{
-        font-size: 13pt;
-    }
     .cardSection{
         grid-template-columns: 8vw auto 8vw;
     }
@@ -582,13 +563,6 @@ h2{
     .cardDesc{
         display: grid;
         grid-template-columns: auto auto auto;
-    }
-
-    .cardLink{
-        padding: 10px;
-        width: 30vw;
-        grid-column-start: 2;
-        grid-column-end: 3;
     }
 
     .viewButton{
