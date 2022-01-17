@@ -1,21 +1,18 @@
 //Gives back the appropriate info based on selected project
-function getProject (){
-    //Gets the project
-    const projList = document.querySelector("#projList").value;
-
+function getProject (proj){
     //Finds the project selected and gives documentation
     //PROJECTS IN ALPHABETICAL ORDER
-    if(projList === "GTN") {
-        displayDocumentation("guessTheNumber")
-    } else if(projList === "LF") {
+    if(proj === "GTN") {
+        displayDocumentation("guessTheNumber");
+    } else if(proj === "LF") {
         //Landmark Finder
         displayDocumentation("landmarkFinder");
-    } else if(projList === "OSE") {
+    } else if(proj === "OSE") {
         //Outer Space Experience
         displayDocumentation("outerSpaceExperience");
     } else {
         //If none is found, default message
-        alert("Sorry, was unable to find that project");
+        alert("Sorry, was unable to find that project. Loading Default!");
     }
 };
 

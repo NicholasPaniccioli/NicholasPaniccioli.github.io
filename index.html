@@ -20,7 +20,7 @@
             <div id="name">
                 <h1>Nicholas Paniccioli</h1>
             </div>
-            <div id="headerLink">
+            <div class="headerLink">
                 <a href="index.html">Home</a>
                 <a href="html/game.html">Guessing Game</a>
                 <a href="html/projectdoc.html">Projects</a>
@@ -30,7 +30,7 @@
         </div>
 
         <!-- Where all the links and text for past works will go -->
-        <div class="cardSection" id="content">
+        <div id="cardSection" class="content">
             <!-- Holds all the cards for projects -->
             <div id="cardsShowContainer">
                 <!-- Card for Guessing Game -->
@@ -87,7 +87,7 @@
 
         </div>
 
-        <hr>
+        <!-- <hr> -->
 
         <!--Holds all the introduction material  -->
         <div id="meSection">
@@ -105,12 +105,7 @@
                     </p>
                 </div>
             </div>
-            <div id="resumeDownload">
-                <a id="resumeButton" href="images/NPaniccioli_Resume.pdf" download><i class="fa fa-download"></i>  Download Resume</a>
         </div>
-        </div>
-        
-
 
         <!-- The bottom bar of the page -->
         <footer>
@@ -145,7 +140,6 @@
         }
         function showSelected(n){
             cardDisplay = n;
-            console.log('Im picked');
             showCard(cardDisplay);
         }
         
@@ -176,6 +170,6 @@
             thumbnails[cardDisplay-1].style.opacity=0.9;
 
         }
-        </script>
+    </script>
 
 </html>

@@ -20,7 +20,7 @@
             <div id="name">
                 <h1>Nicholas Paniccioli</h1>
             </div>
-            <div id="headerLink">
+            <div class="headerLink">
                 <a href="../index.html">Home</a>
                 <a href="game.html">Guessing Game</a>
                 <a href="projectdoc.html">Projects</a>
@@ -29,27 +29,15 @@
             </div>
         </div>
 
-        <div id="content">
+        <div id="projectContainer" class="content">
 
-            <div id="docIntro">
-                <p>
-                    Welcome to my project library. Here you can look through the projects I've made
-                    and find the documentation for each one. They'll tell you their purpose,
-                    the goal I had when I created them, what I worked with to make it, and more!
-                </p>
-            </div>
-
-            <!-- Select List for the projects -->
-            <div id="projFix">
-                <div id="projSearch">
-                    <label for="projects">Choose a Project: </label>
-                    <select title="projects" name="projects" id="projList">
-                        <option value="GTN">Guess The Number</option>
-                        <option value="LF">Landmark Finder</option>
-                        <option value="OSE">Outer Space Experience</option>
-                    </select>
-
-                    <button id="pickProj">Submit</button>
+            <!-- Dropdown list, from W3Schools -->
+            <div class="dropdown" id="projFix">
+                <button onclick="dropList()" class="dropbtn">Projects</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <option class="projSelect" value="GTN" onclick="getProject('GTN')">Guess The Number</option>
+                    <option class="projSelect" value="LF" onclick="getProject('LF')">Landmark Finder</option>
+                    <option class="projSelect" value="OSE" onclick="getProject('OSE')">Outer Space Experience</option>
                 </div>
             </div>
 
@@ -248,14 +236,26 @@
     </body>
 
     <script>
-        //Used to check when button is pressed
-        const init = () => {
-            const button = document.querySelector("#pickProj");
-            button.addEventListener('click', getProject);
-        };
+        //Loads in Guessing Game by Default
+        getProject('GTN');
 
-        getProject();
-        window.onload = init;
+        //Dropdown List from W3Schools
+        function dropList() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            let dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                let openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
     </script>
 
 </html>

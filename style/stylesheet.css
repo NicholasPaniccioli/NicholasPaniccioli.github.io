@@ -18,22 +18,22 @@
     border-bottom: solid 3px #8BCA16;
 }
 
-#headerLink{
+.headerLink, .linkMenu{
     display:inline;
     line-height: 100px;
     vertical-align: middle;
 }
-#headerLink a{
+.headerLink a,  .linkMenu a{
     padding: 0px 5px 0px 5px;
     margin: 0px 15px 0px 15px;
     font-size: 14pt;
     text-decoration: none;
     color: white;
 }
-#headerLink a:hover{
+.headerLink a:hover{
     border-bottom: solid 3px #8BCA16;
 }
-#headerLink a:active{
+.headerLink a:active,  .linkMenu a:active{
     border-bottom: solid 3px #1d3557;
 }
 
@@ -85,9 +85,8 @@ footer{
 
 /*Helps get rid of whitespace after footer TAKEN from StackOverflow, check sources page*/
 html,body,header { height:100%;}
-#content{
+.content{
     min-height: calc(100% - 285px);
-    margin: 50px 20px 50px 20px;
 }
 
 /* Focuses on the Body */
@@ -98,8 +97,11 @@ body{
 }
 
 /* Focuses on the Content */
-.cardSection{
-    padding: 20px;
+#cardsShowContainer{
+    padding: 50px 20px 50px 20px;
+}
+
+#cardSection{
     display: block;
     animation: cardIn 2s normal;
 }
@@ -110,19 +112,21 @@ body{
 
 hr{
     border-top: 3px solid #8BCA16;
-    width: 90vw;
+    width: 60vw;
 }
 
 /* Focuses on the Profile Intro */
 #meSection{
-    margin: 50px 20px 50px 20px;
-    padding: 20px;
+    padding: 20px 0 50px 0;
 }
 
 #intro{
     display: grid;
     grid-template-columns: 25% 75%;
-    padding: 25px 25px 0 25px;
+    padding: 0 25px 0 50px;
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #profile{
@@ -134,47 +138,31 @@ hr{
 #introText{
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
 }
 
 #aboutHeader{
     font-family: 'Roboto Slab', 'Roboto', serif;
     text-align: center;
     font-size: 16pt;
+    text-shadow: -2px 1px #A8DADC;
 }
 #aboutText{
     font-size: 12pt;
+    border-left: solid 5px #8BCA16;
+    padding: 10px;
 }
 
 #proPic{
     width: 15vw;
     height: auto;
     border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
 }
-
-/*Resume Download*/
-#resumeDownload{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin-bottom: 40px;
-}
-
-#resumeButton{
-    margin-left: auto;
-    margin-right: auto;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    background-color: #457B9D; /* Green */
-    border:solid 1px black;
-    color: white;
-    padding: 10px 20px;
-    max-height: 50px; 
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-
 
 /* Focuses on the Cards in Index*/
 .cardContainer{
@@ -208,6 +196,10 @@ hr{
     color: black;
 }
 
+.cardInfo h2 {
+    text-shadow: -2px 1px #A8DADC;
+}
+
 .cardPic{
     position: relative;
     text-align: center;
@@ -217,8 +209,9 @@ hr{
     width: 60vw;
     max-width: 100%;
     max-height: 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,.60);
+    box-shadow: 0 0 1px rgba(0,0,0,.60);
     opacity: 0.3;
+    filter: grayscale(100%);
 }
 
 .indexThumbnail{
@@ -250,7 +243,7 @@ h2{
     transition-duration: 0.2s;
     cursor: pointer;
 }
-.viewButton:hover, .docButton:hover, #resumeButton:hover{
+.viewButton:hover, .docButton:hover{
     background-color: #A8DADC;
     color: white;
     border: solid 2px #8BCA16;
@@ -268,12 +261,17 @@ h2{
     width: 20%;
     height: auto;
     box-shadow: 0 0 5px rgba(0,0,0,.60);
-    transition: 1s;
+    transition: 0.5s;
     z-index: 1;
 }
 .thumbSelect:hover{
     width: 23%;
-    transition: 1s;
+    transition: 0.5s;
+}
+
+
+#arrowButtons{
+    display: none;
 }
 
 /* Focuses on Updates in Documentation */
@@ -291,11 +289,54 @@ h2{
 }
 
 /* Focuses on the Project Documentation */
-#docIntro {
-    margin: 15px;
-}
+
+/* Dropdown from W3Schools */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+/* End of Dropdown */
 
 /* Temp fix will need to be looked at later */
+#projectContainer{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.projSelect{
+    padding: 10px;
+    cursor: pointer;
+}
+
 #projFix{
     margin: 20px;
 }
@@ -344,7 +385,7 @@ h2{
 }
 
 #tabDiv{
-    margin: 15px;
+    margin: 25px;
 }
 
 #tabSelector{
@@ -366,6 +407,8 @@ h2{
 #gameContent{
     display: grid;
     grid-template-columns: auto;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 #gameFeedback{
@@ -504,7 +547,7 @@ h2{
 
 
 /* Adjusts for smaller windows and phone screens */
-@media screen and (max-width: 700px)
+@media screen and (max-width: 1000px)
 {
     /* Prevents swiping to side on phone */
     html {
@@ -516,61 +559,32 @@ h2{
     }
 
     /* Focuses on the Header */
-    h1{
+    header h1{
         font-size: 18px;
         padding-bottom: 5px;
     }
     
     #header{
-        grid-template-columns: none;
+        grid-template-columns: auto;
         grid-template-areas:
-        'title title'
-        'home blog';
+        'title'
+        'links';
         padding: 10px;
     }
-
-    #homeLink, #blogLink, #name{
+    #name{
+        grid-area: title;
         margin-left: auto;
         margin-right: auto;
+        text-align: center;
+    }
+    .headerLink{
+        text-align: center;
+        font-size: 14pt;
     }
 
-    #homeLink{grid-area: home;}
-
-    #blogLink{grid-area: blog;}
-    
-    #name{grid-area: title;}
-
-    /* Focuses on the Cards in Index*/
-    .cardSection{
-        grid-template-columns: 8vw auto 8vw;
-    }
-
-    .cardContainer{
-        grid-template-columns:none;
-        grid-template-areas:
-        'content'
-        'info';
-    }
-
-    .cardPic{
-        grid-area: content;
-        width: 100%;
-        height: 100%;
-    }
-
-    .cardInfo{grid-area: info;}
-
-    .cardDesc{
-        display: grid;
-        grid-template-columns: auto auto auto;
-    }
-
-    .viewButton{
-        padding: 10px;
-    }
-
-    .buttonDiv{
-        margin: 10px;
+    .cardInfo{
+        top: 25%;
+        left: 25%;
     }
 
     /* Focuses on the Profile Intro */   
@@ -597,11 +611,6 @@ h2{
         margin-right: auto;
         grid-column-start: 1;
         grid-column-start: 2;
-    }
-
-    #about{
-        display: flex;
-        justify-content: center;
     }
 
     /* Focuses Project documentation */
