@@ -289,28 +289,53 @@ h2{
 }
 
 /* Focuses on the Project Documentation */
+#topSection{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.projLabel{
+    width: auto;
+    position: relative;
+    font-family: 'Roboto Slab', 'Roboto', serif;
+    color: black;
+    padding: 16px;
+    font-size: 18pt;
+    border-left: solid 4px #8BCA16;
+    margin-bottom: 20px;
+    text-shadow: -2px 1px #A8DADC;
+    animation: sideIn 1s normal;
+}
+@keyframes sideIn {
+    0% {opacity: 0%; left: 50px; top: 0px}
+    100%{opacity: 100%; left: 0px; top: 0px;}
+}
 
 /* Dropdown from W3Schools */
-.dropbtn {
-    background-color: #3498DB;
+.dropbtn{
+    background-color: #457B9D;
     color: white;
     padding: 16px;
     font-size: 16px;
+    font-family: 'Roboto', serif;
     border: none;
     cursor: pointer;
+    animation: sideIn 2s normal;
   }
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+  .dropbtn:hover{
+    background-color: #1d3557;
   }
   
   .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: #f1f1f1;
+    background-color: white;
     min-width: 160px;
+    max-width: 200px;
+    max-height: 150px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    transition: 1s;
   }
   
   .dropdown-content a {
@@ -330,11 +355,16 @@ h2{
     width: 80%;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 50px
 }
 
 .projSelect{
     padding: 10px;
     cursor: pointer;
+}
+.projSelect:hover{
+    background-color: #457b9d;
+    color: white;
 }
 
 #projFix{
@@ -348,15 +378,17 @@ h2{
 }
 
 .thumbnail {
+    position: relative;
     text-align: center;
     max-height: 300px;
+    animation: swipeIn 1s normal;
 }
 
-.projPic {
-    width: 50%;
-    height: 100%;
+#projPic {
+    width: 80%;
+    height: auto;
     max-height: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,.20);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .projDesc{
@@ -614,8 +646,26 @@ h2{
     }
 
     /* Focuses Project documentation */
-    #projSection {
+    #projSection, #topSection {
         grid-template-columns: auto;
+    }
+
+    #topSection{
+        text-align: center;
+    }
+
+    .projLabel{
+        border-left: none;
+        border-bottom: solid 4px #8BCA16;
+        max-width: 150px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .dropdown-content {
+        max-width: 187px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     /* Focuses on Game page */

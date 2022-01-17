@@ -31,22 +31,26 @@
 
         <div id="projectContainer" class="content">
 
+            <div id="topSection">
             <!-- Dropdown list, from W3Schools -->
             <div class="dropdown" id="projFix">
-                <button onclick="dropList()" class="dropbtn">Projects</button>
+                <h2 class="projLabel">Projects</h2>
+                <button onclick="dropList()" class="dropbtn" id="projList">Projects </button>
                 <div id="myDropdown" class="dropdown-content">
-                    <option class="projSelect" value="GTN" onclick="getProject('GTN')">Guess The Number</option>
-                    <option class="projSelect" value="LF" onclick="getProject('LF')">Landmark Finder</option>
-                    <option class="projSelect" value="OSE" onclick="getProject('OSE')">Outer Space Experience</option>
+                    <option class="projSelect" value="GTN" name="Guess The Number" onclick="getProject('GTN')">Guess The Number</option>
+                    <option class="projSelect" value="LF" name="Landmark Finder" onclick="getProject('LF')">Landmark Finder</option>
+                    <option class="projSelect" value="OSE" name="Outer Space Experience" onclick="getProject('OSE')">Outer Space Experience</option>
                 </div>
+            </div>
+
+            <div class="thumbnail">
+                <img id="projPic" src="../images/guess game/guessGame.jpg" alt="Piture of the Project">
+            </div>
             </div>
 
             <div id="projSection">
                 <!-- Guess The Number Documentation -->
                 <div class="projectsDocumentation" id="guessTheNumber">
-                    <div class="thumbnail">
-                        <img class="projPic" src="../images/guess game/guessGame.jpg" alt="Guess The Number Thumbnail">
-                    </div>
 
                     <div class="projDesc">
                         <p>The development of this project started <strong>July 9th 2021</strong>,
@@ -174,9 +178,6 @@
 
                 <!-- Landmark Finder Documentation -->
                 <div class="projectsDocumentation" id="landmarkFinder">
-                    <div class="thumbnail">
-                        <img class="projPic" src="../images/portfolio/mapboxAPI.JPG" alt="Landmark Finder Thumbnail">
-                    </div>
                     <p class="projDesc">
                         This project was originally created as a school project back in April 2020.
                         For a month I had to program a site that used Two APIs together to create something useful.
@@ -194,9 +195,6 @@
 
                 <!-- Outer Space Experience Documentation -->
                 <div class="projectsDocumentation" id="outerSpaceExperience">
-                    <div class="thumbnail">
-                        <img class="projPic" src="../images/portfolio/spaceExp.JPG" alt="Outer Space Experience Thumbnail">
-                    </div>
                     <p class="projDesc">
                         Outer Space Experience was a school projected I worked on in March of 2020.
                         The goal of the project was to create a visual experience using Canvas and the AudioContext API to
