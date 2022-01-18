@@ -412,6 +412,11 @@ h2{
     padding: 25px;
 }
 
+/* Focuses on the Blog page */
+#blogContainer{
+    padding: 35px;
+}
+
 /* Focuses on Game HTML */
 #gameTabs{
     min-height: calc(100% - 280px);
