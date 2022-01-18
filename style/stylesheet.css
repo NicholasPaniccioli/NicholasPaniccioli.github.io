@@ -302,7 +302,8 @@ h2{
     position: relative;
     font-family: 'Roboto Slab', 'Roboto', serif;
     color: black;
-    padding: 16px;
+    padding: 20px;
+    margin-left: 10px;
     font-size: 18pt;
     border-left: solid 4px #8BCA16;
     margin-bottom: 20px;
@@ -319,8 +320,8 @@ h2{
     display: block;
     background-color: #457B9D;
     color: white;
-    padding: 16px;
-    margin: 5px 0 5px 0;
+    padding: 20px;
+    margin: 5px;
     font-size: 16px;
     font-family: 'Roboto', serif;
     border: none;
@@ -398,6 +399,7 @@ h2{
 
 .projDesc{
     margin: 10px;
+    padding: 10px 20px 30px 20px;
     font-size: 11pt;
 }
 
@@ -668,7 +670,11 @@ h2{
     }
 
     .dropdown-content {
-        max-width: 187px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .dropbtn, #viewBtn{
         margin-right: auto;
         margin-left: auto;
     }
