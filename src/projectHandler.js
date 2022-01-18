@@ -41,8 +41,12 @@ function getProject (proj){
         projList.innerHTML += "  VR Convention";
         projPic.src = "../images/projects/VRC/Convention-A.JPG";
     } else {
-        //If none is found, default message
+        //If none is found, default message and default project
         alert("Sorry, was unable to find that project. Loading Default!");
+        displayDocumentation("guessTheNumber");
+        projList.innerHTML += "  Guess The Number";
+        projPic.src = "../images/projects/GTN/GTN-Thumb.JPG";
+        viewBtn.onclick = function() {window.open('game.html','_blank')};
     }
 
 };

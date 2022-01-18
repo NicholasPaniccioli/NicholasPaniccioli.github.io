@@ -56,129 +56,23 @@
             <div id="projSection">
                 <!-- Guess The Number Documentation -->
                 <div class="projectsDocumentation" id="guessTheNumber">
-
-                    <div class="projDesc">
-                        <p>The development of this project started <strong>July 9th 2021</strong>,
-                        as a means of something fun for me to create while expanding my knowledge
-                        on Javascript and CSS. I wanted to create something where I can use both
-                        my gaming and web design skills.</p>
-                        
-                        <br><strong>July 11th 2021</strong><br>
-                        <p>After a bit of time and effort the game is finally done. Almost done anyways,
-                        from the V1.0 image we have a look, where the game is very bland in style
-                        and not a lot of logic is finished yet. The game at this point checks if the
-                        user has guesses left and if they answer correctly. But it does not check to
-                        see if they should be able to guess after they guess correctly.
-                        As for the process, the user presses start, and the JS then changes the start
-                        button to a restart one and also adds more html elements like the guess button
-                        and text box. The user guesses and the JS responds based on if they have enough
-                        guesses and/or if the number matches the one randomly created. If it matches, they
-                        win! (but doesnt stop them from guessing). If not the game continues and their
-                        total guesses lower until they eventually hit 0 in which they can no longer
-                        guess and must hit restart.
-                        It is very exciting to see that something I created is functioning and I’m
-                        already brainstorming on what other mechanics I may be able to add.
-                        As of now I have point systems, and fully functioning logic in my plans. And confetti!</p>
-                        
-                        <br><strong>July 12th 2021</strong><br>
-                        <p>It’s late and not even a minute has passed 12am and Im continuing work on this
-                        project. And V1.1 is done (No new picture as only new text has been added so
-                        nothing visual has changed) I added some more logic and conditions so now
-                        even with a correct answer the player can no longer continue to guess. Now
-                        on to working on the higher and lower system.
-                        Okay it is 1:16am and the Higher or Lower function now works! When a user guesses
-                        I have JS checking and comparing the numbers to give back appropriate feedback.
-                        The game is finally complete and I am filled with immense joy seeing the minimal product done.
-                        It’s 5:47pm and I have just pushed a final check for user guesses.
-                        Now player’s won’t be able to guess when they use words.</p>
-                        
-                        <br><strong>July 14th</strong><br>
-                        <p>As the game and its main mechanics have been finished I have finally implemented
-                        a point system upon playing the game completing V1.2. Using local storage, points are saved and
-                        then earned upon wins in the game, And because they are in local storage you can
-                        leave the site and come back and still have your points! As of now though not much
-                        can be done with them, but plans to integrate a shop with different backgrounds and
-                        confetti is in the works.</p>
-                        
-                        <br><strong>August 11th 2021</strong><br>
-                        <p>It has been awhile since I last touched my project, due in part to distractions,
-                        side jobs, and other activities that have required my attention. But I have been
-                        looking into ways of getting my goals to work for the Guessing Game like confetti
-                        on wins and a store. While the store should be relatively easy to make, the confetti
-                        has proven more difficult as I need to find a way to layer it over the screen and also
-                        should I make my own? Should I use canvas? Pixel art? Or do I just find a royalty free GIF
-                        online and use that? I’m exploring my options, so in the meantime I plan to work on the store
-                        and have purchasable items that will change the background and button colors, and even maybe the style.</p>
-                        
-                        <br><strong>August 15th 2021</strong><br>
-                        <p>After doing some research and figuring out how to do a proper overlay I have finally implemented
-                        V1.3 which adds the long awaited confetti! Well not 100%. The logic is there and now it's easy to
-                        put any picture or GIF in place of the current test GIF that I made. Now to make
-                        better looking confetti and then create a store.</p>
-                    
-                        <br><strong>August 19th 2021</strong><br>
-                        <p>Tabs have been added which is paving the way to having a store and other things for my game.
-                        V1.4 and V1.41 have been pushed. They bring new tabs and css changes for the tabs and other
-                        responsiveness towards smaller screens. Currently tabs are buttons set with the same JS I used
-                        on the slideshow on my index page. Only instead of pictures and some buttons its going to be used
-                        to switch between the game, the store, and eventually achievements and player stats.</p>
-                    
-                        <br><strong>September 1st, 9th, & 12th, 2021</strong><br>
-                        <p>So we have a lot of ground to cover. Due in my part for forgetting to write updates.
-                        So to make things easier we're going to break it down by the dates and what happened.
-                        <br><br>Sept 1st - V1.4.3 I created and added my own pixel art confetti for the win screen. 
-                        I'm extremely happy with it as Itss fun to see something I made come to life in the game and it's confetti!
-                        <br><br>Sept 9th - V1.5 This was a big day. I sat myself down and worked entirely on the logic for the store. Previously
-                        all the store checked for was if they had a certain amount of points and then unlocked the color(and you could switch it).
-                        It didn't take away points and when the page refreshed the colors would be locked again.
-                        So to keep this short I created a function that would check the color picked, how much it was,
-                        and what to do if the player did or didn't have the right amount points. So now the store acts like a store.
-                        I also added a function that uses a new localStorage key/value in order to keep unlocked items, unlocked. Even after refreshing the page.
-                        <br><br>Sept 12th - V1.5.1 So after resting for the weekend from a good coding session I came back to work
-                        only to find the store no longer working. Colors weren't staying unlocked when refreshed, my buttons attritbutes were no longer changing,
-                        and worst of all unlocked colors still took points when you wanted to use them. So I had to redo
-                        the way my buttons worked. I created a whole new section of buttons that are now responsible for
-                        color changing and one row responsible for unlocking. So now when clicked the unlock button hides and
-                        the color changing buttons appears. Lastly made a few adjustments to the function that keeps things unlocked and the store now works! Again</p>
-                        
-                        <br><strong>September 20th 2021</strong><br>
-                        <p>V2.0 is complete and brings with it a newly completed tab! Stats has been a long term goal
-                        that I'm excited to finally have completed. Now players who play the guessing game can find all the
-                        fun little statistics about how they play, from the number of times they've won to how many points
-                        they've earned over the course of their entire time playing. All of this was accomplished by working
-                        with some JS and the local storage. Creating some logic for each stat and placing those functions
-                        in the correct spot allow me to update and change the stats that I have created for the player.
-                        Now while this doesn't changemuch in the way of game mechanics it's fun to see the numbers grow
-                        and answer the question of 'how good am I?'.<br>
-                        With the stats tab finished that leaves one big challenge left, Achievements. Currently the plan
-                        is to write/put 10 or so individual achievements players can earn. Do some art assets so when
-                        they do earn them they get fun pixel art badges. And when all of that is done, start to write out
-                        the JS functions that will overwatch and reward players with these badges. That concludes the V2.0 update!</p>
-                    
-                        <br><strong>September 23rd 2021</strong><br>
-                        <p>V2.5 is out and players can now start earning achievements! All the logic is placed and everything
-                        seems to work without a hitch, but some longer playtesting will make that certain. With the game pretty much
-                        finished, what next? Well for starters, I still need to design and implement the pixel art badges. As of now it's
-                        just text, so not a full update which is why it's 2.5 and not 3.0. However once I get that done, I need to add some
-                        more content to the store, meaning new confetti more colors, text color options etc. Which will include more JS changes.
-                        But once all of that is said and done I have plans to work on the CSS to really clean up the look of the game.
-                        After that the game will be done and we will see whether or not I have further plans to work on the game.</p>
-                    
-                        <br><strong>September 28th 2021</strong><br>
-                        <p>V2.7 is a relatively small and simple update, but much needed. The achievements tab feels more game like as you can see what achievements
-                        have been earned and are still locked as opposed to having a blank page. Also went through and fixed some functions where
-                        achievements were impossible to unlock. Also added a new image to clearly show which achievements have not been unlocked
-                        So instead of just displaying once invisible achievements, the achievements are always shown but now only the images change.
-                        With this new update the game feels much more alive and playful. So I feel comfortable now switching my time from doing programming
-                        to a little bit of art. Don't worry I'm not giving up coding as I still have a mechanic I want to add for the achievements that would allow
-                        players to use points to get hints for how to earn each achievement.</p>
-                    
-                        <br><strong>September 29th 2021</strong><br>
-                        <p>V2.8 is another small update that adds just a little bit of flair to the game. It adds a hint button to each achievement
-                        where players can use there points to unlock a descprition on how to earn the achievement. As of now though the hints
-                        do not stay unlocked upon a refresh of the page, so I'll need to add another local storage item to keep track of that.
-                        So for my next step I can focus on doing the art for the new badges along with a couple of CSS changes to clean up the look across the game.</p>
-                    </div>
+                    <p class="projDesc">
+                        A few months after I finished my last class at RIT I found myself itching to create a game. 
+                        With some new found experience in JS I wanted to make something small in scale yet still fun. 
+                        I also knew I wanted to mess with random number generation so the idea of a number guessing game 
+                        just made sense.
+                        <br><br>It started with creating a minimal viable product. Getting the basic mechanic to work and 
+                        nothing. Is the number random? Yes. Can the player Guess? Yes. Can they Win? Yes. And so on. Once
+                        those were done it was about the checks and balances; giving limits on guesses, no words, adding
+                        a higher or lower mechanic, etc. Testing and testing until the base game was complete! I had my
+                        simple game done, but for me simple wasn't enough.
+                        <br><br>After I had finished the game, I created a point system. Win the game, win a point. Then 
+                        it turned to a store to buy different colored backgrounds. Then different points for less or more guesses.
+                        Which then turned into an entire achievements tab, let's reward the player not only for winning,
+                        but for also playing. For those that love to know it all, let's give them their statistics. And of course
+                        with each new mechanic and tab added, more and more testing was needed. With the latest update 
+                        putting this game in a place I'm 100% happy with.
+                    </p>
                 </div>
 
                 <!-- Landmark Finder Documentation -->
@@ -239,7 +133,21 @@
                 <!-- Virtual Reality Convention Center -->
                 <div class="projectsDocumentation" id="vrConvention">
                     <p class="projDesc">
-                        Temp filler text until filled out later! Sorry for the inconvience give a bit of time and this will be all cleared up!
+                        During my first internship at VR Networking I was given plenty of work. However, it wasn't until I was given 
+                        the task to design and layout a convention center that my game design skills would be utiilized. The space was to be used
+                        on AltSpace for both VR and PC, and every moment of it was amazingly beautiful and excruciating. There was a lot of planning, 
+                        concept art, breaking, modeling, placing, turning, colliding, testing, VR-ing? The idea is there. The point being, I put a 
+                        tremendous amount of work into the world I created and I couldn't be prouder.
+                        <br><br>I was given a hollow shell, some assets, few directions, and a lot of personal freedom in Unity when it came to laying out.
+                        Makking some concept art and going back and forth with my supervisor we found something we liked and I got to work.
+                        At first it was overwhelming, there's nothing here and I have to fill it with how much? But I chipped away at it, started
+                        with one small section and built out. At first a botanical garden, then some rest areas next to it, the booths, more areas 
+                        and seats, and before I knew it the entire space was filled. Even after putting on my headset and seeing the world, 
+                        I could not believe my eyes.
+                        <br><br>However it wasn't always easy, I was also responsible for optimzing the entire space. Going through the assets to minimize
+                        the amount of triangles and adjusting the images/materials to lower the amount of space taken. Creating prefabs of booths and foliage, 
+                        making them easy to edit for future use. In fact, the entire space was crafted so that once the internship is over my supervisor
+                        can easily pick up the work where I left behind and easily edit every aspect.
                     </p>
                 </div>
 
