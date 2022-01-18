@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <!-- Used for the download pic -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
         <title>My Portfolio</title>
     </head>
@@ -34,9 +35,9 @@
             <!-- Holds all the cards for projects -->
             <div id="cardsShowContainer">
                 <!-- Card for Guessing Game -->
-                <div class="cardContainer" id="guessing">
+                <div class="cardContainer" id="projectOne">
                     <div class="cardPic">
-                        <img class="indexThumbnail" src="images/guess game/guessGame.jpg" alt="Guessing Game">
+                        <img class="indexThumbnail" src="images/projects/GTN/GTN-Thumb.JPG" alt="Guessing Game">
                     </div>
                     <div class="cardInfo">
                         <h2 class="infoTitle">Guess the Number</h2>
@@ -49,24 +50,24 @@
                     </div>
                 </div>
                 <!-- Card for Mapbox API -->
-                <div class="cardContainer" id="mapbox">
+                <div class="cardContainer" id="projectTwo">
                     <div class="cardPic">
-                        <img class="indexThumbnail" src="images/portfolio/mapboxAPI.JPG" alt="Landmark Finder">
+                        <img class="indexThumbnail" src="images/projects/VRC/Convention-A.JPG" alt="VR Convention">
                     </div>
                     <div class="cardInfo">
-                        <h2 class="infoTitle">Landmark Finder</h2>
+                        <h2 class="infoTitle">VR Convention</h2>
                         <div class="cardDesc">
                             <div class="buttonDiv">
-                                <button class="viewButton" onclick="window.open('https://people.rit.edu/njp7745/330/exercises/Project-3/','_blank')">View</button>
-                                <button class="docButton" value="LF" onclick="window.open('html/projectdoc.html','_blank')">Doc</button>
+                                <!-- <button class="viewButton" onclick=function(){alert("Sorry there's no site to view the full project on")}>View</button> -->
+                                <button class="docButton" value="VRC" onclick="window.open('html/projectdoc.html','_blank')">Doc</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Card for Space Experience -->
-                <div class="cardContainer" id="space">
+                <div class="cardContainer" id="projectThree">
                     <div class="cardPic">
-                        <img class="indexThumbnail" src="images/portfolio/spaceExp.JPG" alt="Space Experience">
+                        <img class="indexThumbnail" src="images/projects/OSE/OSE-Thumb.jpeg" alt="Space Experience">
                     </div>
                     <div class="cardInfo">
                         <h2 class="infoTitle">Space Experience</h2>
@@ -79,9 +80,9 @@
                     </div>
                 </div>
                 <div id="imageSelect">
-                    <img class="thumbSelect" src="images/guess game/guessGame.jpg" alt="Guessing Game" onclick="showSelected(1)">
-                    <img class="thumbSelect" src="images/portfolio/mapboxAPI.JPG" alt="Landmark Finder" onclick="showSelected(2)">
-                    <img class="thumbSelect" src="images/portfolio/spaceExp.JPG" alt="Space Experience" onclick="showSelected(3)">
+                    <img class="thumbSelect" src="images/projects/GTN/GTN-Thumb.JPG" alt="Guessing Game" onclick="showSelected(1)">
+                    <img class="thumbSelect" src="images/projects/VRC/Convention-A.JPG" alt="VR Convention" onclick="showSelected(2)">
+                    <img class="thumbSelect" src="images/projects/OSE/OSE-Thumb.jpeg" alt="Space Experience" onclick="showSelected(3)">
                 </div>
             </div>
 

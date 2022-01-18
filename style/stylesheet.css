@@ -188,6 +188,9 @@ hr{
     top: 25%;
     left: 30%;
 }
+#projectTwo .cardInfo{
+    left: 40%;
+}
 
 .infoTitle{
     font-family: 'Roboto Slab', 'Roboto', serif;
@@ -243,7 +246,7 @@ h2{
     transition-duration: 0.2s;
     cursor: pointer;
 }
-.viewButton:hover, .docButton:hover{
+.viewButton:hover, .docButton:hover, #viewBtn:hover{
     background-color: #A8DADC;
     color: white;
     border: solid 2px #8BCA16;
@@ -312,10 +315,12 @@ h2{
 }
 
 /* Dropdown from W3Schools */
-.dropbtn{
+.dropbtn, #viewBtn{
+    display: block;
     background-color: #457B9D;
     color: white;
     padding: 16px;
+    margin: 5px 0 5px 0;
     font-size: 16px;
     font-family: 'Roboto', serif;
     border: none;
