@@ -408,6 +408,19 @@ h2{
     font-size: 11pt;
 }
 
+/* Focuses on the Pixel Art Gallery and indivudal items */
+#pixelGallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+#pixelGallery img{
+    max-width: 300px;
+    max-height: 300px;
+    margin: 20px;
+}
+
 /* Focuses on Sources Page */
 #welSource{
     padding: 25px;
