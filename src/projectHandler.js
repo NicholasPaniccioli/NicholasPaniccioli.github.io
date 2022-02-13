@@ -5,7 +5,10 @@ function getProject (proj){
     let projPic = document.getElementById('projPic');
     let viewBtn = document.getElementById('viewBtn');
 
-    //By default gives aleart saying there is no view page for a given project
+    //Resets Project Picture to Show it
+    projPic.style.display ="block";
+
+    //By default gives alert saying there is no view page for a given project
     viewBtn.onclick = function(){alert("Hi there! Unfortunately there's no site to view this work. This may be because"
     + " it's being worked on currently or the product itself is on a different platform.");}
 
@@ -14,6 +17,7 @@ function getProject (proj){
     //Finds the project selected and gives documentation, thumbnail, and appropriate view link (if one is given)
     //PROJECTS IN ALPHABETICAL ORDER
     if(proj === "GTN") {
+        //Guess The Number
         displayDocumentation("guessTheNumber");
         projList.innerHTML += "  Guess The Number";
         projPic.src = "../images/projects/GTN/GTN-Thumb.JPG";
@@ -30,10 +34,16 @@ function getProject (proj){
         projList.innerHTML += "  Outer Space Experience";
         projPic.src = "../images/projects/OSE/OSE-Thumb.jpeg";
         viewBtn.onclick = function(){window.open('https://people.rit.edu/njp7745/330/exercises/Project-2/','_blank')};
+    } else if(proj === "") { //ATTENTION Needs to be filled in upon completing the project section
+        //Pixel Art
+        displayDocumentation("pixelArt");
+        projList.innerHTML += "  Pixel Art";
+        projPic.src = "";
+        projPic.style.display ="none";
     } else if(proj === "PORT") {
-        //VR Convention
+        //Portfolio Site
         displayDocumentation("portfolioSite");
-        projList.innerHTML += "  My Portfolio Site";
+        projList.innerHTML += " Portfolio Site";
         projPic.src = "../images/projects/PORT/Home-A.jpeg";
     } else if(proj === "VRC") {
         //VR Convention
@@ -42,7 +52,7 @@ function getProject (proj){
         projPic.src = "../images/projects/VRC/Convention-A.JPG";
     } else {
         //If none is found, default message and default project
-        alert("Sorry, was unable to find that project. Loading Default!");
+        alert("Sorry, was unable to find that project This may be because the page is still being worked on. So I'll load the default!");
         displayDocumentation("guessTheNumber");
         projList.innerHTML += "  Guess The Number";
         projPic.src = "../images/projects/GTN/GTN-Thumb.JPG";
