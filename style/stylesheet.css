@@ -233,6 +233,7 @@ h2{
     max-height: 50px;
     width: 15vw;
     height: 10vh; 
+    min-width: 100px;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
@@ -565,6 +566,10 @@ h2{
 }
 
 /* Store Tab */
+#storeItems{
+    text-align: center;
+}
+
 #unlocked, #storeColors{
     padding: 10px;
 }
@@ -581,6 +586,7 @@ h2{
 #statList{
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 #statList, li {
@@ -671,6 +677,11 @@ h2{
         margin-right: auto;
         grid-column-start: 1;
         grid-column-start: 2;
+    }
+
+    #aboutText{
+        border-top: solid 5px #8BCA16;
+        border-left: solid 0;
     }
 
     /* Focuses Project documentation */
