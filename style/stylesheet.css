@@ -271,11 +271,25 @@ h2{
     display: none;
 }
 
-/* Focuses on Updates in Documentation */
+/* Focuses on the Blog page */
+#blogContainer{
+    width: 50vw;
+    padding: 50px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .updateHead{
     font-style: italic;
     color: black;
     margin: 5px;
+    text-align: center;
+}
+
+.updateLine{
+    width: 35%;
+    border-top: 3px solid #A8DADC;
+    margin: 0 auto 15px auto;
 }
 
 .update{
@@ -430,11 +444,6 @@ h2{
 
 #sources{
     padding: 25px;
-}
-
-/* Focuses on the Blog page */
-#blogContainer{
-    padding: 35px;
 }
 
 /* Focuses on Game HTML */
