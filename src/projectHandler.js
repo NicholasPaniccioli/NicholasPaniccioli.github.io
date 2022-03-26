@@ -16,7 +16,12 @@ function getProject (proj){
     projList.innerHTML = "&#9776";
     //Finds the project selected and gives documentation, thumbnail, and appropriate view link (if one is given)
     //PROJECTS IN ALPHABETICAL ORDER
-    if(proj === "GTN") {
+    if(proj === "CLD") {
+        //Citadel Level Design
+        displayDocumentation("citadelLevelDesign");
+        projList.innerHTML += "  Citadel Level Design";
+        projPic.src = "../images/projects/CLD/SewerLD-B.png";
+    } else if(proj === "GTN") {
         //Guess The Number
         displayDocumentation("guessTheNumber");
         projList.innerHTML += "  Guess The Number";
@@ -43,7 +48,7 @@ function getProject (proj){
     } else if(proj === "PORT") {
         //Portfolio Site
         displayDocumentation("portfolioSite");
-        projList.innerHTML += " Portfolio Site";
+        projList.innerHTML += "  Portfolio Site";
         projPic.src = "../images/projects/PORT/Home-A.jpeg";
     } else if(proj === "VRC") {
         //VR Convention
