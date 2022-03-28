@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-        <script type="text/javascript" src="../src/blogHandler.js"></script>
-        <link rel="shortcut icon" type="image/gif" href="../favicon.png">
-        
-        <title>Blog</title>
+        <!-- Used for the download pic -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" type="image/gif" href="favicon.png">
+
+        <title>About Me</title>
     </head>
 
     <body>
@@ -29,8 +29,23 @@
             </div>
         </div>
 
-        <!-- Where all the updates go -->
-        <div class="content" id="blogContainer"></div>
+        <!--Holds all the introduction material  -->
+        <div id="meSection">
+            <h2 id="aboutHeader">About Me</h2>
+            <div id="intro">
+                <div id="profile">
+                    <img id="proPic" src="../images/portfolio/profile.jpg" alt="Picture of Me">
+                </div>
+                <div id="introText">
+                    <p id="aboutText">
+                        Hi, welcome to my portfolio site! It's a work in progress, but I'm excited to show off
+                        what I can create. Currently I'm working on finishing my degree at Rochester Institute of Technology.
+                        My major and focus is in Game Design and Development, chosen because of my passion for video games and the narratives 
+                        that they tell. My dream is to work in the industry and leave a mark on the gaming community.
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <!-- The bottom bar of the page -->
         <footer>
@@ -51,11 +66,7 @@
                 </ul>
             </div>
         </footer>
-        
-    </body>
 
-    <script>
-        getBlogs();
-    </script>
+    </body>
 
 </html>

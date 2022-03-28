@@ -25,8 +25,7 @@
                 <a href="../index.html">Home</a>
                 <a href="game.html">Guessing Game</a>
                 <a href="projectdoc.html">Projects</a>
-                <a href="https://trello.com/b/OS7vwvyW/portfolio-website">Trello Board</a>
-                <a href="documentation.html">Blog</a>
+                <a href="about.html">About Me</a>
             </div>
         </div>
 
@@ -38,7 +37,7 @@
                 <h2 class="projLabel">Projects</h2>
                 <button onclick="dropList()" class="dropbtn" id="projList">Projects </button>
                 <div id="myDropdown" class="dropdown-content">
-                    <!-- <option class="projSelect" value="CLD" name="Citadel Level Design" onclick="getProject('CLD')">Citadel Level Design</option> -->
+                    <option class="projSelect" value="CLD" name="Citadel Level Design" onclick="getProject('CLD')">Citadel Level Design</option>
                     <option class="projSelect" value="GTN" name="Guess The Number" onclick="getProject('GTN')">Guess The Number</option>
                     <option class="projSelect" value="LF" name="Landmark Finder" onclick="getProject('LF')">Landmark Finder</option>
                     <option class="projSelect" value="OSE" name="Outer Space Experience" onclick="getProject('OSE')">Outer Space Experience</option>
@@ -59,6 +58,16 @@
                 <!-- Citadel Level Design Documentation -->
                 <div class="projectsDocumentation" id="citadelLevelDesign">
                     <p class="projDesc">
+                        During Spring 2021, in my Production Studio class I was tasked with joining a group and creating a game.
+                        Upon finding my group we got straight to work and settled on a game idea, Citadel. It was to be a retro style 
+                        shooter in the same vein as Doom or Quake. It revolved around a prisoner who was hell-bent on 
+                        getting revenge on the 'perfect' utopia that put him behind bars.
+                        <br><br>My responsibilities included narrative writing, level design, and QA. We
+                        worked primarily in Unity with me using ProBuilder to create the maps. There I was able to design two levels, 
+                        the Suburbs and the Sewers. For both levels I started with some concept art, moved to gray boxing, 
+                        then filled them in with game objects, finally after recieving feedback I would either make changes or 
+                        get the levels to a more finished look.
+
                     </p>
                 </div>
 
@@ -199,8 +208,9 @@
             
             <div class="footerLinks">
                 <ul class="links">
-                    <li><a id="sourcelink" href="sources.html">Sources</a></li>
                     <li><a id="doclink" href="documentation.html">Blog</a></li>
+                    <li><a href="https://trello.com/b/OS7vwvyW/portfolio-website">Trello Board</a></li>
+                    <li><a id="sourcelink" href="sources.html">Sources</a></li>
                 </ul>
             </div>
         </footer>
@@ -209,7 +219,7 @@
 
     <script>
         //Loads in Guessing Game by Default
-        getProject('GTN');
+        getProject('CLD');
 
         //Dropdown List from W3Schools
         function dropList() {

@@ -115,55 +115,6 @@ hr{
     width: 60vw;
 }
 
-/* Focuses on the Profile Intro */
-#meSection{
-    padding: 20px 0 50px 0;
-}
-
-#intro{
-    display: grid;
-    grid-template-columns: 25% 75%;
-    padding: 0 25px 0 50px;
-    width: 65%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#profile{
-    text-align: center;
-    line-height: 100px;
-    vertical-align:middle
-}
-
-#introText{
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    vertical-align: middle;
-}
-
-#aboutHeader{
-    font-family: 'Roboto Slab', 'Roboto', serif;
-    text-align: center;
-    font-size: 16pt;
-    text-shadow: -2px 1px #A8DADC;
-}
-#aboutText{
-    font-size: 12pt;
-    border-left: solid 5px #8BCA16;
-    padding: 10px;
-}
-
-#proPic{
-    width: 15vw;
-    height: auto;
-    border-radius: 50%;
-    margin-top: auto;
-    margin-bottom: auto;
-    vertical-align: middle;
-}
-
 /* Focuses on the Cards in Index*/
 .cardContainer{
     width: 100%;
@@ -232,7 +183,7 @@ h2{
     margin: 10px;
     max-height: 50px;
     width: 15vw;
-    height: 10vh; 
+    height: 10vh;
     min-width: 100px;
     text-align: center;
     text-decoration: none;
@@ -335,11 +286,11 @@ h2{
     cursor: pointer;
     animation: sideIn 2s normal;
 }
-  
+
 .dropbtn:hover{
     background-color: #1d3557;
 }
-  
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -355,16 +306,16 @@ h2{
     transition: 1s;
     margin-left: 10px;
 }
-  
+
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-  
+
   .dropdown a:hover {background-color: #ddd;}
-  
+
   .show {display: block;}
 /* End of Dropdown from W3Schools*/
 /* Dropdown continue */
@@ -437,9 +388,70 @@ h2{
     margin: 20px;
 }
 
+/* Focuses on About Me Page */
+#meSection{
+    width: 70vw;
+    padding: 50px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Focuses on the Profile Intro */
+#intro{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#profile{
+    text-align: center;
+    line-height: 100px;
+    vertical-align:middle
+}
+
+#introText{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+}
+
+#aboutHeader{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 15px;
+    font-family: 'Roboto Slab', 'Roboto', serif;
+    font-size: 16pt !important;
+    text-shadow: -2px 1px #A8DADC;
+}
+
+#aboutText{
+    font-size: 12pt;
+    border-top: solid 5px #8BCA16;
+    padding: 10px;
+}
+
+#proPic{
+    width: 15vw;
+    height: auto;
+    border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+}
+
 /* Focuses on Sources Page */
+#sourceContainer{
+    width: 50vw;
+    padding: 50px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #welSource{
     padding: 25px;
+    border-bottom: solid 3px #8BCA16;
 }
 
 #sources{
@@ -522,7 +534,7 @@ h2{
     padding: 5px 10px;
     max-height: 50px;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     text-align: center;
     font-size: 15px;
     cursor: pointer;
@@ -591,7 +603,6 @@ h2{
 }
 
 /* Stats Tab */
-
 #statList{
     list-style: none;
     padding: 0;
@@ -631,9 +642,9 @@ h2{
     html {
         overflow-x: scroll;
         overflow-x: hidden;
-        touch-action: none; 
+        touch-action: none;
         -ms-overflow-style: none;
-        -ms-scroll-chaining: none; 
+        -ms-scroll-chaining: none;
     }
 
     /* Focuses on the Header */
@@ -641,7 +652,7 @@ h2{
         font-size: 18px;
         padding-bottom: 5px;
     }
-    
+
     #header{
         grid-template-columns: auto;
         grid-template-areas:
@@ -662,7 +673,7 @@ h2{
         font-size: 14pt;
     }
 
-    /* Focuses on the Profile Intro */   
+    /* Focuses on the Profile Intro */
     #intro{
         display: flex;
         flex-direction: column;
@@ -763,7 +774,7 @@ h2{
         margin-right: auto;
         text-align: center;
     }
-    
+
     .achItem{
         width: 100%;
         height: 100%;
