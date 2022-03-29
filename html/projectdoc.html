@@ -221,6 +221,9 @@
         //Loads in Guessing Game by Default
         getProject('CLD');
 
+        //When page loads, goes to check if there is a specific one called
+        window.onload = onloadProject();
+
         //Dropdown List from W3Schools
         function dropList() {
             document.getElementById("myDropdown").classList.toggle("show");

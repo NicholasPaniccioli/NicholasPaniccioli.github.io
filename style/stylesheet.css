@@ -284,7 +284,7 @@ h2{
     font-family: 'Roboto', serif;
     border: none;
     cursor: pointer;
-    animation: sideIn 2s normal;
+    animation: sideIn 1s normal;
 }
 
 .dropbtn:hover{
@@ -433,7 +433,7 @@ h2{
 }
 
 #proPic{
-    width: 15vw;
+    width: 10vw;
     height: auto;
     border-radius: 50%;
     margin-top: auto;

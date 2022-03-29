@@ -8,9 +8,10 @@ function getProject (proj){
     //Resets Project Picture to Show it
     projPic.style.display ="block";
 
-    //By default gives alert saying there is no view page for a given project
+    //By default gives alert saying there is no view page for a given project and brings back button if hidden
     viewBtn.onclick = function(){alert("Hi there! Unfortunately there's no site to view this work. This may be because"
     + " it's being worked on currently or the product itself is on a different platform.");}
+    viewBtn.style.display = "inline";
 
     //Hamburger button
     projList.innerHTML = "&#9776";
@@ -21,6 +22,7 @@ function getProject (proj){
         displayDocumentation("citadelLevelDesign");
         projList.innerHTML += "  Citadel Level Design";
         projPic.src = "../images/projects/CLD/SewerLD-B.png";
+        viewBtn.style.display = "none";
     } else if(proj === "GTN") {
         //Guess The Number
         displayDocumentation("guessTheNumber");
@@ -45,16 +47,19 @@ function getProject (proj){
         projList.innerHTML += "  Pixel Art";
         projPic.src = "";
         projPic.style.display ="none";
+        viewBtn.style.display = "none";
     } else if(proj === "PORT") {
         //Portfolio Site
         displayDocumentation("portfolioSite");
         projList.innerHTML += "  Portfolio Site";
         projPic.src = "../images/projects/PORT/Home-A.jpeg";
+        viewBtn.style.display = "none";
     } else if(proj === "VRC") {
         //VR Convention
         displayDocumentation("vrConvention");
         projList.innerHTML += "  VR Convention";
         projPic.src = "../images/projects/VRC/Convention-A.JPG";
+        viewBtn.style.display = "none";
     } else {
         //If none is found, default message and default project
         alert("Sorry, was unable to find that project This may be because the page is still being worked on. So I'll load the default!");
@@ -63,7 +68,6 @@ function getProject (proj){
         projPic.src = "../images/projects/GTN/GTN-Thumb.JPG";
         viewBtn.onclick = function() {window.open('game.html','_blank')};
     }
-
 };
 
 //Shows documentation selected and hides the rest
@@ -79,3 +83,23 @@ function displayDocumentation(projectName){
         }
     }
 };
+
+//On window loads, gives correct project based on button clicked
+function onloadProject (){
+    let selectedProject = window.location.href;
+    if(selectedProject.includes('?')){
+        // console.log("special link");
+        // console.log(selectedProject.indexOf('?'));
+        // console.log(selectedProject.length);
+
+        let selectedWord = "";
+        for(let i = selectedProject.indexOf('?') + 1; i < selectedProject.length; i++){
+            selectedWord += selectedProject[i];
+        }
+
+        console.log(selectedWord);
+        proj=selectedWord;
+
+        getProject(proj);
+    }
+}
