@@ -103,6 +103,9 @@ body{
 
 #cardSection{
     display: block;
+    width:  75%;
+    margin-left: auto;
+    margin-right: auto;
     animation: cardIn 2s normal;
 }
 @keyframes cardIn {
@@ -117,11 +120,15 @@ hr{
 
 /* Focuses on the Cards in Index*/
 .cardContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 'info pic';
+    margin: 10px 0 10px 0;
     width: 100%;
     min-width:50vw;
-    height: 60vh;
-    min-height: 65vh;
-    max-height: 70vh;
+    /* height: 45vh;
+    min-height: 40vh; */ 
+    /* max-height: 50vh;  */
     animation: swipeIn 1s normal;
 }
 @keyframes swipeIn {
@@ -130,11 +137,12 @@ hr{
 }
 
 .cardInfo{
+    grid-area: info;
     padding: 10px;
     /* margin-left: auto; */
-    margin: auto;
+    /* margin: auto;
     position: relative;
-    bottom: 230%;
+    bottom: 230%; */
 }
 .cardInfo h2 {
     text-shadow: -2px 1px #A8DADC;
@@ -143,22 +151,32 @@ hr{
 .infoTitle{
     font-family: 'Roboto Slab', 'Roboto', serif;
     font-size: 18pt;
-    text-align: center;
     color: black;
 }
 
+.detailHead{
+    font-family: 'Roboto Slab', 'Roboto', serif;
+    font-size: 14pt;
+    color: black;
+}
+.detailText{
+    font-size: 12pt;
+    line-height: 25px;
+}
+
 .cardPic{
-    position: relative;
+    grid-area: pic;
+    /* position: relative; */
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 50vh;
-    width: 60vw;
+    vertical-align: center;
+    margin: auto;
+    height: 80%;
+    width: 80%;
     max-width: 100%;
     max-height: 100%;
-    box-shadow: 0 0 1px rgba(0,0,0,.60);
-    opacity: 0.3;
-    filter: grayscale(100%);
+    box-shadow: 1px 1px 4px rgba(0,0,0,.60);
+    /* opacity: 0.3;
+    filter: grayscale(100%); */
 }
 
 .indexThumbnail{
@@ -182,7 +200,7 @@ h2{
     padding: 10px 20px;
     margin: 10px;
     max-height: 50px;
-    width: 15vw;
+    width: 5vw;
     height: 10vh;
     min-width: 100px;
     text-align: center;
@@ -198,7 +216,7 @@ h2{
 }
 
 .buttonDiv{
-    margin: 5px;
+    text-align: center;
 }
 
 #imageSelect{
@@ -667,10 +685,13 @@ h2{
         text-align: center;
     }
     .headerLink{
+        grid-area: links;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        font-size: 14pt;
+    }
+    .headerLink a{
+        font-size: 16pt;
     }
 
     /* Focuses on the Profile Intro */

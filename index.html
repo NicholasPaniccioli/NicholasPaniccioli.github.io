@@ -35,54 +35,78 @@
             <div id="cardsShowContainer">
                 <!-- Card for Guessing Game -->
                 <div class="cardContainer" id="projectOne">
-                    <div class="cardPic">
-                        <img class="indexThumbnail" src="images/projects/GTN/GTN-Thumb.JPG" alt="Guessing Game">
-                    </div>
                     <div class="cardInfo">
                         <h2 class="infoTitle">Guess The Number</h2>
                         <div class="cardDesc">
+                            <div class="cardDetails">
+                                <h3 class="detailHead">Project Details</h3>
+                                <p class="detailText">
+                                    A random number from 1-100 is picked, do you think you have the luck to guess the right one in 5 attempts? 
+                                    Don't worry it's not all luck, you'll get some help telling you if the answer is higher or lower! Earn points on correct
+                                    guesses and customize the window with the in-game shop. Show off your achievements with unlockable badges!
+                                </p>
+                            </div>
                             <div class="buttonDiv">
                                 <button class="viewButton" onclick="window.open('html/game.html','_blank')">View</button>
-                                <button class="docButton" value="GTN" onclick="window.open('html/projectdoc.html?GTN','_self')">Doc</button>
+                                <button class="docButton" value="GTN" onclick="window.open('html/projectdoc.html?GTN','_self')">Details</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="cardPic">
+                        <img class="indexThumbnail" src="images/projects/GTN/GTN-Thumb.JPG" alt="Guessing Game">
                     </div>
                 </div>
                 <!-- Card for Mapbox API -->
                 <div class="cardContainer" id="projectTwo">
-                    <div class="cardPic">
-                        <img class="indexThumbnail" src="images/projects/VRC/Convention-A.JPG" alt="VR Convention">
-                    </div>
                     <div class="cardInfo">
                         <h2 class="infoTitle">VR Convention</h2>
                         <div class="cardDesc">
+                            <div class="cardDetails">
+                                <h3 class="detailHead">Project Details</h3>
+                                <p class="detailText">
+                                    Welcome to the VR Convention Centre, here you can host a booth for your business or learn about a new industry. 
+                                    Explore this massive VR world I created where businesses can connect, people can meet others with similar interests, 
+                                    and presentations can be hosted to teach the public other new and fascinating topics from VR to Marketing.
+                                </p>
+                            </div>
                             <div class="buttonDiv">
                                 <!-- <button class="viewButton" onclick=function(){alert("Sorry there's no site to view the full project on")}>View</button> -->
-                                <button class="docButton" value="VRC" onclick="window.open('html/projectdoc.html?VRC','_self')">Doc</button>
+                                <button class="docButton" value="VRC" onclick="window.open('html/projectdoc.html?VRC','_self')">Details</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="cardPic">
+                        <img class="indexThumbnail" src="images/projects/VRC/Convention-A.JPG" alt="VR Convention">
                     </div>
                 </div>
                 <!-- Card for Space Experience -->
                 <div class="cardContainer" id="projectThree">
-                    <div class="cardPic">
-                        <img class="indexThumbnail" src="images/projects/OSE/OSE-Thumb.jpeg" alt="Space Experience">
-                    </div>
                     <div class="cardInfo">
                         <h2 class="infoTitle">Space Experience</h2>
                         <div class="cardDesc">
+                            <div class="cardDetails">
+                                <h3 class="detailHead">Project Details</h3>
+                                <p class="detailText">
+                                    Have you wanted to travel to outer space? Get an idea for what it feels like to be weightless? Space Experience can't take
+                                    you out of this atmosphere, but it'll do it's best to give you taste of being out of this world. Enjoy the music, colors, and stars!
+                                    Don't like the colors or speed? Feel free to change that and more with the different options available.
+                                </p>
+                            </div>
                             <div class="buttonDiv">
                                 <button class="viewButton" onclick="window.open('https://people.rit.edu/njp7745/330/exercises/Project-2/','_blank')">View</button>
-                                <button class="docButton" value="OSE" onclick="window.open('html/projectdoc.html?OSE','_self')">Doc</button>
+                                <button class="docButton" value="OSE" onclick="window.open('html/projectdoc.html?OSE','_self')">Details</button>
                             </div>
                         </div>
                     </div>
+                    <div class="cardPic">
+                        <img class="indexThumbnail" src="images/projects/OSE/OSE-Thumb.jpeg" alt="Space Experience">
+                    </div>
                 </div>
-                <div id="imageSelect">
+                <!-- <div id="imageSelect">
                     <img class="thumbSelect" src="images/projects/GTN/GTN-Thumb.JPG" alt="Guessing Game" onclick="showSelected(1)">
                     <img class="thumbSelect" src="images/projects/VRC/Convention-A.JPG" alt="VR Convention" onclick="showSelected(2)">
                     <img class="thumbSelect" src="images/projects/OSE/OSE-Thumb.jpeg" alt="Space Experience" onclick="showSelected(3)">
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -113,44 +137,44 @@
         let cardDisplay = 1;
 
         //Shows the 1st default card
-        showCard(cardDisplay);
+        // showCard(cardDisplay);
 
-        //Shows the next card in line
-        function nextCard(n) {
-            showCard(cardDisplay +=n);
-        }
-        function showSelected(n){
-            cardDisplay = n;
-            showCard(cardDisplay);
-        }
+        // //Shows the next card in line
+        // function nextCard(n) {
+        //     showCard(cardDisplay +=n);
+        // }
+        // function showSelected(n){
+        //     cardDisplay = n;
+        //     showCard(cardDisplay);
+        // }
         
-        //Dictates which card to show
-        function showCard(n) {
-            let totalCards = document.getElementsByClassName("cardContainer");
-            let thumbnails = document.getElementsByClassName("thumbSelect");
+        // //Dictates which card to show
+        // function showCard(n) {
+        //     let totalCards = document.getElementsByClassName("cardContainer");
+        //     let thumbnails = document.getElementsByClassName("thumbSelect");
 
-            //If the number is greater, restarts to the beginning of the cards
-            if(n > totalCards.length) {
-                cardDisplay = 1;
-            }
+        //     //If the number is greater, restarts to the beginning of the cards
+        //     if(n > totalCards.length) {
+        //         cardDisplay = 1;
+        //     }
 
-            //If the number goes below, starts from the end of the cards
-            if(n < 1) {
-                cardDisplay = totalCards.length;
-            };
+        //     //If the number goes below, starts from the end of the cards
+        //     if(n < 1) {
+        //         cardDisplay = totalCards.length;
+        //     };
 
-            //Loops through and sets all cards display to none
-            for(let i = 0; i < totalCards.length; i++)
-            {
-                totalCards[i].style.display= "none";
-                thumbnails[i].style.opacity=0.4;
-            }
+        //     //Loops through and sets all cards display to none
+        //     for(let i = 0; i < totalCards.length; i++)
+        //     {
+        //        // totalCards[i].style.display= "none";
+        //         thumbnails[i].style.opacity=0.4;
+        //     }
 
-            //Which ever card is on display will be shown
-            totalCards[cardDisplay-1].style.display= "grid";
-            thumbnails[cardDisplay-1].style.opacity=0.9;
+        //     //Which ever card is on display will be shown
+        //     totalCards[cardDisplay-1].style.display= "grid";
+        //     thumbnails[cardDisplay-1].style.opacity=0.9;
 
-        }
+        // }
     </script>
 
 </html>
