@@ -118,6 +118,11 @@ hr{
     width: 60vw;
 }
 
+.cardSeparators{
+    width: 100% !important;
+    margin: 20px 0 20px 0;
+}
+
 /* Focuses on the Cards in Index*/
 .cardContainer{
     display: grid;
@@ -130,6 +135,9 @@ hr{
     min-height: 40vh; */ 
     /* max-height: 50vh;  */
     animation: swipeIn 1s normal;
+}
+.cdAlt{
+    grid-template-areas: 'pic info' !important;
 }
 @keyframes swipeIn {
     0% {opacity: 35%; left: 0px; top:50px;}
@@ -153,8 +161,11 @@ hr{
     font-size: 18pt;
     color: black;
 }
+.infoTitleALT,.detailHeadALT{
+    text-align: center;
+}
 
-.detailHead{
+.detailHead,.responseHead{
     font-family: 'Roboto Slab', 'Roboto', serif;
     font-size: 14pt;
     color: black;
