@@ -705,6 +705,15 @@ h2{
         font-size: 16pt;
     }
 
+    /* Focuses on the Cards */
+    .cardContainer{
+        display: block;
+    }
+
+    .cardPic{
+        box-shadow: none !important;
+    }
+
     /* Focuses on the Profile Intro */
     #intro{
         display: flex;
