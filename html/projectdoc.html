@@ -32,26 +32,26 @@
         <div id="projectContainer" class="content">
 
             <div id="topSection">
-            <!-- Dropdown list, from W3Schools -->
-            <div class="dropdown" id="projFix">
-                <h2 class="projLabel">Projects</h2>
-                <button onclick="dropList()" class="dropbtn" id="projList">Projects </button>
-                <div id="myDropdown" class="dropdown-content">
-                    <option class="projSelect" value="CLD" name="Citadel Level Design" onclick="getProject('CLD')">Citadel Level Design</option>
-                    <option class="projSelect" value="GTN" name="Guess The Number" onclick="getProject('GTN')">Guess The Number</option>
-                    <option class="projSelect" value="LF" name="Landmark Finder" onclick="getProject('LF')">Landmark Finder</option>
-                    <option class="projSelect" value="OSE" name="Outer Space Experience" onclick="getProject('OSE')">Outer Space Experience</option>
-                    <!-- <option class="projSelect" value="PIX" name="Pixel Art" onclick="getProject('PIX')">Pixel Art</option> -->
-                    <option class="projSelect" value="PORT" name="Portfolio Site" onclick="getProject('PORT')">Portfolio Site</option>
-                    <option class="projSelect" value="VRC" name="VR Convention" onclick="getProject('VRC')">VR Convention</option>
-                    <!-- <option class="projSelect" value="" name="" onclick="getProject('')"></option> -->
+                <!-- Dropdown list, from W3Schools -->
+                <div class="dropdown" id="projFix">
+                    <h2 class="projLabel">Projects</h2>
+                    <button onclick="dropList()" class="dropbtn" id="projList">Projects </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <option class="projSelect" value="CLD" name="Citadel Level Design" onclick="getProject('CLD')">Citadel Level Design</option>
+                        <option class="projSelect" value="GTN" name="Guess The Number" onclick="getProject('GTN')">Guess The Number</option>
+                        <option class="projSelect" value="LF" name="Landmark Finder" onclick="getProject('LF')">Landmark Finder</option>
+                        <option class="projSelect" value="OSE" name="Outer Space Experience" onclick="getProject('OSE')">Outer Space Experience</option>
+                        <!-- <option class="projSelect" value="PIX" name="Pixel Art" onclick="getProject('PIX')">Pixel Art</option> -->
+                        <option class="projSelect" value="PORT" name="Portfolio Site" onclick="getProject('PORT')">Portfolio Site</option>
+                        <option class="projSelect" value="VRC" name="VR Convention" onclick="getProject('VRC')">VR Convention</option>
+                        <!-- <option class="projSelect" value="" name="" onclick="getProject('')"></option> -->
+                    </div>
+                    <button id="viewBtn">View Project</button>
                 </div>
-                <button id="viewBtn">View Project</button>
-            </div>
 
-            <div class="thumbnail">
-                <img id="projPic" src="../images/projects/GTN/" alt="Picture of the Project">
-            </div>
+                <div class="thumbnail">
+                    <img id="projPic" src="../images/projects/GTN/" alt="Picture of the Project">
+                </div>
             </div>
 
             <div id="projSection">
@@ -153,7 +153,7 @@
                 </div>
 
                 <!-- Pixel Art -->
-                <div class="projectsDocumentation" id="pixelArt">
+                <!-- <div class="projectsDocumentation" id="pixelArt">
                     <p class="projDesc">
                         Welcome one and all to the marvelous Pixel Art Gallery! Here you will find a collection of some of the finest
                         work that I have contributed to the pixel art world. Everything from assets used in school projects to
@@ -169,7 +169,7 @@
                         <img src="../images/projects/PIX/Floating-Brain.gif" alt="Pixel Art of a Floating Brain">
 
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Portfolio Site -->
                 <div class="projectsDocumentation" id="portfolioSite">
@@ -192,6 +192,15 @@
                             - Create a structure that is easy to navigate for newcomers<br>
                             - Build a site to clearly convey my skills and projects I've worked on<br>
                         </p>
+                        <!-- <h3 class="imagesHead">Screenshots</h3>
+                        <div class="projImages">
+                            <div class="imageContent">
+                                <img class="thumbSelect" src="../images/projects/GTN/V.1.0.jpg" alt="GTN-V1" onclick="showSelected(1)">
+                                <img class="thumbSelect bigCenter" src="../images/projects/GTN/V.1.2.jpg" alt="GTN-V1.2" onclick="showSelected(2)">
+                                <img class="thumbSelect" src="../images/projects/GTN/V.1.3.jpg" alt="GTN-V1.3" onclick="showSelected(3)">
+                                <img class="thumbSelect" src="../images/projects/GTN/V.1.4.0.jpg" alt="GTN-V1.4.0" onclick="showSelected(4)">
+                            </div>
+                        </div>  -->
                     </div>
                 </div>
 
@@ -242,7 +251,7 @@
             <div class="footerLinks">
                 <ul class="links">
                     <li><a id="doclink" href="documentation.html">Blog</a></li>
-                    <li><a href="https://trello.com/b/OS7vwvyW/portfolio-website">Trello Board</a></li>
+                    <li><a href="https://trello.com/b/OS7vwvyW/portfolio-website" target="_blank">Trello Board</a></li>
                     <li><a id="sourcelink" href="sources.html">Sources</a></li>
                 </ul>
             </div>
@@ -264,16 +273,62 @@
 
         // Close the dropdown if the user clicks outside of it
         window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            let dropdowns = document.getElementsByClassName("dropdown-content");
-            for (let i = 0; i < dropdowns.length; i++) {
-                let openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+            if (!event.target.matches('.dropbtn')) {
+                let dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
                 }
             }
         }
-    }
+
+        //// TO BE USED LATER, Still figuring out the work
+        // //To be used for picture display
+        // let picDisplay = 1;
+
+        // //Shows default pic
+        // showPic(picDisplay);
+
+        // //Shows the next pic or picture clicked
+        // function nextPic(n) {
+        //     showPic(picDisplay +=n);
+        // }
+        // function showSelected(n){
+        //     picDisplay = n;
+        //     showPic(picDisplay);
+        // }
+        
+        // //Dictates which picture to show
+        // function showPic(n) {
+        //     let thumbnails = document.getElementsByClassName("thumbSelect");
+        //     let totalPics = thumbnails.length;
+
+        //     //If the number exceeds length, restarts to the beginning of the picture wheel
+        //     if(n > totalPics) {
+        //         picDisplay = 1;
+        //     }
+
+        //     //If the number goes below length, starts from the end of the picture wheel
+        //     if(n < 1) {
+        //         picDisplay = totalPics;
+        //     };
+
+        //     //Loops through all the pics and lowers opacity
+        //     for(let i = 0; i < totalPics; i++)
+        //     {
+        //        // totalPics[i].style.display= "none";
+        //         thumbnails[i].style.opacity=0.4;
+        //         thumbnails[i].style.width="20%";
+        //         thumbnails[i].style.verticalAlign = "middle";
+        //     }
+
+        //     //Which ever pic is on display will be shown
+        //     thumbnails[picDisplay-1].style.opacity=0.9;
+        //     thumbnails[picDisplay-1].style.width = "40%";
+
+        // }
     </script>
 
 </html>
