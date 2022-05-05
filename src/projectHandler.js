@@ -1,3 +1,6 @@
+//To be used for picture display
+let picDisplay = 0;
+
 //Gives back the appropriate info based on selected project
 function getProject (proj){
     // Grabs all the projects in the list, the container for the thumbnail, and the view button
@@ -29,6 +32,7 @@ function getProject (proj){
         projList.innerHTML += "  Guess The Number";
         projPic.src = "../images/projects/GTN/GTN-Thumb.JPG";
         viewBtn.onclick = function() {window.open('game.html','_blank')};
+        showPic(0, "GTNthumbSelect");
     } else if(proj === "LF") {
         //Landmark Finder
         displayDocumentation("landmarkFinder");
@@ -101,5 +105,117 @@ function onloadProject (){
         proj=selectedWord;
 
         getProject(proj);
+    }
+}
+
+//Shows the; prev pic, next pic, or picture clicked
+function prevPic(n, name) {
+    showPic(picDisplay -=n, name);
+}
+function nextPic(n, name) {
+    showPic(picDisplay +=n, name);
+}
+function showSelected(n, name){
+    picDisplay = n;
+    showPic(picDisplay, name);
+}
+        
+//Dictates which pictures to show based on class and project shown
+//Also formats number so length accounts for array, 
+//IE Starting number is 0 or subtracting 1 from length to account for Array
+function showPic(n, name) {
+    let thumbnails = document.getElementsByClassName(name);
+    let totalPics = thumbnails.length-1;
+    let prevGTN = document.getElementById("prevGTN");
+    let curntGTN = document.getElementById("curntGTN");
+    let nextGTN = document.getElementById("nextGTN");
+
+    //Resets and clears image holders before adding the next ones
+    while(prevGTN.hasChildNodes()){
+        prevGTN.removeChild(prevGTN.lastChild);
+    }while(curntGTN.hasChildNodes()){
+        curntGTN.removeChild(curntGTN.lastChild);
+    }while(nextGTN.hasChildNodes()){
+        nextGTN.removeChild(nextGTN.lastChild);
+    }
+
+    //If the number exceeds length, restarts to the beginning of the picture wheel
+    if(n > totalPics) {
+        picDisplay = 0;
+    }
+
+    //If the number goes below length, starts from the end of the picture wheel
+    if(n < 0) {
+        picDisplay = totalPics;
+    };
+
+    //If n is between the two points, picture to be displayed is changed
+    if(0 <= n && n <= totalPics)
+    {
+        picDisplay = n;
+    }
+
+    //Loops through all the pics and lowers opacity
+    for(let i = 0; i <= totalPics; i++)
+    {
+        thumbnails[i].style.display= "none";
+        thumbnails[i].style.width="80%";
+        thumbnails[i].style.verticalAlign = "middle";
+    }
+
+    //Pic before selected will be shown
+    //Checks the image before is not below 0
+    //Clones and adds clone to its appropriate spot
+    if(picDisplay-1 < 0)
+    {
+        let prevClone = thumbnails[totalPics].cloneNode();
+        prevClone.style.display = "";
+        prevClone.style.opacity = "0.5";
+        prevClone.classList.remove(name);
+        prevGTN.appendChild(prevClone);
+    } else if(picDisplay-1 == 0){
+        let prevClone = thumbnails[0].cloneNode();
+        prevClone.style.display = "";
+        prevClone.style.opacity = "0.5";
+        prevClone.classList.remove(name);
+        prevGTN.appendChild(prevClone);
+    }else{
+        let prevClone = thumbnails[picDisplay-1].cloneNode();
+        prevClone.style.display = "";
+        prevClone.style.opacity = "0.5";
+        prevClone.classList.remove(name);
+        prevGTN.appendChild(prevClone);
+    }
+
+    //Which ever pic is on display will be shown bright
+    //Clones and adds clone to its appropriate spot
+    let curntClone = thumbnails[picDisplay].cloneNode();
+    curntClone.style.display = "";
+    curntClone.classList.remove(name);
+    curntGTN.appendChild(curntClone);
+
+    //Next pic is shown 
+    //Checks next picture doesnt go over limit
+    //Clones and adds clone to its appropriate spot
+    if(picDisplay+1 > totalPics)
+    {
+        let nextClone = thumbnails[0].cloneNode();
+        nextClone.style.display = "";
+        nextClone.style.opacity = "0.5";
+        nextClone.classList.remove(name);
+        nextGTN.appendChild(nextClone);
+    } else if(picDisplay+1 == totalPics){
+        let nextClone = thumbnails[totalPics].cloneNode();
+        nextClone.style.display = "";
+        nextClone.style.opacity = "0.5";
+        nextClone.classList.remove(name);
+        nextGTN.appendChild(nextClone);
+    }
+    else{
+        let nextClone = thumbnails[picDisplay+1].cloneNode();
+        nextClone.style.display = "";
+        nextClone.style.opacity = "0.5";
+        nextClone.classList.remove(name);
+        nextGTN.appendChild(nextClone);
     }
 }
