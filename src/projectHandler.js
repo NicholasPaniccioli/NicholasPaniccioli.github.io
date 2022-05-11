@@ -1,6 +1,3 @@
-//To be used for picture display
-let picDisplay = 0;
-
 //Gives back the appropriate info based on selected project
 function getProject (proj){
     // Grabs all the projects in the list, the container for the thumbnail, and the view button
@@ -108,6 +105,10 @@ function onloadProject (){
     }
 }
 
+
+//To be used for picture display
+let picDisplay = 0;
+
 //Shows the; prev pic, next pic, or picture clicked
 function prevPic(n, name) {
     showPic(picDisplay -=n, name);
@@ -170,19 +171,19 @@ function showPic(n, name) {
     {
         let prevClone = thumbnails[totalPics].cloneNode();
         prevClone.style.display = "";
-        prevClone.style.opacity = "0.5";
+        //prevClone.style.opacity = "0.5";
         prevClone.classList.remove(name);
         prevGTN.appendChild(prevClone);
     } else if(picDisplay-1 == 0){
         let prevClone = thumbnails[0].cloneNode();
         prevClone.style.display = "";
-        prevClone.style.opacity = "0.5";
+        //prevClone.style.opacity = "0.5";
         prevClone.classList.remove(name);
         prevGTN.appendChild(prevClone);
     }else{
         let prevClone = thumbnails[picDisplay-1].cloneNode();
         prevClone.style.display = "";
-        prevClone.style.opacity = "0.5";
+        //prevClone.style.opacity = "0.5";
         prevClone.classList.remove(name);
         prevGTN.appendChild(prevClone);
     }
@@ -191,6 +192,7 @@ function showPic(n, name) {
     //Clones and adds clone to its appropriate spot
     let curntClone = thumbnails[picDisplay].cloneNode();
     curntClone.style.display = "";
+    curntClone.style.width = "100%";
     curntClone.classList.remove(name);
     curntGTN.appendChild(curntClone);
 
@@ -201,20 +203,20 @@ function showPic(n, name) {
     {
         let nextClone = thumbnails[0].cloneNode();
         nextClone.style.display = "";
-        nextClone.style.opacity = "0.5";
+        //nextClone.style.opacity = "0.5";
         nextClone.classList.remove(name);
         nextGTN.appendChild(nextClone);
     } else if(picDisplay+1 == totalPics){
         let nextClone = thumbnails[totalPics].cloneNode();
         nextClone.style.display = "";
-        nextClone.style.opacity = "0.5";
+        //nextClone.style.opacity = "0.5";
         nextClone.classList.remove(name);
         nextGTN.appendChild(nextClone);
     }
     else{
         let nextClone = thumbnails[picDisplay+1].cloneNode();
         nextClone.style.display = "";
-        nextClone.style.opacity = "0.5";
+        //nextClone.style.opacity = "0.5";
         nextClone.classList.remove(name);
         nextGTN.appendChild(nextClone);
     }

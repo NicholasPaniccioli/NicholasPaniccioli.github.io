@@ -231,10 +231,10 @@ h2{
 }
 
 .projImages{
-    display: inline;
+    display: block;
     text-align: center;
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
 }
 .imageContent{
     margin-left: auto;
@@ -250,12 +250,30 @@ h2{
 
 .slideshow{
     display: grid;
-    grid-template-columns: 10% auto auto auto 10%;
+    grid-template-columns: 10% 20% 40% 20% 10%;
+}
+.slideButton{
+    margin: auto;
+    padding: 20px 10px;
+    background-color: #457B9D;
+    border:solid 1px black;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    animation: swipeIn 1s normal;
+}
+.slideButton:hover{
+    background-color: #1d3557;
 }
 
 .prev, .curnt, .next{
     margin:auto;
     vertical-align: middle;
+    text-align: center;
+}
+.prev, .next{
+    opacity: 0.5;
 }
 
 
