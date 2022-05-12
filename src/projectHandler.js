@@ -29,7 +29,7 @@ function getProject (proj){
         projList.innerHTML += "  Guess The Number";
         projPic.src = "../images/projects/GTN/GTN-Thumb.JPG";
         viewBtn.onclick = function() {window.open('game.html','_blank')};
-        showPic(0, "GTNthumbSelect");
+        showPic(0, "GTNthumbSelect", "GTN");
     } else if(proj === "LF") {
         //Landmark Finder
         displayDocumentation("landmarkFinder");
@@ -55,6 +55,7 @@ function getProject (proj){
         projList.innerHTML += "  Portfolio Site";
         projPic.src = "../images/projects/PORT/Home-A.jpeg";
         viewBtn.style.display = "none";
+        showPic(0, "PORTthumbSelect", "PORT");
     } else if(proj === "VRC") {
         //VR Convention
         displayDocumentation("vrConvention");
@@ -73,7 +74,6 @@ function getProject (proj){
 
 //Shows documentation selected and hides the rest
 function displayDocumentation(projectName){
-
     let projectsDocumentation = document.getElementsByClassName("projectsDocumentation");
     
     for(let i = 0; i < projectsDocumentation.length; i++){
@@ -89,16 +89,10 @@ function displayDocumentation(projectName){
 function onloadProject (){
     let selectedProject = window.location.href;
     if(selectedProject.includes('?')){
-        // console.log("special link");
-        // console.log(selectedProject.indexOf('?'));
-        // console.log(selectedProject.length);
-
         let selectedWord = "";
         for(let i = selectedProject.indexOf('?') + 1; i < selectedProject.length; i++){
             selectedWord += selectedProject[i];
         }
-
-        console.log(selectedWord);
         proj=selectedWord;
 
         getProject(proj);
@@ -110,34 +104,34 @@ function onloadProject (){
 let picDisplay = 0;
 
 //Shows the; prev pic, next pic, or picture clicked
-function prevPic(n, name) {
-    showPic(picDisplay -=n, name);
+function prevPic(n, name, suffix) {
+    showPic(picDisplay -=n, name, suffix);
 }
-function nextPic(n, name) {
-    showPic(picDisplay +=n, name);
+function nextPic(n, name, suffix) {
+    showPic(picDisplay +=n, name, suffix);
 }
-function showSelected(n, name){
+function showSelected(n, name, suffix){
     picDisplay = n;
-    showPic(picDisplay, name);
+    showPic(picDisplay, name, suffix);
 }
         
 //Dictates which pictures to show based on class and project shown
 //Also formats number so length accounts for array, 
 //IE Starting number is 0 or subtracting 1 from length to account for Array
-function showPic(n, name) {
+function showPic(n, name, suffix) {
     let thumbnails = document.getElementsByClassName(name);
     let totalPics = thumbnails.length-1;
-    let prevGTN = document.getElementById("prevGTN");
-    let curntGTN = document.getElementById("curntGTN");
-    let nextGTN = document.getElementById("nextGTN");
+    let prev = document.getElementById("prev" + suffix);
+    let curnt = document.getElementById("curnt" + suffix);
+    let next = document.getElementById("next" + suffix);
 
     //Resets and clears image holders before adding the next ones
-    while(prevGTN.hasChildNodes()){
-        prevGTN.removeChild(prevGTN.lastChild);
-    }while(curntGTN.hasChildNodes()){
-        curntGTN.removeChild(curntGTN.lastChild);
-    }while(nextGTN.hasChildNodes()){
-        nextGTN.removeChild(nextGTN.lastChild);
+    while(prev.hasChildNodes()){
+        prev.removeChild(prev.lastChild);
+    }while(curnt.hasChildNodes()){
+        curnt.removeChild(curnt.lastChild);
+    }while(next.hasChildNodes()){
+        next.removeChild(next.lastChild);
     }
 
     //If the number exceeds length, restarts to the beginning of the picture wheel
@@ -171,21 +165,18 @@ function showPic(n, name) {
     {
         let prevClone = thumbnails[totalPics].cloneNode();
         prevClone.style.display = "";
-        //prevClone.style.opacity = "0.5";
         prevClone.classList.remove(name);
-        prevGTN.appendChild(prevClone);
+        prev.appendChild(prevClone);
     } else if(picDisplay-1 == 0){
         let prevClone = thumbnails[0].cloneNode();
         prevClone.style.display = "";
-        //prevClone.style.opacity = "0.5";
         prevClone.classList.remove(name);
-        prevGTN.appendChild(prevClone);
+        prev.appendChild(prevClone);
     }else{
         let prevClone = thumbnails[picDisplay-1].cloneNode();
         prevClone.style.display = "";
-        //prevClone.style.opacity = "0.5";
         prevClone.classList.remove(name);
-        prevGTN.appendChild(prevClone);
+        prev.appendChild(prevClone);
     }
 
     //Which ever pic is on display will be shown bright
@@ -194,7 +185,7 @@ function showPic(n, name) {
     curntClone.style.display = "";
     curntClone.style.width = "100%";
     curntClone.classList.remove(name);
-    curntGTN.appendChild(curntClone);
+    curnt.appendChild(curntClone);
 
     //Next pic is shown 
     //Checks next picture doesnt go over limit
@@ -203,21 +194,18 @@ function showPic(n, name) {
     {
         let nextClone = thumbnails[0].cloneNode();
         nextClone.style.display = "";
-        //nextClone.style.opacity = "0.5";
         nextClone.classList.remove(name);
-        nextGTN.appendChild(nextClone);
+        next.appendChild(nextClone);
     } else if(picDisplay+1 == totalPics){
         let nextClone = thumbnails[totalPics].cloneNode();
         nextClone.style.display = "";
-        //nextClone.style.opacity = "0.5";
         nextClone.classList.remove(name);
-        nextGTN.appendChild(nextClone);
+        next.appendChild(nextClone);
     }
     else{
         let nextClone = thumbnails[picDisplay+1].cloneNode();
         nextClone.style.display = "";
-        //nextClone.style.opacity = "0.5";
         nextClone.classList.remove(name);
-        nextGTN.appendChild(nextClone);
+        next.appendChild(nextClone);
     }
 }

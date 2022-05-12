@@ -1,6 +1,5 @@
 //Gets all the Blogs and displays them properly
 function getBlogs(){
-
     let blogContainer = document.getElementById("blogContainer");
     blogContainer.innerHTML = "";
 
